@@ -204,21 +204,30 @@ let HTMLString =
 // console.log(arr1)
 // console.log(arr2)
 
-Array.prototype.flatten = function() {
-    let result = []
-    for (const value of this) {
-        if(Array.isArray(value)) {
-            // both spread and concat work here but have to change result from const to let
-            // const flattened = value.flatten()
-            // result.push(...flattened)
-            result = result.concat(value.flatten())
-        } else {
-            result.push(value)
-        }
-    }
-    return result
-}
+// Array.prototype.flatten = function() {
+//     let result = []
+//     for (const value of this) {
+//         if(Array.isArray(value)) {
+//             // both spread and concat work here but have to change result from const to let
+//             // const flattened = value.flatten()
+//             // result.push(...flattened)
+//             result = result.concat(value.flatten())
+//         } else {
+//             result.push(value)
+//         }
+//     }
+//     return result
+// }
 
-const arr1 = [1, 2, 3].flatten()
-const arr2 = [[1, 2], 2, 3].flatten()
-console.log(arr2)
+// const arr1 = [1, 2, 3].flatten()
+// const arr2 = [[1, 2], 2, 3].flatten()
+// console.log(arr2)
+
+Document.prototype.myGetElementById = function (id) {
+    for (const element of this.children) {
+        if (element.id === id) return element
+        const found = Document.prototype.myGetElementById.call(element, id)
+        if (found) return found
+    }
+    return null
+}
