@@ -13,20 +13,20 @@
     *Print out the array after each of these steps ^
 */
 
-let planets = ["Mercury", "Venus", "Earth", "Mars"]
-console.log(planets)
-planets.push("Jupiter")
-console.log(planets)
-planets.unshift("Sun")
-console.log(planets)
+// let planets = ["Mercury", "Venus", "Earth", "Mars"]
+// console.log(planets)
+// planets.push("Jupiter")
+// console.log(planets)
+// planets.unshift("Sun")
+// console.log(planets)
 // planets.pop()
-planets.splice(-2, 2)
-console.log(planets)
+// planets.splice(-2, 2)
+// console.log(planets)
 // planets.pop()
 // console.log(planets)
 // planets.shift()
-planets.splice(0,2)
-console.log(planets)
+// planets.splice(0,2)
+// console.log(planets)
 // planets.shift()
 // console.log(planets)
 
@@ -99,3 +99,77 @@ console.log(planets)
 
     WHY is this?
 */
+
+/*
+
+Write a function that accepts a string as an argument
+
+The function should capitalize ONLY every other letter in the string
+
+The function should then return the converted string
+
+*/
+
+// function capitalizeEveryOtherLetter(string) {
+//     let charArray = string.toLowerCase().split('')
+//     for(let i = 0; i < charArray.length; i++) {
+//         if(i % 2 === 0) {
+//             charArray[i] = charArray[i].toUpperCase()
+//         }
+//     }
+//     return charArray.join('')
+// }
+
+// console.log(capitalizeEveryOtherLetter('hello'))
+// console.log(capitalizeEveryOtherLetter('yo MICHAEL'))
+// console.log(capitalizeEveryOtherLetter('helloo?!?!?!'))
+
+
+/*
+
+    Write a function that accepts a String as an argument.
+
+    The String is supposed to be HTML, but all the div
+    elements are missing their closing tags (they have the < and >)
+
+    The function's job is to find and close all the divs 
+    in the provided HTML String
+
+    The function should return the entire corrected string.
+
+*/
+
+let HTMLString = 
+    `<div>Lorem ipsum dolor sit, eos est quas.<div>
+    <div>Lorem ipsum dolor sit, eos est quas.<div>
+    <div>Lorem ipsum dolor sit, eos est quas.<div>
+    <div>Lorem ipsum dolor sit, eos est quas.<div>
+    <div>Lorem ipsum dolor sit, eos est quas.<div>`
+
+// function closeDivTags(str) {
+//     let charArray = str.split('')
+//     let counter = 0
+//     for(let i = 0; i < charArray.length; i++) {
+//         if(charArray[i] === '<' 
+//         && charArray[i+1] === 'd' 
+//         && charArray[i+2] === 'i' 
+//         && charArray[i+3] === 'v' 
+//         && charArray[i+4] === '>') {
+//             counter++
+//             if(counter % 2 === 0) {
+//                 charArray.splice(i+1, 0, '/')
+//             }
+//         }
+//     }
+//     return charArray.join('')
+// }
+
+function closeDivTags(str) {
+    let counter = 0
+    return str.replace(/<div>/g, () => {
+        counter++
+        return (counter % 2 === 0) ? '</div>' : '<div>'
+    })
+}
+
+console.log(closeDivTags(HTMLString))
