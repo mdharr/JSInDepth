@@ -12,15 +12,15 @@
     When you're done, call the function once.
 */
 
-function chill() {
-    console.log("Doing some chilling:")
-    for(let i = 1; i <= 10; i++) {
-        console.log(`Chill... ${i}`)
-    }
-    console.log("That was ice cold!")
-}
+// function chill() {
+//     console.log("Doing some chilling:")
+//     for(let i = 1; i <= 10; i++) {
+//         console.log(`Chill... ${i}`)
+//     }
+//     console.log("That was ice cold!")
+// }
 
-chill()
+// chill()
 
 /*
     Write a function called "noRemainder":
@@ -37,7 +37,15 @@ chill()
         const result2 = noRemainder(100, 10); // result2 should be true
 */
 
+// function noRemainder(number, mod) {
+//     if(number % mod === 0) return true
+//     return false
+// }
 
+// const result1 = noRemainder(10, 7)
+// const result2 = noRemainder(100, 10)
+// console.log(result1)
+// console.log(result2)
 
 /*
     Write a function called "login":
@@ -61,7 +69,23 @@ chill()
      - const test5 = login('moomoo', 'moo'); // "test5" should be false
 */
 
+function login(username, password) {
+    if(username === "admin") return true
+    if(username === "monkey" && password === "123") return true
+    if(username === "moomoo" && password === "farm") return true
+    return false
+}
 
+const test = login('hello', 'meow');
+const test2 = login('admin', 'lol');
+const test3 = login('monkey', '123');
+const test4 = login('moomoo', 'farm');
+const test5 = login('moomoo', 'moo');
+console.log(test)
+console.log(test2)
+console.log(test3)
+console.log(test4)
+console.log(test5)
 
 /*
     1. Write a function called "square":
@@ -85,3 +109,16 @@ chill()
      - const sum1 = sumOfSquares(2, 3); // "sum1" should be 13 (4 + 9)
      - const sum2 = sumOfSquares(3, 4); // "sum1" should be 25 (9 + 16)
 */
+
+function square(num) {
+    return num**2
+}
+
+function sumOfSquares(num1, num2) {
+    return square(num1) + square(num2)
+}
+
+const sum1 = sumOfSquares(2, 3);
+const sum2 = sumOfSquares(3, 4);
+console.log(sum1)
+console.log(sum2)
