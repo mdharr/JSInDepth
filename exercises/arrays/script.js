@@ -44,11 +44,11 @@
     BONUS: Try to see if you can make it so that all you need to change
     is the "multiple" variable and the program still works correctly.
 */
-let multiple = 5
-let arr1 = [10, 11, 12, 13, 14, 15]
-arr1.forEach(item => {
-    console.log(`${item} x ${multiple} = ${item*multiple}`)
-})
+// let multiple = 5
+// let arr1 = [10, 11, 12, 13, 14, 15]
+// arr1.forEach(item => {
+//     console.log(`${item} x ${multiple} = ${item*multiple}`)
+// })
 
 /*
     Create a variable called "greeting" and initialize it to:
@@ -61,7 +61,10 @@ arr1.forEach(item => {
     WHAT is a String, really?
 */
 
-
+let greeting = "Hello, nice to meet you!"
+for(let i = 0; i < greeting.length; i++) {
+    console.log(greeting[i])
+}
 
 /*
     Create a variable called "total" that starts at 0
