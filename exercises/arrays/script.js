@@ -190,16 +190,35 @@ let HTMLString =
 // console.log(radar.isPalindrome())
 
 // recreate Map function based on Array.prototype
-Array.prototype.myMap = function (cb) {
-    const newArray = []
-    for(let i = 0; i < this.length; i++) {
-        newArray[i] = cb(this[i])
+// Array.prototype.myMap = function (cb) {
+//     const newArray = []
+//     for(let i = 0; i < this.length; i++) {
+//         newArray[i] = cb(this[i])
+//     }
+//     return newArray
+// }
+
+// const arr1 = [1, 2, 3].myMap(console.log)
+// const arr2 = ["a", "b", "c"].myMap(console.log)
+
+// console.log(arr1)
+// console.log(arr2)
+
+Array.prototype.flatten = function() {
+    let result = []
+    for (const value of this) {
+        if(Array.isArray(value)) {
+            // both spread and concat work here but have to change result from const to let
+            // const flattened = value.flatten()
+            // result.push(...flattened)
+            result = result.concat(value.flatten())
+        } else {
+            result.push(value)
+        }
     }
-    return newArray
+    return result
 }
 
-const arr1 = [1, 2, 3].myMap(console.log)
-const arr2 = ["a", "b", "c"].myMap(console.log)
-
-console.log(arr1)
+const arr1 = [1, 2, 3].flatten()
+const arr2 = [[1, 2], 2, 3].flatten()
 console.log(arr2)
