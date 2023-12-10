@@ -44,8 +44,11 @@
     BONUS: Try to see if you can make it so that all you need to change
     is the "multiple" variable and the program still works correctly.
 */
-
-
+let multiple = 5
+let arr1 = [10, 11, 12, 13, 14, 15]
+arr1.forEach(item => {
+    console.log(`${item} x ${multiple} = ${item*multiple}`)
+})
 
 /*
     Create a variable called "greeting" and initialize it to:
@@ -223,11 +226,11 @@ let HTMLString =
 // const arr2 = [[1, 2], 2, 3].flatten()
 // console.log(arr2)
 
-Document.prototype.myGetElementById = function (id) {
-    for (const element of this.children) {
-        if (element.id === id) return element
-        const found = Document.prototype.myGetElementById.call(element, id)
-        if (found) return found
-    }
-    return null
-}
+// Document.prototype.myGetElementById = function (id) {
+//     for (const element of this.children) {
+//         if (element.id === id) return element
+//         const found = Document.prototype.myGetElementById.call(element, id)
+//         if (found) return found
+//     }
+//     return null
+// }
