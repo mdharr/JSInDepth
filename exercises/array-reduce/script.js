@@ -110,4 +110,14 @@
 */
 
 // const nums = [10, 30, 50, 70, 90]
-// const squares = nums
+// const squares = nums.map(num => num**2)
+// const over1000 = squares.filter(square => square > 1000)
+// const finale = over1000.reduce((sum, num) => {
+//     return sum+=num
+// }, 0)
+const finale = [10, 30, 50, 70, 90].map(num => num**2).filter(num => num > 1000).reduce((sum, num) => sum+=num, 0)
+
+// console.log(nums)
+// console.log(squares)
+// console.log(over1000)
+console.log(finale)
