@@ -211,10 +211,8 @@ let HTMLString =
 // String.prototype.isPalindrome = function () {
 //     let reversedString = this.split('').reverse().join('')
 //     if(String(this) === reversedString) {
-//         console.log(this.toString(), reversedString)
 //         return true
 //     } else {
-//         console.log(this.toString(), reversedString)
 //         return false
 //     }
 // }
@@ -237,6 +235,7 @@ let HTMLString =
 // console.log(arr1)
 // console.log(arr2)
 
+// without depth parameter (flattens everything)
 // Array.prototype.flatten = function() {
 //     let result = []
 //     for (const value of this) {
@@ -251,6 +250,23 @@ let HTMLString =
 //     }
 //     return result
 // }
+
+// has depth parameter
+// Array.prototype.flatten = function(depth = 1) {
+//     let result = [];
+//     for (const value of this) {
+//         if (Array.isArray(value) && depth > 0) {
+//             result = result.concat(value.flatten(depth - 1));
+//         } else {
+//             result.push(value);
+//         }
+//     }
+//     return result;
+// }
+
+// console.log([1, [2, [3, [4]], 5]].flatten());
+// console.log([1, [2, [3, [4]], 5]].flatten(2));
+
 
 // const arr1 = [1, 2, 3].flatten()
 // const arr2 = [[1, 2], 2, 3].flatten()
