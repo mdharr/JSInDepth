@@ -51,9 +51,25 @@ console.log(mexico)
     8. Print out "myPet" to the terminal again
 */
 
+let myPet = {
+    name: "Sudo",
+    type: "Dog",
+    breed: "Poodle",
+    age: 7,
+    friends: ["Bit", "Byte", "Data"]
+}
 
-
-
+console.log(myPet)
+// dot notation
+myPet.color = "Black"
+// bracket notation
+// myPet['color'] = "Black"
+console.log(myPet)
+myPet.breed = "Beagle"
+myPet.friends = myPet.friends.filter(friend => friend !== "Data")
+console.log(myPet)
+myPet.friends.push("Chip")
+console.log(myPet)
 /*
     1. Create the following 3 objects:
         - const banana = {name: "banana", quantity: 1, price: 1.95}
