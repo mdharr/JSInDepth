@@ -38,7 +38,9 @@ console.log(hasSpaces)
     3. Print out both arrays
 */
 
-
+const prices = [1.23, 19.99, 85.2, 32.87, 8, 5.2]
+const lowPrices = prices.filter(price => (price + (price*.15)) < 10.00)
+console.log(lowPrices)
 
 
 /*
