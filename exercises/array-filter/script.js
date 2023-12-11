@@ -6,9 +6,9 @@
     3. Print out both "practice" and the new filtered array
 */
 
-const practice = [10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
-const evenNums = practice.filter(item => item % 2 === 0)
-console.log(evenNums)
+// const practice = [10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
+// const evenNums = practice.filter(item => item % 2 === 0)
+// console.log(evenNums)
 
 /*
     1. Create an array called 'countries' of the following strings:
@@ -22,7 +22,9 @@ console.log(evenNums)
     HINT: Google for "javascript string contains"
 */
 
-
+const countries = ["France", "South Africa", "Brazil", "United States", "Sweden"]
+const hasSpaces = countries.filter(country => country.includes(' '))
+console.log(hasSpaces)
 
 
 /*
