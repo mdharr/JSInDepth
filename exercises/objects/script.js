@@ -154,10 +154,28 @@ console.log(candy)
     *This is a challenging exercise - take it slow and step by step
 */
 
+const houseForSale = {
+    area: 940,
+    value: 320000,
+    streetName: "Fifth Street",
+    built: "2012",
+    owner: {name: "Blake", age: 29},
+    offers: [290000, 295000, 315000, 312000]
+}
+console.log(houseForSale)
+delete houseForSale.built
+console.log(houseForSale)
+// const newHouseForSale = Object.assign({}, houseForSale);
+// delete newHouseForSale.built;
+houseForSale.owner.age = 30
+console.log(houseForSale)
 
-
-
-
+const maxOfferPrice = houseForSale.offers.reduce((max, price) => {
+    return max > price ? max : price
+}, 0)
+console.log(maxOfferPrice)
+houseForSale.salePrice = 312000
+console.log(houseForSale)
 /*
     1. Create an object called "myConsole"
     
