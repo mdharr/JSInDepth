@@ -57,10 +57,10 @@
     4. Change it so if we see "mouse", we instead return "mice"
 */
 
-const items = ["light", "banana", "phone", "book", "mouse"]
-const plurals = items.map(item => `${item}s`)
-console.log(items)
-console.log(plurals)
+// const items = ["light", "banana", "phone", "book", "mouse"]
+// const plurals = items.map(item => `${item}s`)
+// console.log(items)
+// console.log(plurals)
 
 
 /*
@@ -76,3 +76,8 @@ console.log(plurals)
     "matrix" should look like this:
         [[10], [20], [30], [40], [50]]
 */
+
+const row = [10, 20, 30, 40, 50]
+const matrix = row.map(item => [item])
+console.log(row)
+console.log(matrix)
