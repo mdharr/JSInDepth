@@ -56,15 +56,17 @@
     HINT: Google for "javascript array includes"
 */
 
-const values = [[1,2,3], [0,0,1], [3,6,9], [0,1,2]]
+// const values = [[1,2,3], [0,0,1], [3,6,9], [0,1,2]]
 // const hasTwos = values.filter(value => {
 //     for(let i = 0; i < value.length; i++) {
 //         if(value[i] === 2) return value
 //     }
 // })
-const hasTwos = values.filter(value => value.includes(2))
 
-console.log(hasTwos)
+
+// const hasTwos = values.filter(value => value.includes(2))
+
+// console.log(hasTwos)
 
 
 /*
@@ -83,6 +85,13 @@ console.log(hasTwos)
     "over50" should contain: [60, 80, 100]
 */
 
-
+const nums = [10, 20, 30, 40, 50]
+const timesTwo = nums.map(num => num*2)
+const over50 = timesTwo.filter(num => num > 50)
+console.log(nums)
+console.log(timesTwo)
+// method chaining on nums also viable
+// const over50 = nums.map(num => num*2).filter(num => num > 50)
+console.log(over50)
 
 
