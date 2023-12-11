@@ -81,9 +81,14 @@
     BONUS: Can you do steps 1-3 in one line?
 */
 
-const items = ["light", "banana", "phone", "book", "mouse"]
-const caps = items.map(item => `${item.charAt(0).toUpperCase()}${item.slice(1)}`)
-console.log(caps)
+// const items = ["light", "banana", "phone", "book", "mouse"]
+// const caps = items.map(item => `${item.charAt(0).toUpperCase()}${item.slice(1)}`)
+// const concat = caps.reduce((string, item) => {
+//     return string ? `${string} ${item}` : string += item
+// }, '')
+// console.log(items)
+// console.log(caps)
+// console.log(concat)
 
 
 /*
@@ -103,3 +108,6 @@ console.log(caps)
 
     BONUS^2: Can you do 1-4 all in one line?
 */
+
+// const nums = [10, 30, 50, 70, 90]
+// const squares = nums
