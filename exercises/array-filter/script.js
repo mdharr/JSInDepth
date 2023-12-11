@@ -22,10 +22,9 @@
     HINT: Google for "javascript string contains"
 */
 
-const countries = ["France", "South Africa", "Brazil", "United States", "Sweden"]
-const hasSpaces = countries.filter(country => country.includes(' '))
-console.log(hasSpaces)
-
+// const countries = ["France", "South Africa", "Brazil", "United States", "Sweden"]
+// const hasSpaces = countries.filter(country => country.includes(' '))
+// console.log(hasSpaces)
 
 /*
     1. Create an array called "prices" with the following values:
@@ -38,10 +37,9 @@ console.log(hasSpaces)
     3. Print out both arrays
 */
 
-const prices = [1.23, 19.99, 85.2, 32.87, 8, 5.2]
-const lowPrices = prices.filter(price => (price + (price*.15)) < 10.00)
-console.log(lowPrices)
-
+// const prices = [1.23, 19.99, 85.2, 32.87, 8, 5.2]
+// const lowPrices = prices.filter(price => (price + (price*.15)) < 10.00)
+// console.log(lowPrices)
 
 /*
     1. Create the following array called "values":
@@ -58,7 +56,15 @@ console.log(lowPrices)
     HINT: Google for "javascript array includes"
 */
 
+const values = [[1,2,3], [0,0,1], [3,6,9], [0,1,2]]
+// const hasTwos = values.filter(value => {
+//     for(let i = 0; i < value.length; i++) {
+//         if(value[i] === 2) return value
+//     }
+// })
+const hasTwos = values.filter(value => value.includes(2))
 
+console.log(hasTwos)
 
 
 /*
