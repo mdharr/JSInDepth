@@ -6,9 +6,9 @@
     3. Print out both "practice" and the new mapped array
 */
 
-let practice = [25, 26, 27, 28, 29, 30]
-let squared = practice.map(number => number**2)
-console.log(squared)
+// let practice = [25, 26, 27, 28, 29, 30]
+// let squared = practice.map(number => number**2)
+// console.log(squared)
 
 
 /*
@@ -25,7 +25,9 @@ console.log(squared)
           number function built-in to Javascript to use
 */
 
-
+const boolsArray = [true, true, false, true, false, false]
+const mappedArray = boolsArray.map(element => element === true ? Math.floor(Math.random()*100)+1 : 0)
+console.log(mappedArray)
 
 
 /*
