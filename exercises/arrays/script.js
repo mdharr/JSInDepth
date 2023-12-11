@@ -124,7 +124,15 @@
 
     WHY is this?
 */
-
+// let bakery = ['Cake', 'Cookie', 'Bread', 'Scone']
+// console.log(bakery)
+// let myBakery = [...bakery]
+// myBakery.push('Croissant')
+// myBakery.push('Granola')
+// console.log(bakery)
+// console.log(myBakery)
+// They are pointing to the same reference, so if you want a new array, you must use
+// spread operator
 /*
 
 Write a function that accepts a string as an argument
