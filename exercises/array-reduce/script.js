@@ -6,12 +6,12 @@
     3. Print out both "points" and "sum"
 */
 
-const points = [55, 56, 57, 58, 59, 60]
-const sum = points.reduce((total, point) => {
-    return total += point
-}, 0)
-console.log(points)
-console.log(sum)
+// const points = [55, 56, 57, 58, 59, 60]
+// const sum = points.reduce((total, point) => {
+//     return total += point
+// }, 0)
+// console.log(points)
+// console.log(sum)
 
 
 /*
@@ -30,6 +30,20 @@ console.log(sum)
     TIP: Look up reduce on Google using docs like MDN
 */
 
+const companies = ["apple", "tesla", "spacex", "amazon", "meta", "google"];
+// const modded = companies.reduce((string, company) => {
+//     if (company.startsWith('a')) {
+//         return string ? `${string}-${company}` : company;
+//     }
+//     return string;
+// }, '');
+
+// simplified even further
+const modded = companies.reduce((string, company) => {
+    return company.startsWith('a') ? (string ? `${string}-${company}` : company) : string;
+}, '');
+
+console.log(modded);
 
 
 
