@@ -58,12 +58,12 @@
     3. Print out "prices" and "afterTax"
 */
 
-const prices = [1.23, 19.99, 85.2, 32.87, 8, 5.2]
-const afterTax = prices.reduce((sum, price) => {
-    return price > 6 ? sum += price : sum += price*0.2
-}, 0)
-console.log(prices)
-console.log(afterTax)
+// const prices = [1.23, 19.99, 85.2, 32.87, 8, 5.2]
+// const afterTax = prices.reduce((sum, price) => {
+//     return price > 6 ? sum += price : sum += price*0.2
+// }, 0)
+// console.log(prices)
+// console.log(afterTax)
 
 /*
     1. Create the following array called "items":
@@ -81,7 +81,9 @@ console.log(afterTax)
     BONUS: Can you do steps 1-3 in one line?
 */
 
-
+const items = ["light", "banana", "phone", "book", "mouse"]
+const caps = items.map(item => `${item.charAt(0).toUpperCase()}${item.slice(1)}`)
+console.log(caps)
 
 
 /*
