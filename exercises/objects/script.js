@@ -100,34 +100,34 @@
     9. Print out both "store" and "candy"
 */
 
-const banana = {name: "banana", quantity: 1, price: 1.95}
-const apple = {name: "apple", quantity: 1, price: 1.45}
-const candy = {name: "candy", quantity: 1, price: 3.50}
+// const banana = {name: "banana", quantity: 1, price: 1.95}
+// const apple = {name: "apple", quantity: 1, price: 1.45}
+// const candy = {name: "candy", quantity: 1, price: 3.50}
 
-const store = {
-    storeNumber: 5,
-    locationCity: "Milan",
-    locationCountry: "Italy",
-    products: [banana, apple, candy]
-}
+// const store = {
+//     storeNumber: 5,
+//     locationCity: "Milan",
+//     locationCountry: "Italy",
+//     products: [banana, apple, candy]
+// }
 
 // console.log(store)
 // console.log(store.products)
 // console.log(store.products[2])
 
-store.products.find(product => product.name === "banana").price = 1.75;
+// store.products.find(product => product.name === "banana").price = 1.75;
 
 // const bananaProduct = store.products.find(product => product.name === "banana");
 // if (bananaProduct) {
 //     bananaProduct.price = 1.75;
 // }
 
-console.log(store)
-console.log(banana)
+// console.log(store)
+// console.log(banana)
 
-candy.price = 4.99
-console.log(store)
-console.log(candy)
+// candy.price = 4.99
+// console.log(store)
+// console.log(candy)
 
 
 /*
@@ -154,28 +154,26 @@ console.log(candy)
     *This is a challenging exercise - take it slow and step by step
 */
 
-const houseForSale = {
-    area: 940,
-    value: 320000,
-    streetName: "Fifth Street",
-    built: "2012",
-    owner: {name: "Blake", age: 29},
-    offers: [290000, 295000, 315000, 312000]
-}
-console.log(houseForSale)
-delete houseForSale.built
-console.log(houseForSale)
+// const houseForSale = {
+//     area: 940,
+//     value: 320000,
+//     streetName: "Fifth Street",
+//     built: "2012",
+//     owner: {name: "Blake", age: 29},
+//     offers: [290000, 295000, 315000, 312000]
+// }
+// console.log(houseForSale)
+// delete houseForSale.built
+// console.log(houseForSale)
 // const newHouseForSale = Object.assign({}, houseForSale);
 // delete newHouseForSale.built;
-houseForSale.owner.age = 30
-console.log(houseForSale)
+// houseForSale.owner.age = 30
+// console.log(houseForSale)
 
-const maxOfferPrice = houseForSale.offers.reduce((max, price) => {
-    return max > price ? max : price
-}, 0)
-console.log(maxOfferPrice)
-houseForSale.salePrice = 312000
-console.log(houseForSale)
+// const maxOfferPrice = houseForSale.offers.reduce((max, price) => max > price ? max : price, 0)
+// console.log(maxOfferPrice)
+// houseForSale.salePrice = 312000
+// console.log(houseForSale)
 /*
     1. Create an object called "myConsole"
     
@@ -192,3 +190,10 @@ console.log(houseForSale)
 
     BONUS: How might the built-in "console" work?
 */
+
+const myConsole = {
+    log: function (message) { console.log(message) }
+}
+
+myConsole.log("Hello, friend!")
+
