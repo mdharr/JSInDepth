@@ -30,7 +30,7 @@
     TIP: Look up reduce on Google using docs like MDN
 */
 
-const companies = ["apple", "tesla", "spacex", "amazon", "meta", "google"];
+// const companies = ["apple", "tesla", "spacex", "amazon", "meta", "google"];
 // const modded = companies.reduce((string, company) => {
 //     if (company.startsWith('a')) {
 //         return string ? `${string}-${company}` : company;
@@ -39,11 +39,11 @@ const companies = ["apple", "tesla", "spacex", "amazon", "meta", "google"];
 // }, '');
 
 // simplified even further
-const modded = companies.reduce((string, company) => {
-    return company.startsWith('a') ? (string ? `${string}-${company}` : company) : string;
-}, '');
+// const modded = companies.reduce((string, company) => {
+//     return company.startsWith('a') ? (string ? `${string}-${company}` : company) : string;
+// }, '');
 
-console.log(modded);
+// console.log(modded);
 
 
 
@@ -58,8 +58,12 @@ console.log(modded);
     3. Print out "prices" and "afterTax"
 */
 
-
-
+const prices = [1.23, 19.99, 85.2, 32.87, 8, 5.2]
+const afterTax = prices.reduce((sum, price) => {
+    return price > 6 ? sum += price : sum += price*0.2
+}, 0)
+console.log(prices)
+console.log(afterTax)
 
 /*
     1. Create the following array called "items":
