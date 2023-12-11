@@ -61,10 +61,10 @@
     WHAT is a String, really?
 */
 
-let greeting = "Hello, nice to meet you!"
-for(let i = 0; i < greeting.length; i++) {
-    console.log(greeting[i])
-}
+// let greeting = "Hello, nice to meet you!"
+// for(let i = 0; i < greeting.length; i++) {
+//     console.log(greeting[i])
+// }
 
 /*
     Create a variable called "total" that starts at 0
@@ -82,7 +82,26 @@ for(let i = 0; i < greeting.length; i++) {
 */
 
 
+// let total = 0
+// let count = 0
+// const grades = [55, 63, 82, 98, 91, 43]
 
+// for(let i = 0; i < grades.length; i++) {
+//     count++
+//     total += grades[i]
+// }
+// console.log(total / count)
+
+// function findAverage(nums) {
+//     let count = 0
+//     for(let i = 0; i < nums.length; i++) {
+//         count++
+//         total += nums[i]
+//     }
+//     return total / count
+// }
+
+// console.log(findAverage(grades))
 
 /*
     Create a variable called "bakery" that points to an array
