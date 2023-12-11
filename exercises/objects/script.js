@@ -14,18 +14,18 @@
     5. Print out "mexico" to the terminal again
 */
 
-let mexico = {
-    id: 24,
-    name: "Mexico",
-    capital: "Mexico City",
-    neighbors: [
-        "USA", "Guatemala", "Belize"
-    ]
-}
-console.log(mexico)
-mexico.id = 25
-mexico.neighbors.push("Honduras")
-console.log(mexico)
+// let mexico = {
+//     id: 24,
+//     name: "Mexico",
+//     capital: "Mexico City",
+//     neighbors: [
+//         "USA", "Guatemala", "Belize"
+//     ]
+// }
+// console.log(mexico)
+// mexico.id = 25
+// mexico.neighbors.push("Honduras")
+// console.log(mexico)
 
 
 /*
@@ -51,25 +51,27 @@ console.log(mexico)
     8. Print out "myPet" to the terminal again
 */
 
-let myPet = {
-    name: "Sudo",
-    type: "Dog",
-    breed: "Poodle",
-    age: 7,
-    friends: ["Bit", "Byte", "Data"]
-}
+// let myPet = {
+//     name: "Sudo",
+//     type: "Dog",
+//     breed: "Poodle",
+//     age: 7,
+//     friends: ["Bit", "Byte", "Data"]
+// }
 
-console.log(myPet)
-// dot notation
-myPet.color = "Black"
-// bracket notation
-// myPet['color'] = "Black"
-console.log(myPet)
-myPet.breed = "Beagle"
-myPet.friends = myPet.friends.filter(friend => friend !== "Data")
-console.log(myPet)
-myPet.friends.push("Chip")
-console.log(myPet)
+// console.log(myPet)
+// // dot notation
+// myPet.color = "Black"
+// // bracket notation
+// // myPet['color'] = "Black"
+// console.log(myPet)
+// myPet.breed = "Beagle"
+// myPet.friends = myPet.friends.filter(friend => friend !== "Data")
+// console.log(myPet)
+// myPet.friends.push("Chip")
+// console.log(myPet)
+
+
 /*
     1. Create the following 3 objects:
         - const banana = {name: "banana", quantity: 1, price: 1.95}
@@ -98,8 +100,34 @@ console.log(myPet)
     9. Print out both "store" and "candy"
 */
 
+const banana = {name: "banana", quantity: 1, price: 1.95}
+const apple = {name: "apple", quantity: 1, price: 1.45}
+const candy = {name: "candy", quantity: 1, price: 3.50}
 
+const store = {
+    storeNumber: 5,
+    locationCity: "Milan",
+    locationCountry: "Italy",
+    products: [banana, apple, candy]
+}
 
+// console.log(store)
+// console.log(store.products)
+// console.log(store.products[2])
+
+store.products.find(product => product.name === "banana").price = 1.75;
+
+// const bananaProduct = store.products.find(product => product.name === "banana");
+// if (bananaProduct) {
+//     bananaProduct.price = 1.75;
+// }
+
+console.log(store)
+console.log(banana)
+
+candy.price = 4.99
+console.log(store)
+console.log(candy)
 
 
 /*
