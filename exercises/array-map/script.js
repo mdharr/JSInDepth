@@ -25,10 +25,9 @@
           number function built-in to Javascript to use
 */
 
-const boolsArray = [true, true, false, true, false, false]
-const mappedArray = boolsArray.map(element => element === true ? Math.floor(Math.random()*100)+1 : 0)
-console.log(mappedArray)
-
+// const boolsArray = [true, true, false, true, false, false]
+// const mappedArray = boolsArray.map(element => element === true ? Math.floor(Math.random()*100)+1 : 0)
+// console.log(mappedArray)
 
 /*
     1. Create an array called "prices" with the following values:
@@ -41,8 +40,10 @@ console.log(mappedArray)
     3. Print out both arrays
 */
 
-
-
+// const prices = [1.23, 19.99, 85.2, 32.87, 8, 5.2]
+// const taxedPrices = prices.map(element => element > 10 ? element += (element*0.2) : element)
+// console.log(prices)
+// console.log(taxedPrices)
 
 /*
     1. Create the following array called "items":
