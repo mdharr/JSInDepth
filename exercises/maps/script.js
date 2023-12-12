@@ -166,6 +166,17 @@ console.log(houseForSale)
 houseForSale.delete("built")
 console.log(houseForSale)
 
+houseForSale.get("owner").age = 30
+console.log(houseForSale)
+
+const maxOfferPrice = houseForSale.get("offers").reduce((max, price) => {
+    return price > max ? max = price : max
+}, -Infinity)
+console.log(maxOfferPrice)
+
+houseForSale.set("salePrice", 312000)
+console.log(houseForSale)
+
 /*
     1. Create a Map called "myConsole"
     
