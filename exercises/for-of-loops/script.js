@@ -5,12 +5,10 @@
     2. Use a for-of loop to print out each number squared
 */
 
-const numbers = [10, 20, 40, 50, 20, 100]
-for(const number of numbers) {
-    console.log(number)
-}
-
-
+// const numbers = [10, 20, 40, 50, 20, 100]
+// for(const number of numbers) {
+//     console.log(number)
+// }
 
 
 /*
@@ -33,7 +31,14 @@ for(const number of numbers) {
          {age: 39, name: "Dragon"}, {age: 2, name: "Dragon"}]
 */
 
+const ages = [10, 42, 15, 22, 11, 74, 39, 2]
 
+const results = []
+
+for(const obj of ages) {
+    results.push({ age: obj, name: "Dragon" })
+}
+console.log(results)
 
 
 
