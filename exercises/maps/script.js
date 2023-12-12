@@ -197,16 +197,16 @@
        How does this differ from an Object?
 */
 
-const myConsole = new Map()
-myConsole.set("log", (message) => { console.log(message) })
+// const myConsole = new Map()
+// myConsole.set("log", (message) => { console.log(message) })
 
-myConsole.get("log")("Hello there!")
+// myConsole.get("log")("Hello there!")
 
-myConsole.set(1, "number one")
-myConsole.set("1", "string one")
-console.log(myConsole)
+// myConsole.set(1, "number one")
+// myConsole.set("1", "string one")
+// console.log(myConsole)
 
-console.log(myConsole.get("1"))
+// console.log(myConsole.get("1"))
 
 /*
     1. Create an array called "numbers" with the following values:
@@ -228,7 +228,35 @@ console.log(myConsole.get("1"))
 */
 
 
+const numbers = [10, 20, 15, 30, 15, 20, 35, 60, 10]
 
+const seenNumbers = new Map()
+
+for(let i = 0; i < numbers.length; i++) {
+    if(seenNumbers.has(numbers[i])) {
+        console.log(i, seenNumbers.get(numbers[i]))
+        break
+    } else {
+        seenNumbers.set(numbers[i], i)
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+// firstDuplicatePair = duplicatePairs[0]
+// console.log(duplicatePairs)
+// console.log(firstDuplicatePair[0], firstDuplicatePair[1])
+// console.log(seenNumbers)
 
 // const myMap = new Map()
 
@@ -250,3 +278,20 @@ console.log(myConsole.get("1"))
 
 // console.log(myMap)
 // console.log(myMap.size)
+
+
+
+
+
+// const numbers = [10, 20, 15, 30, 15, 20, 35, 60, 10]
+
+// const seenNumbers = new Map()
+
+// for(let i = 0; i < numbers.length; i++) {
+//     if(seenNumbers.has(numbers[i])) {
+//         console.log(i, seenNumbers.get(numbers[i]))
+//         break
+//     } else {
+//         seenNumbers.set(numbers[i], i)
+//     }
+// }
