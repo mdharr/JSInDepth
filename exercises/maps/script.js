@@ -154,28 +154,28 @@
     *This is a challenging exercise - take it slow and step by step
 */
 
-const houseForSale = new Map()
-houseForSale.set("area", 940)
-houseForSale.set("value", 320000)
-houseForSale.set("streetName", "Fifth Street")
-houseForSale.set("built", "2012")
-houseForSale.set("owner", { name: "Blake", age: 29} )
-houseForSale.set("offers", [290000, 295000, 315000, 312000])
-console.log(houseForSale)
+// const houseForSale = new Map()
+// houseForSale.set("area", 940)
+// houseForSale.set("value", 320000)
+// houseForSale.set("streetName", "Fifth Street")
+// houseForSale.set("built", "2012")
+// houseForSale.set("owner", { name: "Blake", age: 29} )
+// houseForSale.set("offers", [290000, 295000, 315000, 312000])
+// console.log(houseForSale)
 
-houseForSale.delete("built")
-console.log(houseForSale)
+// houseForSale.delete("built")
+// console.log(houseForSale)
 
-houseForSale.get("owner").age = 30
-console.log(houseForSale)
+// houseForSale.get("owner").age = 30
+// console.log(houseForSale)
 
-const maxOfferPrice = houseForSale.get("offers").reduce((max, price) => {
-    return price > max ? max = price : max
-}, -Infinity)
-console.log(maxOfferPrice)
+// const maxOfferPrice = houseForSale.get("offers").reduce((max, price) => {
+//     return price > max ? max = price : max
+// }, -Infinity)
+// console.log(maxOfferPrice)
 
-houseForSale.set("salePrice", 312000)
-console.log(houseForSale)
+// houseForSale.set("salePrice", 312000)
+// console.log(houseForSale)
 
 /*
     1. Create a Map called "myConsole"
@@ -197,8 +197,16 @@ console.log(houseForSale)
        How does this differ from an Object?
 */
 
+const myConsole = new Map()
+myConsole.set("log", (message) => { console.log(message) })
 
+myConsole.get("log")("Hello there!")
 
+myConsole.set(1, "number one")
+myConsole.set("1", "string one")
+console.log(myConsole)
+
+console.log(myConsole.get("1"))
 
 /*
     1. Create an array called "numbers" with the following values:
