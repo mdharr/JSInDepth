@@ -61,22 +61,17 @@
     4. Print out "capsNames"
 */
 
-const names = new Set()
+// const names = new Set()
 
-const capsNames = new Set()
-    names.add("Bilbo")
-    names.add("Hermione")
-    names.add("Spock")
-    names.add("Leia")
-for(const name of names) {
-    capsNames.add(name.charAt(0) + name.slice(1))
-}
-console.log(capsNames)
-
-
-
-
-
+// const capsNames = new Set()
+//     names.add("Bilbo")
+//     names.add("Hermione")
+//     names.add("Spock")
+//     names.add("Leia")
+// for(const name of names) {
+//     capsNames.add(name.charAt(0) + name.slice(1))
+// }
+// console.log(capsNames)
 
 /*
     1. Create a Map called "backpack" and add the following entries:
@@ -92,3 +87,19 @@ console.log(capsNames)
 
     3. Also print out the total value of all items in the backpack
 */
+
+const backpack = new Map()
+backpack.set(1, {name: "Sword", value: 300})
+backpack.set(2, {name: "Banana", value: 5})
+backpack.set(3, {name: "Gold Nugget", value: 10000})
+backpack.set(4, {name: "Pants", value: 100})
+
+let totalValue = 0
+
+for(const item of backpack) {
+    const key = item[0]
+    const value = item[1]
+    console.log(`${value.name}: $${value.value}`)
+    totalValue+=value.value
+}
+console.log(totalValue)
