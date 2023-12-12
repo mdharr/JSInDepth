@@ -31,14 +31,14 @@
          {age: 39, name: "Dragon"}, {age: 2, name: "Dragon"}]
 */
 
-const ages = [10, 42, 15, 22, 11, 74, 39, 2]
+// const ages = [10, 42, 15, 22, 11, 74, 39, 2]
 
-const results = []
+// const results = []
 
-for(const obj of ages) {
-    results.push({ age: obj, name: "Dragon" })
-}
-console.log(results)
+// for(const obj of ages) {
+//     results.push({ age: obj, name: "Dragon" })
+// }
+// console.log(results)
 
 
 
@@ -61,6 +61,17 @@ console.log(results)
     4. Print out "capsNames"
 */
 
+const names = new Set()
+
+const capsNames = new Set()
+    names.add("Bilbo")
+    names.add("Hermione")
+    names.add("Spock")
+    names.add("Leia")
+for(const name of names) {
+    capsNames.add(name.charAt(0) + name.slice(1))
+}
+console.log(capsNames)
 
 
 
