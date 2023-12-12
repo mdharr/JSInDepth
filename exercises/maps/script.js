@@ -98,15 +98,15 @@
 
     9. Print out both "store" and "candy"
 */
-const banana = {name: "banana", quantity: 1, price: 1.95}
-const apple = {name: "apple", quantity: 1, price: 1.45}
-const candy = {name: "candy", quantity: 1, price: 3.50}
+// const banana = {name: "banana", quantity: 1, price: 1.95}
+// const apple = {name: "apple", quantity: 1, price: 1.45}
+// const candy = {name: "candy", quantity: 1, price: 3.50}
 
-const store = new Map()
-store.set("storeNumber", 5)
-store.set("locationCity", "Milan")
-store.set("locationCountry", "Italy")
-store.set("products", [banana, apple, candy])
+// const store = new Map()
+// store.set("storeNumber", 5)
+// store.set("locationCity", "Milan")
+// store.set("locationCountry", "Italy")
+// store.set("products", [banana, apple, candy])
 // console.log(store)
 
 // console.log(store.get("products"))
@@ -115,20 +115,20 @@ store.set("products", [banana, apple, candy])
 //     console.log(product)
 // })
 
-for(let i = 0; i < store.get("products").length; i++) {
+// for(let i = 0; i < store.get("products").length; i++) {
     // console.log(store.get("products")[i])
-}
+// }
 
 // console.log(store.get("products")[2])
 
 // store.get("products")[0].price = 1.75
-store.get("products").find(product => product === banana ? product.price = 1.75 : product.price)
+// store.get("products").find(product => product === banana ? product.price = 1.75 : product.price)
 // console.log(store)
 // console.log(banana)
 
-candy.price = 4.99
-console.log(store)
-console.log(candy)
+// candy.price = 4.99
+// console.log(store)
+// console.log(candy)
 
 /*
     1. Create a Map called "houseForSale" with the following entries:
@@ -161,6 +161,9 @@ houseForSale.set("streetName", "Fifth Street")
 houseForSale.set("built", "2012")
 houseForSale.set("owner", { name: "Blake", age: 29} )
 houseForSale.set("offers", [290000, 295000, 315000, 312000])
+console.log(houseForSale)
+
+houseForSale.delete("built")
 console.log(houseForSale)
 
 /*
