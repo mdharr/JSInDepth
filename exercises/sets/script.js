@@ -32,15 +32,15 @@
     2. How can you print out all the UNIQUE points inside "points"?
 */
 
-const points = [10, 20, 10, 30, 15, 15, 35, 60, 10]
-// console.log([...new Set(points)])
-const uniquePoints = new Set()
+// const points = [10, 20, 10, 30, 15, 15, 35, 60, 10]
+// // console.log([...new Set(points)])
+// const uniquePoints = new Set()
 
-for (let i = 0; i < points.length; i++) {
-    uniquePoints.add(points[i])
-}
+// for (let i = 0; i < points.length; i++) {
+//     uniquePoints.add(points[i])
+// }
 
-console.log(uniquePoints)
+// console.log(uniquePoints)
 
 
 
@@ -56,16 +56,24 @@ console.log(uniquePoints)
     *This is quite challenging and is a common interview question
 */
 
-// const numbers = [10, 20, 15, 30, 15, 20, 35, 60, 10]
-// const seenNumbers = new Set()
+const numbers = [10, 20, 15, 30, 15, 20, 35, 60, 10]
 
+const seenNumbers = new Set()
+for(let i = 0; i < numbers.length; i++) {
+    if(seenNumbers.has(numbers[i])) {
+        console.log(numbers[i])
+        break
+    }
+    seenNumbers.add(numbers[i])
+}
+
+// const seenNumbers = []
 // for(let i = 0; i < numbers.length; i++) {
-//     if(seenNumbers.has(numbers[i])) {
+//     if(seenNumbers.includes(numbers[i])) {
 //         console.log(numbers[i])
 //         break
-//     } else {
-//         seenNumbers.add(numbers[i], i)
 //     }
+//     seenNumbers.push(numbers[i])
 // }
 
 
