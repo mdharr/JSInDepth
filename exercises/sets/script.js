@@ -56,16 +56,16 @@
     *This is quite challenging and is a common interview question
 */
 
-const numbers = [10, 20, 15, 30, 15, 20, 35, 60, 10]
+// const numbers = [10, 20, 15, 30, 15, 20, 35, 60, 10]
 
-const seenNumbers = new Set()
-for(let i = 0; i < numbers.length; i++) {
-    if(seenNumbers.has(numbers[i])) {
-        console.log(numbers[i])
-        break
-    }
-    seenNumbers.add(numbers[i])
-}
+// const seenNumbers = new Set()
+// for(let i = 0; i < numbers.length; i++) {
+//     if(seenNumbers.has(numbers[i])) {
+//         console.log(numbers[i])
+//         break
+//     }
+//     seenNumbers.add(numbers[i])
+// }
 
 // const seenNumbers = []
 // for(let i = 0; i < numbers.length; i++) {
@@ -79,10 +79,10 @@ for(let i = 0; i < numbers.length; i++) {
 
 /*
     1. Create an array called "items" with the following values:
-        - {name: "banana", quantity: 1, price: 1.95}
-        - {name: "apple", quantity: 1, price: 1.45}
-        - {name: "banana", quantity: 10, price: 0.05}
-        - {name: "candy", quantity: 1, price: 3.50}
+        - { name: "banana", quantity: 1, price: 1.95 }
+        - { name: "apple", quantity: 1, price: 1.45 }
+        - { name: "banana", quantity: 10, price: 0.05 }
+        - { name: "candy", quantity: 1, price: 3.50 }
 
     2. Create a second array called "results" that starts off empty
 
@@ -94,10 +94,30 @@ for(let i = 0; i < numbers.length; i++) {
 
     5. Print out "results" - it should be:
     [
-        {name: "banana", quantity: 1, price: 1.95},
-        {name: "apple", quantity: 1, price: 1.45},
-        {name: "candy", quantity: 1, price: 3.50}
+        { name: "banana", quantity: 1, price: 1.95 },
+        { name: "apple", quantity: 1, price: 1.45 },
+        { name: "candy", quantity: 1, price: 3.50 }
     ]
 
     HINT: Use to the Set to keep track of duplicates
 */
+
+const items = [
+    { name: "banana", quantity: 1, price: 1.95 },
+    { name: "apple", quantity: 1, price: 1.45 },
+    { name: "banana", quantity: 10, price: 0.05 },
+    { name: "candy", quantity: 1, price: 3.50 }
+]
+const results = []
+const duplicates = new Set()
+
+for(let i = 0; i < items.length; i++) {
+    if(duplicates.has(items[i].name)) {
+        continue
+    }
+    results.push(items[i])
+    duplicates.add(items[i].name)
+}
+
+console.log(duplicates)
+console.log(results)
