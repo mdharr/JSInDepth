@@ -14,17 +14,19 @@
     5. Print out "mexico" to the terminal again
 */
 
-const mexico = new Map()
-    mexico.set("id", 24)
-    mexico.set("name", "Mexico")
-    mexico.set("capital", "Mexico City")
-    mexico.set("neighbors", ["USA", "Guatemala", "Belize"])
-console.log(mexico)
+// const mexico = new Map()
+//     mexico.set("id", 24)
+//     mexico.set("name", "Mexico")
+//     mexico.set("capital", "Mexico City")
+//     mexico.set("neighbors", ["USA", "Guatemala", "Belize"])
+// console.log(mexico)
 
-mexico.set("id", 25)
+// mexico.set("id", 25)
 
-mexico.get("neighbors").push("Honduras")
-console.log(mexico)
+// mexico.get("neighbors").push("Honduras")
+// console.log(mexico)
+
+
 /*
     1. Create a Map called "myPet" with the following entries:
         - name -> "Sudo"
@@ -48,8 +50,26 @@ console.log(mexico)
     8. Print out "myPet" to the terminal again
 */
 
+// const myPet = new Map()
+// myPet.set("name", "Sudo")
+// myPet.set("type", "Dog")
+// myPet.set("breed", "Poodle")
+// myPet.set("age", 7)
+// myPet.set("friends", ["Bit", "Byte", "Data"])
+// console.log(myPet)
 
+// myPet.set("color", "Black")
+// console.log(myPet)
 
+// myPet.set("breed", "Beagle")
+// console.log(myPet)
+
+// let filteredFriends = myPet.get("friends").filter(friend => friend !== "Data")
+// myPet.set("friends", filteredFriends)
+// console.log(myPet)
+
+// filteredFriends.push("Chip")
+// console.log(myPet)
 
 /*
     1. Create the following 3 objects:
@@ -78,9 +98,37 @@ console.log(mexico)
 
     9. Print out both "store" and "candy"
 */
+const banana = {name: "banana", quantity: 1, price: 1.95}
+const apple = {name: "apple", quantity: 1, price: 1.45}
+const candy = {name: "candy", quantity: 1, price: 3.50}
 
+const store = new Map()
+store.set("storeNumber", 5)
+store.set("locationCity", "Milan")
+store.set("locationCountry", "Italy")
+store.set("products", [banana, apple, candy])
+// console.log(store)
 
+// console.log(store.get("products"))
 
+// store.get("products").forEach(product => {
+//     console.log(product)
+// })
+
+for(let i = 0; i < store.get("products").length; i++) {
+    // console.log(store.get("products")[i])
+}
+
+// console.log(store.get("products")[2])
+
+// store.get("products")[0].price = 1.75
+store.get("products").find(product => product === banana ? product.price = 1.75 : product.price)
+// console.log(store)
+// console.log(banana)
+
+candy.price = 4.99
+console.log(store)
+console.log(candy)
 
 /*
     1. Create a Map called "houseForSale" with the following entries:
@@ -106,8 +154,14 @@ console.log(mexico)
     *This is a challenging exercise - take it slow and step by step
 */
 
-
-
+const houseForSale = new Map()
+houseForSale.set("area", 940)
+houseForSale.set("value", 320000)
+houseForSale.set("streetName", "Fifth Street")
+houseForSale.set("built", "2012")
+houseForSale.set("owner", { name: "Blake", age: 29} )
+houseForSale.set("offers", [290000, 295000, 315000, 312000])
+console.log(houseForSale)
 
 /*
     1. Create a Map called "myConsole"
