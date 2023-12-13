@@ -3,8 +3,7 @@ const names = ["Two", "Three", "Four", "Five", "Six",
                "Queen", "King", "Ace"]
 const suits = ["Hearts", "Clubs", "Diamonds", "Spades"]
 
-const cards = [...generateCards(names, suits)]
-const deck = [...cards]
+const deck = [...generateCards(names, suits)]
 const playerHand = []
 const dealerHand = []
 
