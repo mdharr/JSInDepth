@@ -128,32 +128,42 @@
     BONUS: WHY does it work this way?
 */
 
-console.log("Program started")
+// console.log("Program started")
 
-const myPromise = new Promise((resolve, reject) => {
-    setTimeout(() => {
-        resolve({data: "Hello, friend!", error: null})
-    }, 5000)
-})
+// const myPromise = new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//         resolve({data: "Hello, friend!", error: null})
+//     }, 5000)
+// })
 
-console.log(myPromise)
-console.log("Program in progress...")
+// console.log(myPromise)
+// console.log("Program in progress...")
 
-myPromise
-    .then((resolvedValue) => {
-        console.log(resolvedValue)
-        return new Promise((resolve, reject) => {
-            setTimeout(() => {
-                resolve("First promise chain complete!")
-            }, 2000)
-        })
-    })
-    .then((anotherValue) => {
-        console.log(anotherValue)
-    })
+// myPromise
+//     .then((resolvedValue) => {
+//         console.log(resolvedValue)
+//         return new Promise((resolve, reject) => {
+//             setTimeout(() => {
+//                 resolve("First promise chain complete!")
+//             }, 2000)
+//         })
+//     })
+//     .then((anotherValue) => {
+//         console.log(anotherValue)
+//     })
 
-
-
+//     myPromise
+//     .then((resolvedValue) => {
+//         console.log(resolvedValue)
+//         return new Promise((resolve, reject) => {
+//             setTimeout(() => {
+//                 resolve("Second promise chain complete!")
+//             }, 10000)
+//         })
+//     })
+//     .then((anotherValue) => {
+//         console.log(anotherValue)
+//     })
 
 
 /*
@@ -171,12 +181,28 @@ myPromise
 */
 
 
+const myPromise = new Promise((resolve, reject) => {
+    setTimeout(() => {
+        console.log('first promise resolved')
+        resolve(10)
+    }, 3000)
+})
+
+const otherPromise = new Promise((resolve, reject) => {
+    setTimeout(() => {
+        console.log('second promise resolved')
+        resolve(20)
+    }, 5000)
+})
+
+Promise.all([myPromise, otherPromise]).then((values) => {
+    console.log(`Values: ${values.join(', ')}`)
+    console.log(`Sum: ${values[0] + values[1]}`)
+})
 
 
 
-
-
-
+// Promises tutorial notes
 
 // resolved and rejected promise
 // const myPromise = new Promise((resolve, reject) => {
