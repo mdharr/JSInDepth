@@ -152,18 +152,7 @@ myPromise
         console.log(anotherValue)
     })
 
-myPromise
-    .then((resolvedValue) => {
-        console.log(resolvedValue)
-        return new Promise((resolve, reject) => {
-            setTimeout(() => {
-                resolve("Second promise chain complete!")
-            }, 10000)
-        })
-    })
-    .then((anotherValue) => {
-        console.log(anotherValue)
-    })
+
 
 
 
