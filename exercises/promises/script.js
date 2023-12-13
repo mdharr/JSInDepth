@@ -99,3 +99,40 @@
     HINT2: You can Google for something like:
            "resolve 2 promises at the same time javascript"
 */
+
+
+
+
+
+
+
+
+
+// resolved and rejected promise
+// const myPromise = new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//         console.log("Hello my friend!")
+//         resolve('Here is your ice cream!')
+//         reject('Sorry, no ice cream for you!')
+//     }, 2000)
+// })
+
+// myPromise
+//     .then((resolvedValue) => {
+//         console.log("promise seems to be done!")
+//         console.log(resolvedValue)
+//         console.log(myPromise)
+//         return "yo! this ice cream is delicious"
+//     })
+//     .then((anotherValue) => {
+//         setTimeout(() => {
+//             console.log(anotherValue)
+//         }, 2000)
+//     })
+//     .catch((rejectedValue) => {
+//         console.log(rejectedValue)
+//         console.log(myPromise)
+//     })
+
+// console.log("Hello?")
+// console.log(myPromise)
