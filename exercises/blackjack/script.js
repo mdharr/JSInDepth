@@ -62,9 +62,10 @@ dealerHand.push(drawCard(tempDeck))
 playerHand.push(drawCard(tempDeck))
 dealerHand.push(drawCard(tempDeck))
 
-console.log("Starting player hand: ", playerHand)
+console.log("------- GAME START -------")
+console.log("Starting player hand: ", playerHand.map(card => `${card.name} of ${card.suit}`))
 console.log("Starting player score: ", checkScore(playerHand))
-console.log("Starting dealer hand: ", dealerHand)
+console.log("Starting dealer hand: ", dealerHand.map(card => `${card.name} of ${card.suit}`))
 console.log("Starting dealer score: ", checkScore(dealerHand))
 
 while (true) {
@@ -72,18 +73,14 @@ while (true) {
     const dealerScore = checkScore(dealerHand);
 
     if (playerScore === 21) {
-        console.log("Player Wins!");
         break;
     } else if (dealerScore === 21) {
-        console.log("Dealer Wins!");
         break;
     } else if (playerScore > 21) {
         console.log("Player Busts!");
-        console.log("Dealer Wins!");
         break;
     } else if (dealerScore > 21) {
         console.log("Dealer Busts!");
-        console.log("Player Wins!");
         break;
     }
 
@@ -102,12 +99,12 @@ while (true) {
     }
 }
 
-
-console.log("Final player hand: ", playerHand)
+console.log("Final player hand: ", playerHand.map(card => `${card.name} of ${card.suit}`))
 console.log("Final player score: ", checkScore(playerHand))
-console.log("Final dealer hand: ", dealerHand)
+console.log("Final dealer hand: ", dealerHand.map(card => `${card.name} of ${card.suit}`))
 console.log("Final dealer score: ", checkScore(dealerHand))
 console.log(checkWinConditions(playerHand, dealerHand))
+console.log("------- ROUND OVER -------")
 
 function shuffle(deck) {
     let tempDeck = [...deck]
@@ -126,15 +123,17 @@ function drawCard(deck) {
 
 function checkScore(hand) {
     const score = hand.reduce((total, card) => {
-        return total += card.value
-    }, 0)
-    return score
-}
+        let cardValue;
+        if (card.name === 'Ace') {
+            cardValue = (total + 11) <= 21 ? 11 : 1;
+        } else {
+            cardValue = card.value;
+        }
 
-function printHand(hand) {
-    for(const card of hand) {
-        console.log(`${ card.name } of ${ card.suit }`)
-    }
+        return total + cardValue;
+    }, 0);
+
+    return score;
 }
 
 function checkWinConditions(playerHand, dealerHand) {
