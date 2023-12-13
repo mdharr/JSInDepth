@@ -8,7 +8,20 @@
     HINT: Use setTimeout for the delay
 */
 
+// console.log("Program started")
+// const myPromise = new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//         resolve('Program complete')
+//     }, 3000)
+// })
 
+// console.log(myPromise)
+// console.log("Program in progress...")
+
+// myPromise
+//     .then((resolvedValue) => {
+//         console.log(resolvedValue)
+//     })
 
 
 
@@ -25,7 +38,23 @@
     HINT: Use setTimeout for the delay
 */
 
+// console.log("Program started")
 
+// const myPromise = new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//         console.log(myPromise)
+//         console.log("Program in progress...")
+//         resolve("Program complete")
+//         reject("Program failure")
+//     }, 2000)
+// })
+
+// myPromise
+//     .then((resolvedValue) => {
+//         console.log(resolvedValue)
+//     }).catch((rejectedValue) => {
+//         console.log(rejectedValue)
+//     })
 
 
 
@@ -45,8 +74,26 @@
     HINT: Use setTimeout for the delay
 */
 
+// console.log("Program started")
 
+// const myPromise = new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//         console.log(myPromise)
+//         console.log("Program in progress")
+//         resolve('Step 1 complete')
+//     }, 3000)
+// })
 
+// myPromise
+//     .then((resolvedValue) => {
+//         console.log(resolvedValue)
+//         return "Step 2 Complete"
+//     })
+//     .then((anotherValue) => {
+//         setTimeout(() => {
+//             console.log(anotherValue)
+//         }, 3000)
+//     })
 
 
 /*
@@ -81,8 +128,42 @@
     BONUS: WHY does it work this way?
 */
 
+console.log("Program started")
 
+const myPromise = new Promise((resolve, reject) => {
+    setTimeout(() => {
+        resolve({data: "Hello, friend!", error: null})
+    }, 5000)
+})
 
+console.log(myPromise)
+console.log("Program in progress...")
+
+myPromise
+    .then((resolvedValue) => {
+        console.log(resolvedValue)
+        return new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve("First promise chain complete!")
+            }, 2000)
+        })
+    })
+    .then((anotherValue) => {
+        console.log(anotherValue)
+    })
+
+myPromise
+    .then((resolvedValue) => {
+        console.log(resolvedValue)
+        return new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve("Second promise chain complete!")
+            }, 10000)
+        })
+    })
+    .then((anotherValue) => {
+        console.log(anotherValue)
+    })
 
 
 
