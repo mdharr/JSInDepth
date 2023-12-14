@@ -32,13 +32,14 @@
 // console.log("Program started")
 
 // for(let i = 1; i <= 10; i++) {
-//     if(i === 5) {
-//         try {
+//     try {
+//         console.log(i)
+//         if(i === 5) {
 //             throw('Boom!')
-//         } catch (error) {
-//             console.error(error)
-//             console.error(`Loop: ${i}`)
 //         }
+//     } catch (error) {
+//         console.error(error)
+//         console.error(`Error on loop ${i}`)
 //     }
 // }
 
@@ -62,16 +63,15 @@
 
 console.log("Program started")
 
-const user = { name: "Misha", age: 22, settings: { color: "blue" } }
-
 try {
+    const user = { name: "Misha", age: 22, settings: { color: "blue" } }
+    
     console.log("Creating user...")
-    if(user.profile) {
-        console.log(user.profile.color)
-        console.log("User created!")
-    } else {
-        throw new Error('Error logging user profile color')
-    }
+
+    console.log(user.profile.color)
+
+    console.log("User created!")
+
 } catch (error) {
     console.error(error)
 }
