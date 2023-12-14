@@ -17,30 +17,30 @@
     7. How can you modify your async function to catch this error?
 */
 
-function fetchPokemon() {
-    return new Promise((resolve, reject) => {
-        setTimeout(() => {
-            // resolve({ data: {name: "Pickachu", power: 20} })
-            reject(new Error('Danger, danger!'))
-        }, 2000)
-    })
-}
+// function fetchPokemon() {
+//     return new Promise((resolve, reject) => {
+//         setTimeout(() => {
+//             // resolve({ data: {name: "Pickachu", power: 20} })
+//             reject(new Error('Danger, danger!'))
+//         }, 2000)
+//     })
+// }
 
-console.log("Program starting...")
+// console.log("Program starting...")
 
-const useData = async () => {
-    try {
-        const data = await fetchPokemon()
-        console.log(data)
-        console.log("Done fetching...")
-    } catch (error) {
-        console.error(error)
-    }
-    console.log(String("Error was handled!").toUpperCase())
-}
+// const useData = async () => {
+//     try {
+//         const data = await fetchPokemon()
+//         console.log(data)
+//         console.log("Done fetching...")
+//     } catch (error) {
+//         console.error(error)
+//     }
+//     console.log(String("Error was handled!").toUpperCase())
+// }
 
-useData()
-console.log("Program complete!")
+// useData()
+// console.log("Program complete!")
 
 
 /*
@@ -65,8 +65,38 @@ console.log("Program complete!")
     7. Log out "Program complete!"
 */
 
+const fetchUser = () => {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve({ data: {username: "Monkey", admin: true} })
+            reject('failed to login')
+        }, 3000)   
+    })
+}
 
+const login = (user) => {
+    if(user.admin) {
+        console.log("Successfully logged in!")
+    } else {
+        console.log("Failed to log in, please try again.")
+    }
+}
 
+console.log("Program starting...")
+
+const useAdmin = async () => {
+    try {
+        const result = await fetchUser()
+        login(result.data)
+    } catch (error) {
+        console.error(error)
+    }
+    console.log("end of async function")
+}
+
+useAdmin()
+
+console.log("Program complete!")
 
 
 
