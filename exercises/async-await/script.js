@@ -224,7 +224,7 @@ const sellCandies = (candyObj) => {
     })
 }
 
-const useData = async () => {
+const useCandies = async () => {
 
     console.log('Program starting...')
     const startTime = new Date()
@@ -242,15 +242,22 @@ const useData = async () => {
     } catch (error) {
         console.error(error)
     }
-    console.log(`We made ${parseFloat(money/100)} dollars`)
+    console.log(`We made ${parseFloat(money/100).toFixed(2)} dollars`)
     console.log('Program complete')
     const endTime = new Date()
     const elapsedTime = endTime - startTime
     console.log('Elapsed time: ', elapsedTime)
 }
 
-useData()
+useCandies()
 
+// const candy = goGetCandies()
+// candy.then((result) => {
+//     const sellValue = sellCandies(result)
+//     sellValue.then((value) => {
+//         console.log(value)
+//     })
+// })
 
 
 
