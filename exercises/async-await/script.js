@@ -65,38 +65,38 @@
     7. Log out "Program complete!"
 */
 
-const fetchUser = () => {
-    return new Promise((resolve, reject) => {
-        setTimeout(() => {
-            resolve({ data: {username: "Monkey", admin: true} })
-            reject('failed to login')
-        }, 3000)   
-    })
-}
+// const fetchUser = () => {
+//     return new Promise((resolve, reject) => {
+//         setTimeout(() => {
+//             resolve({ data: {username: "Monkey", admin: true} })
+//             reject('failed to login')
+//         }, 3000)   
+//     })
+// }
 
-const login = (user) => {
-    if(user.admin) {
-        console.log("Successfully logged in!")
-    } else {
-        console.log("Failed to log in, please try again.")
-    }
-}
+// const login = (user) => {
+//     if(user.admin) {
+//         console.log("Successfully logged in!")
+//     } else {
+//         console.log("Failed to log in, please try again.")
+//     }
+// }
 
-console.log("Program starting...")
+// console.log("Program starting...")
 
-const useAdmin = async () => {
-    try {
-        const result = await fetchUser()
-        login(result.data)
-    } catch (error) {
-        console.error(error)
-    }
-    console.log("end of async function")
-}
+// const useAdmin = async () => {
+//     try {
+//         const result = await fetchUser()
+//         login(result.data)
+//     } catch (error) {
+//         console.error(error)
+//     }
+//     console.log("end of async function")
+// }
 
-useAdmin()
+// useAdmin()
 
-console.log("Program complete!")
+// console.log("Program complete!")
 
 
 
@@ -119,15 +119,69 @@ console.log("Program complete!")
     6. Log out "Program complete!"
 
     7. How long does this take and why?
+    ANSWER: It took a total of 8000ms because fetchFast resolves after 2000ms then
+    fetchSlow executes and resolves after another 6000ms
     8. How could you speed it up?
+    ANSWER: Since fetchFast and fetchSlow are not dependant on each other, I can remove the await
+    keywords in my async function and declare fastResult/slowResult outside of the try catch blocks 
+    in the beginning of the async function to execute both functions at the same time so each one can 
+    fetch their specified data simultaneously (asynchronously) rather than waiting (synchronously),
+    then finally surround another promise at the bottom of the function with a try/catch
+    and it will be a Promise.all([promise1, promise2]) which waits for the promises to fulfill
+    before executing.
 */
 
 
+const fetchFast = () => {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve('Fast Done!')
+            reject('error fetching fast')
+        }, 2000);
+    })
+}
 
+const fetchSlow = () => {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve('Slow Done!')
+            reject('error fetching slow')
+        }, 6000);
+    })
+}
+const startTime = new Date()
+console.log("Program starting...")
 
+const useData = async () => {
+    let fastResult, slowResult
 
+    try {
+        fastResult = fetchFast()
+        console.log(fastResult)
+    } catch (error) {
+        console.error(error)
+    }
+    
+    try {
+        slowResult = fetchSlow()
+        console.log(slowResult)
+    } catch (error) {
+        console.error(error)
+    }
 
+    try {
+        const finalResults = await Promise.all([fastResult, slowResult])
+        console.log("Done fetching data!", finalResults)
+    } catch (error) {
+        console.error(error)
+    }
 
+    const endTime = new Date()
+    const timeElapsed = endTime - startTime
+    console.log("Execution time: ", timeElapsed)
+}
+
+useData()
 
 
 /*
@@ -154,7 +208,13 @@ console.log("Program complete!")
     Q2: Which of these 2 methods is easier to read?
 */
 
-
+const goGetCandies = () => {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve({ candy: "sour keys", quantity: 10 })
+        }, 2000);
+    })
+}
 
 
 
