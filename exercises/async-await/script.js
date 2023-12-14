@@ -132,56 +132,56 @@
 */
 
 
-const fetchFast = () => {
-    return new Promise((resolve, reject) => {
-        setTimeout(() => {
-            resolve('Fast Done!')
-            reject('error fetching fast')
-        }, 2000);
-    })
-}
+// const fetchFast = () => {
+//     return new Promise((resolve, reject) => {
+//         setTimeout(() => {
+//             resolve('Fast Done!')
+//             reject('error fetching fast')
+//         }, 2000);
+//     })
+// }
 
-const fetchSlow = () => {
-    return new Promise((resolve, reject) => {
-        setTimeout(() => {
-            resolve('Slow Done!')
-            reject('error fetching slow')
-        }, 6000);
-    })
-}
-const startTime = new Date()
-console.log("Program starting...")
+// const fetchSlow = () => {
+//     return new Promise((resolve, reject) => {
+//         setTimeout(() => {
+//             resolve('Slow Done!')
+//             reject('error fetching slow')
+//         }, 6000);
+//     })
+// }
+// const startTime = new Date()
+// console.log("Program starting...")
 
-const useData = async () => {
-    let fastResult, slowResult
+// const useData = async () => {
+//     let fastResult, slowResult
 
-    try {
-        fastResult = fetchFast()
-        console.log(fastResult)
-    } catch (error) {
-        console.error(error)
-    }
+//     try {
+//         fastResult = fetchFast()
+//         console.log(fastResult)
+//     } catch (error) {
+//         console.error(error)
+//     }
     
-    try {
-        slowResult = fetchSlow()
-        console.log(slowResult)
-    } catch (error) {
-        console.error(error)
-    }
+//     try {
+//         slowResult = fetchSlow()
+//         console.log(slowResult)
+//     } catch (error) {
+//         console.error(error)
+//     }
 
-    try {
-        const finalResults = await Promise.all([fastResult, slowResult])
-        console.log("Done fetching data!", finalResults)
-    } catch (error) {
-        console.error(error)
-    }
+//     try {
+//         const finalResults = await Promise.all([fastResult, slowResult])
+//         console.log("Done fetching data!", finalResults)
+//     } catch (error) {
+//         console.error(error)
+//     }
 
-    const endTime = new Date()
-    const timeElapsed = endTime - startTime
-    console.log("Execution time: ", timeElapsed)
-}
+//     const endTime = new Date()
+//     const timeElapsed = endTime - startTime
+//     console.log("Execution time: ", timeElapsed)
+// }
 
-useData()
+// useData()
 
 
 /*
@@ -216,8 +216,40 @@ const goGetCandies = () => {
     })
 }
 
+const sellCandies = (candyObj) => {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve(25 * candyObj.quantity)
+        }, 3000);
+    })
+}
 
+const useData = async () => {
 
+    console.log('Program starting...')
+    const startTime = new Date()
+
+    let candy, money
+
+    try {
+        candy = await goGetCandies()
+    } catch (error) {
+        console.error(error)
+    }
+    
+    try {
+        money = await sellCandies(candy)
+    } catch (error) {
+        console.error(error)
+    }
+    console.log(`We made ${parseFloat(money/100)} dollars`)
+    console.log('Program complete')
+    const endTime = new Date()
+    const elapsedTime = endTime - startTime
+    console.log('Elapsed time: ', elapsedTime)
+}
+
+useData()
 
 
 
