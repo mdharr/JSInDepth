@@ -10,9 +10,15 @@
 */
 
 
+// console.log("Program started")
 
+// try {
+//     throw("Uh oh")
+// } catch (error) {
+//     console.error(error)
+// }
 
-
+// console.log("Program complete!")
 
 /*
     1. Create a loop that loops 10 times starting at 1
@@ -23,7 +29,20 @@
     5. Make sure the loop goes all the way to 10
 */
 
+// console.log("Program started")
 
+// for(let i = 1; i <= 10; i++) {
+//     if(i === 5) {
+//         try {
+//             throw('Boom!')
+//         } catch (error) {
+//             console.error(error)
+//             console.error(`Loop: ${i}`)
+//         }
+//     }
+// }
+
+// console.log("Program complete")
 
 
 
@@ -41,10 +60,23 @@
        you feel makes sense.
 */
 
+console.log("Program started")
 
+const user = { name: "Misha", age: 22, settings: { color: "blue" } }
 
+try {
+    console.log("Creating user...")
+    if(user.profile) {
+        console.log(user.profile.color)
+        console.log("User created!")
+    } else {
+        throw new Error('Error logging user profile color')
+    }
+} catch (error) {
+    console.error(error)
+}
 
-
+console.log("Program complete")
 
 /*
     1. Create a try block that does the following:
@@ -61,3 +93,33 @@
     4. What is the issue with this setup/code?
     5. How can we fix it so we can access "number" in the catch?
 */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// console.log("Program started")
+
+// try {
+//     throw("kaboom!")
+// } catch (error) {
+//     console.error(error)
+//     console.error("I got you, don't worry!")
+// }
+
+// console.log("Program complete!")
