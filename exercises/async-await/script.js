@@ -20,17 +20,27 @@
 function fetchPokemon() {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
-            resolve({ data: {name: "Pickachu", power: 20} })
+            // resolve({ data: {name: "Pickachu", power: 20} })
+            reject(new Error('Danger, danger!'))
         }, 2000)
     })
 }
 
-async function useData() {
-    const result = await fetchPokemon()
-    console.log(result)
+console.log("Program starting...")
+
+const useData = async () => {
+    try {
+        const data = await fetchPokemon()
+        console.log(data)
+        console.log("Done fetching...")
+    } catch (error) {
+        console.error(error)
+    }
+    console.log(String("Error was handled!").toUpperCase())
 }
 
 useData()
+console.log("Program complete!")
 
 
 /*
@@ -113,3 +123,40 @@ useData()
     Q1: Which of these 2 methods do you prefer?
     Q2: Which of these 2 methods is easier to read?
 */
+
+
+
+
+
+
+
+
+
+
+
+// NOTES
+
+// const makeTimeout = (ms) => {
+//     const timeout = new Promise((resolve, reject) => {
+//         setTimeout(() => {
+//             resolve("All done!")
+//             reject('there was an error!')
+//         }, ms)
+//     })
+
+//     return timeout
+// }
+
+// const causeError = async () => {
+//     try {
+//         const result = await makeTimeout(2000)
+//         console.log(result)
+//     } catch (error) {
+//         console.log('we are in the error case, all done')
+//         console.error(error)
+//     }
+// }
+
+// console.log("Program started")
+// causeError()
+// console.log("Program done")
