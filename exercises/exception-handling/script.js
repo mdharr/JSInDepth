@@ -61,22 +61,22 @@
        you feel makes sense.
 */
 
-console.log("Program started")
+// console.log("Program started")
 
-try {
-    const user = { name: "Misha", age: 22, settings: { color: "blue" } }
-    
-    console.log("Creating user...")
+// try {
+//     const user = { name: "Misha", age: 22, settings: { color: "blue" } }
 
-    console.log(user.profile.color)
+//     console.log("Creating user...")
 
-    console.log("User created!")
+//     console.log(user.profile.color)
 
-} catch (error) {
-    console.error(error)
-}
+//     console.log("User created!")
 
-console.log("Program complete")
+// } catch (error) {
+//     console.error(error)
+// }
+
+// console.log("Program complete")
 
 /*
     1. Create a try block that does the following:
@@ -94,8 +94,23 @@ console.log("Program complete")
     5. How can we fix it so we can access "number" in the catch?
 */
 
+console.log("Program started")
 
+let number = 1337
 
+try {
+    number += Math.floor(Math.random() * 1001)
+    console.log(number)
+    if(number < 2000) {
+        throw new Error('You lose!')
+    }
+    console.log('You win!')
+} catch (error) {
+    console.error(error)
+    console.error(number)
+}
+
+console.log("Program complete")
 
 
 
