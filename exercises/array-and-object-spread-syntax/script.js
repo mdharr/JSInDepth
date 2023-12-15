@@ -40,18 +40,18 @@
     */
    
    
-const views = [[5, 10, 20], [10, 20, 30]];
-const viewsCopy = [...views]
-console.log(views)
-console.log(viewsCopy)
-viewsCopy[1].push(40)
-viewsCopy[0].pop()
-console.log(views)
-console.log(viewsCopy)
-views.push([200, 300])
-viewsCopy.push([100, 200])
-console.log(views)
-console.log(viewsCopy)
+// const views = [[5, 10, 20], [10, 20, 30]];
+// const viewsCopy = [...views]
+// console.log(views)
+// console.log(viewsCopy)
+// viewsCopy[1].push(40)
+// viewsCopy[0].pop()
+// console.log(views)
+// console.log(viewsCopy)
+// views.push([200, 300])
+// viewsCopy.push([100, 200])
+// console.log(views)
+// console.log(viewsCopy)
 
 /*
     When making shallow copies like above, the arrays in views and viewsCopy are
@@ -88,11 +88,6 @@ console.log(viewsCopy)
 
 
 
-
-
-
-
-
 /*
     1. Create a variable called "animal" that points at this Object:
         { name: "Koala", kingdom: "Australia", cute: true, 
@@ -115,9 +110,18 @@ console.log(viewsCopy)
 */
 
 
+// const animal = { 
+//     name: "Koala", 
+//     kingdom: "Australia", 
+//     cute: true, 
+//     friends: [ { name: "Kangaroo" , kingdom: "Australia"} ] 
+// }
 
-
-
+// const koala = {...animal, tail: false}
+// animal.cute = false
+// animal.friends[0].cute = false
+// console.log(animal)
+// console.log(koala)
 
 
 
@@ -139,3 +143,128 @@ console.log(viewsCopy)
 
     *This can be done MANY different ways but is also quite challenging!
 */
+
+
+const superhero = { 
+    name: "Bruce Wayne", 
+    alias: "Batman", 
+    universe: "DC",
+    happy: false, 
+    enemies: ["Joker", "Catwoman", "Bane"],
+    bestMovie: {title: "The Dark Knight", rating: 95} 
+}
+
+const superheroCopy = {
+    ...superhero,
+    enemies: [...superhero.enemies, "Poison Ivy"],
+    bestMovie: {...superhero.bestMovie, year: 2008}
+}
+console.log(superhero)
+console.log(superheroCopy)
+
+// superheroCopy.enemies.push("Poison Ivy")
+// superheroCopy.bestMovie.year = 2008
+
+console.log(superhero)
+console.log(superheroCopy)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// NOTES
+
+// const myMap = new Map()
+
+// myMap.set("Monkey", 5)
+// myMap.set("Tiger", 1)
+// myMap.set("Elephant", 2)
+
+// console.log(myMap)
+
+// const myMapArray = [...myMap, ["Baboon", 3]]
+// console.log(myMapArray)
+
+
+
+
+// const countryPop = {
+//     Germany: 83,
+//     Brazil: 212,
+//     Egypt: 102,
+// }
+
+// const countryPopCopy = {
+//     Germany: 999,
+//     ...countryPop,
+//     Indonesia: 273,
+// }
+
+// console.log(countryPop)
+// console.log(countryPopCopy)
+
+
+
+// console.log(countryPop)
+
+// const countryPopExtended = {}
+
+// for(const entry of Object.entries(countryPop)) {
+//     const key = entry[0]
+//     const value = entry[1]
+//     countryPopExtended[key] = value
+// }
+// countryPopExtended["Indonesia"] = 273
+// countryPopExtended["Japan"] = 125
+
+// const countryPopExtended2 = {
+//     ...countryPop,
+//     Indonesia: 273,
+//     Japan: 125
+// }
+
+// console.log(countryPopExtended)
+// console.log(countryPopExtended2)
+
+
+// primitive values do not alter original if changed in shallow copy
+// however reference types such as arrays, maps, sets, objects, etc will
+// be modified because they are references to a single memory location
+// const arrOriginal = [[1],[2],3]
+// const arrCopy = [...arrOriginal]
+// arrCopy[2] = 5
+// arrCopy[0][0] = 2
+// console.log(arrOriginal)
+// console.log(arrCopy)
+
+// const countryPop = {
+//     Germany: 83,
+//     Brazil: 212,
+//     Egypt: 102,
+//     Canada: {
+//         pop: 38
+//     },
+// }
+
+// const countryPopCopy = {...countryPop}
+
+// console.log(countryPop)
+// console.log(countryPopCopy)
+
+// console.log("---------")
+
+// countryPop.Canada.capital = "Ottawa"
+
+// console.log(countryPop)
+// console.log(countryPopCopy)
