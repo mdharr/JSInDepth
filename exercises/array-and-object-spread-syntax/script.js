@@ -10,7 +10,12 @@
 */
 
 
+// const points = [10, 15, 20, 30, 5]
 
+// const pointsCopy = [...points, 50, 75]
+
+// console.log(points)
+// console.log(pointsCopy)
 
 
 
@@ -32,8 +37,54 @@
     6. Print out "views" and "viewsCopy"
 
     *Explain this behaviour
+    */
+   
+   
+const views = [[5, 10, 20], [10, 20, 30]];
+const viewsCopy = [...views]
+console.log(views)
+console.log(viewsCopy)
+viewsCopy[1].push(40)
+viewsCopy[0].pop()
+console.log(views)
+console.log(viewsCopy)
+views.push([200, 300])
+viewsCopy.push([100, 200])
+console.log(views)
+console.log(viewsCopy)
+
+/*
+    When making shallow copies like above, the arrays in views and viewsCopy are
+    referencing the same locations in memory, so when those arrays are modified in 
+    any way in either views or viewsCopy, both are modified. However, when a new
+    array is pushed onto one of them, it is not pushed onto the other, because it 
+    is an entirely new location in memory and not part of the original reference(s).
+    In order to make a deep copy, you would have to use Array's map function like
+    this: const viewsCopy = views.map(innerArray => [...innerArray]);
+    Which maps over the inner arrays in the views array and spreads them into 
+    an entirely new array assigned to `viewsCopy`.
 */
 
+// testing deep copying arrays and removing duplicate inner arrays by stringifying
+// the data and converting to Set, the parsing the data back into an inner array
+// const viewsCopy = views.map(innerArray => [...innerArray]);
+
+// views[0].push(30);
+// viewsCopy[1].push(40);
+
+// views.push([15, 30, 45]);
+// viewsCopy.push([15, 30, 45]);
+
+// // Concatenating the two arrays
+// const concatenated = views.concat(viewsCopy);
+
+// // Creating a Set to filter out unique arrays based on their string representation
+// const uniqueSet = new Set(concatenated.map(arr => JSON.stringify(arr)));
+
+// // Converting back to arrays
+// const unique = Array.from(uniqueSet).map(str => JSON.parse(str));
+
+// console.log(unique);
 
 
 
