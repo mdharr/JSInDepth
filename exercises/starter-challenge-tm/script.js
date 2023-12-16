@@ -291,7 +291,7 @@
 
 // console.log(validateEmail('acatt.mh@gmail.com'))
 
-const numbers = [1, 2, 3, 4, 5]
+// const numbers = [1, 2, 3, 4, 5]
 
 // const doubled = numbers.map(num => num*2)
 // console.log(doubled)
@@ -312,8 +312,14 @@ const numbers = [1, 2, 3, 4, 5]
 // const hasEvenNumber = numbers.some(num => num % 2 === 0)
 // console.log(hasEvenNumber)
 
-const incrementsByOne = numbers.every((num, index, array) => {
-    return num == index+1
-})
+// const incrementsByOne = numbers.every((num, index, array) => {
+//     return num == index+1
+// })
 
-console.log(incrementsByOne)
+// console.log(incrementsByOne)
+
+const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+
+function sumOfEvenNumbers(numsArr) {
+
+}
