@@ -361,3 +361,42 @@
 // }
 
 // console.log(calculateTotalSalesWithTax(products, 8))
+
+const test = 'Finding the highest scoring word'
+
+function highestScoringWord(str) {
+    const scoringSystem = generateScoringSystem()
+    const words = formatString(str)
+    // console.log(words)
+    let highestScore = 0;
+    let highestScoringWord = '';
+
+    for(const word of words) {
+        const letters = word.split('')
+        // console.log(letters)
+        const score = letters.reduce((total, letter) => {
+            return total + scoringSystem.get(letter)
+        }, 0)
+        if (score > highestScore) {
+            highestScore = score;
+            highestScoringWord = word;
+        }
+    }
+    return `${highestScoringWord}: ${highestScore}`;
+}
+
+function generateScoringSystem() {
+    const alphabet = 'abcdefghijklmnopqrstuvwxyz'
+    const scoreMap = new Map()
+    let count = 0
+    for(const letter of alphabet) {
+        scoreMap.set(letter, ++count)
+    }
+    return scoreMap
+}
+
+function formatString(str) {
+    return str.toLowerCase().replace(/[^a-z\s]+/g, '').split(' ')
+}
+
+console.log(highestScoringWord(test))
