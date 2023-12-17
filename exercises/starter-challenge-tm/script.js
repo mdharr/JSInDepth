@@ -338,3 +338,26 @@
 //     return sum
 // }
 // console.log(sumOfEvenSquares(numbers))
+
+// const products = [
+//     { name: 'Apple', price: 0.5, quantity: 10 },
+//     { name: 'Banana', price: 0.3, quantity: 20 },
+//     { name: 'Orange', price: 0.6, quantity: 15 }
+// ]
+// const products2 = [
+//     { name: 'Chocolate', price: 2.5, quantity: 5 },
+//     { name: 'Chips', price: 1.2, quantity: 10 },
+//     { name: 'Soda', price: 1.0, quantity: 8 },
+//     { name: 'Candy', price: 0.5, quantity: 15 }
+// ]
+
+// function calculateTotalSalesWithTax(arr, tax) {
+//     let totalSalesAfterTax = arr
+//         .map(item => item.price*item.quantity)
+//         .reduce((total, item) => {
+//             return total+=item
+//         }, 0)
+//     return parseFloat(totalSalesAfterTax += totalSalesAfterTax*(tax/100)).toFixed(2)
+// }
+
+// console.log(calculateTotalSalesWithTax(products, 8))
