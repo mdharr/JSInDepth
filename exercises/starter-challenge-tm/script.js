@@ -318,8 +318,23 @@
 
 // console.log(incrementsByOne)
 
-const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+// const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
 
-function sumOfEvenNumbers(numsArr) {
+// function sumOfEvenNumbers(numsArr) {
+//     const sumSquareOfEvens = numsArr
+//         .filter(num => num % 2 === 0)
+//         .map(num => num**2)
+//         .reduce((total, num) => {
+//             return total + num
+//         }, 0)
+//     return sumSquareOfEvens
+// }
 
-}
+// function sumOfEvenSquares(numsArr) {
+//     let sum = 0
+//     for(const num of numsArr) {
+//         num % 2 === 0 ? sum += num**2 : sum
+//     }
+//     return sum
+// }
+// console.log(sumOfEvenSquares(numbers))
