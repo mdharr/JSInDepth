@@ -468,20 +468,71 @@
 
 // console.log(generateHashtag(hashtag))
 
-const IPv4 = "1.2.3.4"
+// const IPv4 = "1.2.3.4"
 
 // function validateIPv4(str) {
 //     return /^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/.test(str);
 // }
 
-function validateIPv4(str) {
-    const formatted = str.split('.')
-    if(formatted.length !== 4) return false
-    for(const num of formatted) {
-        if(num > 255 || num < 0) return false
-    }
-    return true
+// function validateIPv4(str) {
+//     const formatted = str.split('.')
+//     if(formatted.length !== 4) return false
+//     for(const num of formatted) {
+//         if(num > 255 || num < 0) return false
+//     }
+//     return true
+// }
+
+// console.log(validateIPv4(IPv4))
+
+const cars = [
+    { make: 'Toyota', model: 'Camry', year: 2020, mileage: 30800 },
+    { make: 'Honda', model: 'Civic', year: 2019, mileage: 32000 },
+    { make: 'Chevrolet', model: 'Impala', year: 2021, mileage: 17500 },
+    { make: 'Audi', model: 'R8', year: 2020, mileage: 13000 },
+    { make: 'Tesla', model: 'Model 3', year: 2018, mileage: 50000 }
+];
+
+// SEPARATION OF CONCERNS
+// function analyzeCarMileage(cars) {
+//     return {
+//         averageMileage: calculateAverageMileage(cars),
+//         highestMileage: calculateHighestMileage(cars),
+//         lowestMileage: calculateLowestMileage(cars),
+//         totalMileage: calculateTotalMileage(cars)
+//     };
+// }
+
+// function calculateAverageMileage(cars) {
+//     return cars.reduce((sum, car) => sum + car.mileage, 0) / cars.length;
+// }
+
+// function calculateHighestMileage(cars) {
+//     return cars.reduce((highest, car) => car.mileage > highest.mileage ? car : highest, { mileage: -Infinity });
+// }
+
+// function calculateLowestMileage(cars) {
+//     return cars.reduce((lowest, car) => car.mileage < lowest.mileage ? car : lowest, { mileage: Infinity });
+// }
+
+// function calculateTotalMileage(cars) {
+//     return cars.reduce((sum, car) => sum + car.mileage, 0);
+// }
+
+// REDUCE
+function analyzeCarMileage(cars) {
+    if(cars.length === 0) return null
+    const result = cars.reduce((obj, current) => {
+        if(current.mileage > obj.highestMileageCar.mileage) obj.highestMileageCar = current
+        if(current.mileage < obj.lowestMileageCar.mileage) obj.lowestMileageCar = current
+        obj.totalMileage += current.mileage
+        obj.averageMileage = parseFloat(obj.totalMileage / cars.length.toFixed(2))
+        return obj
+    }, { highestMileageCar: cars[0], lowestMileageCar: cars[0], totalMileage: 0, averageMileage: 0 })
+    return result
 }
 
-console.log(validateIPv4(IPv4))
+console.log(analyzeCarMileage(cars));
+
+
 
