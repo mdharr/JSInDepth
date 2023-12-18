@@ -362,41 +362,74 @@
 
 // console.log(calculateTotalSalesWithTax(products, 8))
 
-const test = 'Finding the highest scoring word'
+// const test = 'Finding the highest scoring word'
+// const test = 'Hello, my name is Xavier.'
 
-function highestScoringWord(str) {
-    const scoringSystem = generateScoringSystem()
-    const words = formatString(str)
-    // console.log(words)
-    let highestScore = 0;
-    let highestScoringWord = '';
+// function highestScoringWord(str) {
+//     const scoringSystem = generateScoringSystem()
+//     const words = formatString(str)
+//     console.log(words)
+//     let highestScore = 0;
+//     let highestScoringWord = '';
 
-    for(const word of words) {
-        const letters = word.split('')
-        // console.log(letters)
-        const score = letters.reduce((total, letter) => {
-            return total + scoringSystem.get(letter)
-        }, 0)
-        if (score > highestScore) {
-            highestScore = score;
-            highestScoringWord = word;
+//     for(const word of words) {
+//         const letters = word.split('')
+//         const score = letters.reduce((total, letter) => {
+//             return total + scoringSystem.get(letter)
+//         }, 0)
+//         if (score > highestScore) {
+//             highestScore = score;
+//             highestScoringWord = word;
+//         }
+//     }
+//     return `${highestScoringWord}: ${highestScore}`;
+// }
+
+// function generateScoringSystem() {
+//     const alphabet = 'abcdefghijklmnopqrstuvwxyz'
+//     const scoreMap = new Map()
+//     let count = 0
+//     for(const letter of alphabet) {
+//         scoreMap.set(letter, ++count)
+//     }
+//     return scoreMap
+// }
+
+// function formatString(str) {
+//     return str.toLowerCase().replace(/[^a-z\s]+/g, '').split(' ')
+// }
+
+// console.log(highestScoringWord(test))
+
+const original = "I am speed racer"
+const test = "ma deesp reacr I"
+
+// function validAnagrams(str1, str2) {
+//     const original = str1.toLowerCase().replace(/[^a-z]/g, '').split('').sort((a,b) => a.localeCompare(b)).join('')
+//     const toCompare = str2.toLowerCase().replace(/[^a-z]/g, '').split('').sort((a, b) => a.localeCompare(b)).join('')
+//     if(original === toCompare) return true
+//     return false
+// }
+
+function validAnagrams(str1, str2) {
+    const original = str1.toLowerCase().replace(/[^a-z]/g, '').split('').reduce((obj, item) => {
+        if(!obj[item]) obj[item] = 0
+        obj[item]++ 
+        return obj
+    }, {})
+    const toCompare = str2.toLowerCase().replace(/[^a-z]/g, '').split('').reduce((obj, item) => {
+        if(!obj[item]) obj[item] = 0
+        obj[item]++
+        return obj
+    }, {})
+
+    if(Object.keys(original).length !== Object.keys(toCompare).length) return false
+    for(const key of Object.keys(original)) {
+        if(original[key] !== toCompare[key]) {
+            return false
         }
     }
-    return `${highestScoringWord}: ${highestScore}`;
+    return true
 }
 
-function generateScoringSystem() {
-    const alphabet = 'abcdefghijklmnopqrstuvwxyz'
-    const scoreMap = new Map()
-    let count = 0
-    for(const letter of alphabet) {
-        scoreMap.set(letter, ++count)
-    }
-    return scoreMap
-}
-
-function formatString(str) {
-    return str.toLowerCase().replace(/[^a-z\s]+/g, '').split(' ')
-}
-
-console.log(highestScoringWord(test))
+console.log(validAnagrams(original, test))
