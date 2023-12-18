@@ -520,19 +520,39 @@ const cars = [
 // }
 
 // REDUCE
-function analyzeCarMileage(cars) {
-    if(cars.length === 0) return null
-    const result = cars.reduce((obj, current) => {
-        if(current.mileage > obj.highestMileageCar.mileage) obj.highestMileageCar = current
-        if(current.mileage < obj.lowestMileageCar.mileage) obj.lowestMileageCar = current
-        obj.totalMileage += current.mileage
-        obj.averageMileage = parseFloat(obj.totalMileage / cars.length.toFixed(2))
-        return obj
-    }, { highestMileageCar: cars[0], lowestMileageCar: cars[0], totalMileage: 0, averageMileage: 0 })
-    return result
+// function analyzeCarMileage(cars) {
+//     if(cars.length === 0) return null
+//     const result = cars.reduce((obj, current) => {
+//         if(current.mileage > obj.highestMileageCar.mileage) obj.highestMileageCar = current
+//         if(current.mileage < obj.lowestMileageCar.mileage) obj.lowestMileageCar = current
+//         obj.totalMileage += current.mileage
+//         obj.averageMileage = parseFloat(obj.totalMileage / cars.length.toFixed(2))
+//         return obj
+//     }, { highestMileageCar: cars[0], lowestMileageCar: cars[0], totalMileage: 0, averageMileage: 0 })
+//     return result
+// }
+
+// console.log(analyzeCarMileage(cars));
+
+const test1 = "ABcd12345"
+const test2 = "password123"
+const test3 = "Pass"
+const test4 = "HelloWorld"
+
+// function validatePassword(password) {
+//     return password.length >= 8 &&
+//     /[a-z].*[a-z]/.test(password) &&
+//     /[A-Z].*[A-Z]/.test(password) &&
+//     /\d.*\d/.test(password) ?
+//     true :
+//     false
+// }
+
+function validatePassword(password) {
+    return /(?=(.*[a-z]){2,})(?=(.*[A-Z]){2,})(?=(.*\d){2,}).{8,}/.test(password)
 }
 
-console.log(analyzeCarMileage(cars));
+console.log(validatePassword(test1))
 
 
 
