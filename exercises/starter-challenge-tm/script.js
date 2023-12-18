@@ -401,35 +401,61 @@
 
 // console.log(highestScoringWord(test))
 
-const original = "I am speed racer"
-const test = "ma deesp reacr I"
+// const original = "I am speed racer"
+// const test = "ma deesp reacr I"
 
+// // string comparison
 // function validAnagrams(str1, str2) {
-//     const original = str1.toLowerCase().replace(/[^a-z]/g, '').split('').sort((a,b) => a.localeCompare(b)).join('')
-//     const toCompare = str2.toLowerCase().replace(/[^a-z]/g, '').split('').sort((a, b) => a.localeCompare(b)).join('')
-//     if(original === toCompare) return true
+//     const firstString = str1.toLowerCase().replace(/[^a-z]/g, '').split('').sort((a,b) => a.localeCompare(b)).join('')
+//     const secondString = str2.toLowerCase().replace(/[^a-z]/g, '').split('').sort((a, b) => a.localeCompare(b)).join('')
+//     if(firstString === secondString) return true
 //     return false
 // }
 
-function validAnagrams(str1, str2) {
-    const original = str1.toLowerCase().replace(/[^a-z]/g, '').split('').reduce((obj, item) => {
-        if(!obj[item]) obj[item] = 0
-        obj[item]++ 
-        return obj
-    }, {})
-    const toCompare = str2.toLowerCase().replace(/[^a-z]/g, '').split('').reduce((obj, item) => {
-        if(!obj[item]) obj[item] = 0
-        obj[item]++
-        return obj
-    }, {})
+// // object comparison
+// function validAnagrams(str1, str2) {
+//     const firstObj = str1.toLowerCase().replace(/[^a-z]/g, '').split('').reduce((obj, item) => {
+//         if(!obj[item]) obj[item] = 0
+//         obj[item]++ 
+//         return obj
+//     }, {})
+//     const secondObj = str2.toLowerCase().replace(/[^a-z]/g, '').split('').reduce((obj, item) => {
+//         if(!obj[item]) obj[item] = 0
+//         obj[item]++
+//         return obj
+//     }, {})
 
-    if(Object.keys(original).length !== Object.keys(toCompare).length) return false
-    for(const key of Object.keys(original)) {
-        if(original[key] !== toCompare[key]) {
-            return false
-        }
-    }
-    return true
-}
+//     if(Object.keys(firstObj).length !== Object.keys(secondObj).length) return false
+//     for(const key of Object.keys(firstObj)) {
+//         if(firstObj[key] !== secondObj[key]) {
+//             return false
+//         }
+//     }
+//     return true
+// }
 
-console.log(validAnagrams(original, test))
+// // map comparison
+// function validAnagrams(str1, str2) {
+//     const firstMap = str1.toLowerCase().replace(/[^a-z]/g, '').split('').reduce((map, item) => {
+//         const count = map.get(item) || 0
+//         map.set(item, count++)
+//         return map
+//     }, new Map())
+//     const secondMap = str2.toLowerCase().replace(/[^a-z]/, '').split('').reduce((map, item) => {
+//         const count = map.get(item) || 0
+//         map.set(item, count++)
+//         return map
+//     }, new Map())
+
+//     if(firstMap.size !== secondMap.size) return false
+
+//     for(const [key, value] of firstMap) {
+//         if(value !== secondMap.get(key)) {
+//             return false
+//         }
+//     }
+
+//     return true
+// }
+
+// console.log(validAnagrams(original, test))
