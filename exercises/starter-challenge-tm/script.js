@@ -460,12 +460,28 @@
 
 // console.log(validAnagrams(original, test))
 
-const hashtag = 'JavaScript is cool'
+// const hashtag = 'JavaScript is cool'
 
-function generateHashtag(str) {
-    return str === '' || str.length > 140 ? false : `#${str.replace(/[^a-zA-Z0-9\s]+/g, '').split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join('')}`
+// function generateHashtag(str) {
+//     return str === '' || str.length > 140 ? false : `#${str.replace(/[^a-zA-Z0-9\s]+/g, '').split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join('')}`
+// }
+
+// console.log(generateHashtag(hashtag))
+
+const IPv4 = "1.2.3.4"
+
+// function validateIPv4(str) {
+//     return /^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/.test(str);
+// }
+
+function validateIPv4(str) {
+    const formatted = str.split('.')
+    if(formatted.length !== 4) return false
+    for(const num of formatted) {
+        if(num > 255 || num < 0) return false
+    }
+    return true
 }
 
-console.log(generateHashtag(hashtag))
-
+console.log(validateIPv4(IPv4))
 
