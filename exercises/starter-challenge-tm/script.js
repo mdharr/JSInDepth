@@ -548,8 +548,18 @@ const test4 = "HelloWorld"
 //     false
 // }
 
+// function validatePassword(password) {
+//     return /(?=(.*[a-z]){2,})(?=(.*[A-Z]){2,})(?=(.*\d){2,}).{8,}/.test(password)
+// }
+
 function validatePassword(password) {
-    return /(?=(.*[a-z]){2,})(?=(.*[A-Z]){2,})(?=(.*\d){2,}).{8,}/.test(password)
+    const isLengthValid = password.length >= 8;
+
+    const hasTwoUppercase = password.split('').filter(char => char === char.toUpperCase() && isNaN(char)).length >= 2;
+    const hasTwoLowercase = password.split('').filter(char => char === char.toLowerCase() && isNaN(char)).length >= 2;
+    const hasTwoDigits = password.split('').filter(char => !isNaN(char) && char !== ' ').length >= 2;
+
+    return isLengthValid && hasTwoUppercase && hasTwoLowercase && hasTwoDigits;
 }
 
 console.log(validatePassword(test1))
