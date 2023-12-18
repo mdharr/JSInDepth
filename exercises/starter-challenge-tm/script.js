@@ -485,13 +485,13 @@
 
 // console.log(validateIPv4(IPv4))
 
-const cars = [
-    { make: 'Toyota', model: 'Camry', year: 2020, mileage: 30800.22 },
-    { make: 'Honda', model: 'Civic', year: 2019, mileage: 32000.12 },
-    { make: 'Chevrolet', model: 'Impala', year: 2021, mileage: 17500 },
-    { make: 'Audi', model: 'R8', year: 2020, mileage: 13000 },
-    { make: 'Tesla', model: 'Model 3', year: 2018, mileage: 50000 }
-];
+// const cars = [
+//     { make: 'Toyota', model: 'Camry', year: 2020, mileage: 30800.22 },
+//     { make: 'Honda', model: 'Civic', year: 2019, mileage: 32000.12 },
+//     { make: 'Chevrolet', model: 'Impala', year: 2021, mileage: 17500 },
+//     { make: 'Audi', model: 'R8', year: 2020, mileage: 13000 },
+//     { make: 'Tesla', model: 'Model 3', year: 2018, mileage: 50000 }
+// ];
 
 // SEPARATION OF CONCERNS
 // function analyzeCarMileage(cars) {
@@ -534,10 +534,10 @@ const cars = [
 
 // console.log(analyzeCarMileage(cars));
 
-const test1 = "ABcd12345"
-const test2 = "password123"
-const test3 = "Pass"
-const test4 = "HelloWorld"
+// const test1 = "ABcd12345"
+// const test2 = "password123"
+// const test3 = "Pass"
+// const test4 = "HelloWorld"
 
 // function validatePassword(password) {
 //     return password.length >= 8 &&
@@ -552,17 +552,30 @@ const test4 = "HelloWorld"
 //     return /(?=(.*[a-z]){2,})(?=(.*[A-Z]){2,})(?=(.*\d){2,}).{8,}/.test(password)
 // }
 
-function validatePassword(password) {
-    const isLengthValid = password.length >= 8;
+// function validatePassword(password) {
+//     const isLengthValid = password.length >= 8;
 
-    const hasTwoUppercase = password.split('').filter(char => char === char.toUpperCase() && isNaN(char)).length >= 2;
-    const hasTwoLowercase = password.split('').filter(char => char === char.toLowerCase() && isNaN(char)).length >= 2;
-    const hasTwoDigits = password.split('').filter(char => !isNaN(char) && char !== ' ').length >= 2;
+//     const hasTwoUppercase = password.split('').filter(char => char === char.toUpperCase() && isNaN(char)).length >= 2;
+//     const hasTwoLowercase = password.split('').filter(char => char === char.toLowerCase() && isNaN(char)).length >= 2;
+//     const hasTwoDigits = password.split('').filter(char => !isNaN(char) && char !== ' ').length >= 2;
 
-    return isLengthValid && hasTwoUppercase && hasTwoLowercase && hasTwoDigits;
+//     return isLengthValid && hasTwoUppercase && hasTwoLowercase && hasTwoDigits;
+// }
+
+// console.log(validatePassword(test1))
+
+const test1 = ['a', 'b', 'c', 'd', 'f']
+const test2 = ['O', 'Q', 'R', 'S', 'T']
+const test3 = ['t', 'u', 'v', 'w', 'x', 'z']
+
+function findMissingLetter(arr) {
+    const alphabet = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
+    const start = alphabet.indexOf(arr[0]);
+    const end = start + arr.length + 1
+    const alphaKey = alphabet.split('').slice(start, end);
+
+    return alphaKey.filter(letter => !arr.includes(letter));
 }
 
-console.log(validatePassword(test1))
-
-
+console.log(findMissingLetter(test3))
 
