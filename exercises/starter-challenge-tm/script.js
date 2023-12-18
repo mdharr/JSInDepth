@@ -459,3 +459,13 @@
 // }
 
 // console.log(validAnagrams(original, test))
+
+const hashtag = 'JavaScript is cool'
+
+function generateHashtag(str) {
+    return str === '' || str.length > 140 ? false : `#${str.replace(/[^a-zA-Z0-9\s]+/g, '').split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join('')}`
+}
+
+console.log(generateHashtag(hashtag))
+
+
