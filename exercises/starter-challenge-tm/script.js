@@ -655,11 +655,22 @@
 // }
 // console.log(power(3, 4))
 
-function arraySum(arr) {
-    if(arr.length === 0) {
-        return 0
+// function arraySum(arr) {
+//     if(arr.length === 0) {
+//         return 0
+//     }
+//     return arr[0] + arraySum(arr.slice(1)) 
+// }
+
+// console.log(arraySum([1,2,3,4,5]))
+
+function numberRange(start, end) {
+    if(start === end) {
+        return [start]
     }
-    return arr[0] + arraySum(arr.slice(1)) 
+    const numbers = numberRange(start, end - 1)
+    numbers.push(end)
+    return numbers
 }
 
-console.log(arraySum([1,2,3,4,5]))
+console.log(numberRange(1, 5))
