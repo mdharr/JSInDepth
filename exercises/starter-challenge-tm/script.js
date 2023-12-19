@@ -564,18 +564,66 @@
 
 // console.log(validatePassword(test1))
 
-const test1 = ['a', 'b', 'c', 'd', 'f']
-const test2 = ['O', 'Q', 'R', 'S', 'T']
-const test3 = ['t', 'u', 'v', 'w', 'x', 'z']
+// const test1 = ['a', 'b', 'c', 'd', 'f']
+// const test2 = ['O', 'Q', 'R', 'S', 'T']
+// const test3 = ['t', 'u', 'v', 'w', 'x', 'z']
 
-function findMissingLetter(arr) {
-    const alphabet = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
-    const start = alphabet.indexOf(arr[0]);
-    const end = start + arr.length + 1
-    const alphaKey = alphabet.split('').slice(start, end);
+// function findMissingLetter(arr) {
+//     const alphabet = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
+//     const start = alphabet.indexOf(arr[0]);
+//     const end = start + arr.length + 1
+//     const alphaKey = alphabet.split('').slice(start, end);
 
-    return alphaKey.filter(letter => !arr.includes(letter));
+//     return alphaKey.filter(letter => !arr.includes(letter));
+// }
+
+// console.log(findMissingLetter(test3))
+
+// function countDown(num) {
+//     // Base Case
+//     if(num <= 0) {
+//         console.log('All done!')
+//         return
+//     }
+//     // Recursive Case
+//     console.log(num)
+//     num--
+//     countDown(num)
+// }
+
+// countDown(10)
+
+// function sumUpTo(n) {
+//     if(n == 1) {
+//         return 1
+//     }
+//     return n + sumUpTo(n - 1)
+// }
+
+// function sumUpTo(n) {
+//     if (n === 1) {
+//         return 1
+//     }
+//     const result = n + sumUpTo(n - 1)
+//     console.log(result)
+//     return result
+// }
+
+// console.log(sumUpTo(1000))
+
+const text = 'racecar'
+
+function isPalindrome(str) {
+    return str === reverseString(str)
 }
 
-console.log(findMissingLetter(test3))
+function reverseString(str) {
+    if(str.length === 1) {
+        return str
+    }
+    const lastChar = str.slice(-1)
+    const restOfString = str.slice(0, -1)
+    return lastChar + reverseString(restOfString)
+}
 
+console.log(isPalindrome(text))
