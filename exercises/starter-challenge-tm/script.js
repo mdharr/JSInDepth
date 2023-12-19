@@ -611,19 +611,29 @@
 
 // console.log(sumUpTo(1000))
 
-const text = 'racecar'
+// const text = 'racecar'
 
-function isPalindrome(str) {
-    return str === reverseString(str)
-}
+// function isPalindrome(str) {
+//     return str === reverseString(str)
+// }
 
-function reverseString(str) {
-    if(str.length === 1) {
-        return str
-    }
-    const lastChar = str.slice(-1)
-    const restOfString = str.slice(0, -1)
-    return lastChar + reverseString(restOfString)
-}
+// function reverseString(str) {
+//     if(str.length === 1) {
+//         return str
+//     }
+//     const lastChar = str.slice(-1)
+//     const restOfString = str.slice(0, -1)
+//     return lastChar + reverseString(restOfString)
+// }
 
-console.log(isPalindrome(text))
+// console.log(isPalindrome(text))
+
+// finding the value for a specific index in the fibonacci sequence
+// function fibonacci(n) {
+//     if(n < 2) {
+//         return n
+//     }
+//     return fibonacci(n-1) + fibonacci(n-2)
+// }
+
+// console.log(fibonacci(6))
