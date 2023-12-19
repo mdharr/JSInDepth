@@ -712,4 +712,4 @@ function permutations(str) {
     return result
 }
 
-console.log(permutations('michael'))
+console.log(permutations('abc'))
