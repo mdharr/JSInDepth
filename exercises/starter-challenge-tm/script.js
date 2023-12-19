@@ -638,11 +638,19 @@
 
 // console.log(fibonacci(6))
 
-function factorial(n) {
-    if(n < 2) {
+// function factorial(n) {
+//     if(n < 2) {
+//         return 1
+//     }
+//     return n * factorial(n-1)
+// }
+
+// console.log(factorial(5))
+
+function power(num, exp) {
+    if(exp === 0) {
         return 1
     }
-    return n * factorial(n-1)
+    return num * power(num, exp-1)
 }
-
-console.log(factorial(5))
+console.log(power(3, 4))
