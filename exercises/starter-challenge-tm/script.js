@@ -664,13 +664,29 @@
 
 // console.log(arraySum([1,2,3,4,5]))
 
-function numberRange(start, end) {
-    if(start === end) {
-        return [start]
+// function numberRange(start, end) {
+//     if(start === end) {
+//         return [start]
+//     }
+//     const numbers = numberRange(start, end - 1)
+//     numbers.push(end)
+//     return numbers
+// }
+
+// console.log(numberRange(1, 5))
+
+function flattenArray(arr) {
+    let result = []
+
+    for (const element of arr) {
+        if(Array.isArray(element)) {
+            result = result.concat(flattenArray(element))
+        } else {
+            result.push(element)
+        }
     }
-    const numbers = numberRange(start, end - 1)
-    numbers.push(end)
-    return numbers
+
+    return result
 }
 
-console.log(numberRange(1, 5))
+console.log(flattenArray([1, 2, 3, [4, 5, [6, 7, 8], 9], 10]))
