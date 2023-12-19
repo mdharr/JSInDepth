@@ -647,10 +647,19 @@
 
 // console.log(factorial(5))
 
-function power(num, exp) {
-    if(exp === 0) {
-        return 1
+// function power(num, exp) {
+//     if(exp === 0) {
+//         return 1
+//     }
+//     return num * power(num, exp-1)
+// }
+// console.log(power(3, 4))
+
+function arraySum(arr) {
+    if(arr.length === 0) {
+        return 0
     }
-    return num * power(num, exp-1)
+    return arr[0] + arraySum(arr.slice(1)) 
 }
-console.log(power(3, 4))
+
+console.log(arraySum([1,2,3,4,5]))
