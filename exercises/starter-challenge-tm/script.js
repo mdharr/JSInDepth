@@ -715,7 +715,7 @@
 
 // console.log(permutations('abcd'))
 
-
+// CONSTANT
 // function accessElement(arr, index) {
 //     return arr[index]
 // }
@@ -725,6 +725,8 @@
 // console.log(accessElement(largeArray, 500))
 // console.timeEnd('Access Element 1')
 
+
+// LINEAR
 // function sumArray(arr) {
 //     let sum = 0
 
@@ -745,27 +747,51 @@
 // console.log(sumArray(largeArray))
 // console.timeEnd('Large Array')
 
-function sumArray(arr) {
-    let sum = 0
-    let sum2 = 0
-    for(let i = 0; i < arr.length; i++) {
-        sum += arr[i]
-        for(let j = 0; j < arr.length; j++) {
-            sum2 += arr[j]
-        }
+
+// QUADRATIC
+// function sumArray(arr) {
+//     let sum = 0
+//     let sum2 = 0
+//     for(let i = 0; i < arr.length; i++) {
+//         sum += arr[i]
+//         for(let j = 0; j < arr.length; j++) {
+//             sum2 += arr[j]
+//         }
+//     }
+
+//     return sum + sum2
+// }
+
+// const smallArray = Array.from({ length: 100 }, (_, index) => index + 1)
+// const largeArray = Array.from({ length: 100000 }, (_, index) => index + 1)
+
+// console.time('Small Array')
+// console.log(sumArray(smallArray))
+// console.timeEnd('Small Array')
+
+// console.time('Large Array')
+// console.log(sumArray(largeArray))
+// console.timeEnd('Large Array')
+
+function findPower(base, exponent) {
+    if(exponent === 0) {
+        return 1
     }
 
-    return sum + sum2
+    if(exponent % 2 === 0) {
+        const halfPower = findPower(base, exponent / 2)
+        return halfPower * halfPower
+    } else {
+        const halfPower = findPower(base, (exponent - 1) / 2)
+        return base * halfPower * halfPower
+    }
 }
 
-const smallArray = Array.from({ length: 100 }, (_, index) => index + 1)
-const largeArray = Array.from({ length: 100000 }, (_, index) => index + 1)
+console.time('Find Power 1')
+console.log(findPower(2, 5))
+console.timeEnd('Find Power 1')
 
-console.time('Small Array')
-console.log(sumArray(smallArray))
-console.timeEnd('Small Array')
-
-console.time('Large Array')
-console.log(sumArray(largeArray))
-console.timeEnd('Large Array')
+console.time('Find Power 2')
+console.log(findPower(2, 10))
+console.timeEnd('Find Power 2')
 
