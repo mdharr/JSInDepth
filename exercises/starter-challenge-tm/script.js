@@ -744,3 +744,28 @@
 // console.time('Large Array')
 // console.log(sumArray(largeArray))
 // console.timeEnd('Large Array')
+
+function sumArray(arr) {
+    let sum = 0
+    let sum2 = 0
+    for(let i = 0; i < arr.length; i++) {
+        sum += arr[i]
+        for(let j = 0; j < arr.length; j++) {
+            sum2 += arr[j]
+        }
+    }
+
+    return sum + sum2
+}
+
+const smallArray = Array.from({ length: 100 }, (_, index) => index + 1)
+const largeArray = Array.from({ length: 100000 }, (_, index) => index + 1)
+
+console.time('Small Array')
+console.log(sumArray(smallArray))
+console.timeEnd('Small Array')
+
+console.time('Large Array')
+console.log(sumArray(largeArray))
+console.timeEnd('Large Array')
+
