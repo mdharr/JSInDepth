@@ -95,9 +95,45 @@ const users = [
 
 // one more solution using findIndex
 // if the index doesn't exist, it will be < 0
-function checkNameExists(name, arr) {
-    const index = arr.findIndex(el => el.name === name)
-    return index > 0
-}
+// function checkNameExists(name, arr) {
+//     const index = arr.findIndex(el => el.name === name)
+//     return index > 0
+// }
 
-console.log(checkNameExists('John', users))
+// console.log(checkNameExists('John', users))
+
+// remove uniques with spread operator and Set
+// const numbers = [1, 1, 2]
+// function removeDuplicates(arr) {
+//     return [...new Set(arr)]
+// }
+
+// console.log(removeDuplicates(numbers))
+
+// make unique with forEach, includes, and push
+// function removeDuplicates(arr) {
+//     const result = []
+//     arr.forEach(item => {
+//         if(!result.includes(item)) {
+//             result.push(item)
+//         }
+//     });
+//     return result
+// }
+
+// solution using reduce, includes, with ternary and spread
+// I really like this solution!!
+// function removeDuplicates(arr) {
+//     return arr.reduce((acc, el) => {
+//         return acc.includes(el) ? acc : [...acc, el]
+//     }, [])
+// }
+
+// console.log(removeDuplicates(numbers))
+// const numbers = [3, 5, 1]
+// function sortArray(arr) {
+//     return [...numbers].sort((a,b) => a - b)
+// }
+// const result = sortArray(numbers)
+// console.log(numbers)
+// console.log(result)
