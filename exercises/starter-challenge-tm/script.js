@@ -724,3 +724,23 @@
 // console.time('Access Element 1')
 // console.log(accessElement(largeArray, 500))
 // console.timeEnd('Access Element 1')
+
+// function sumArray(arr) {
+//     let sum = 0
+
+//     for(let i = 0; i < arr.length; i++) {
+//         sum += arr[i]
+//     }
+//     return sum
+// }
+
+// const smallArray = Array.from({ length: 100 }, (_, index) => index + 1)
+// const largeArray = Array.from({ length: 10000000 }, (_, index) => index + 1)
+
+// console.time('Small Array')
+// console.log(sumArray(smallArray))
+// console.timeEnd('Small Array')
+
+// console.time('Large Array')
+// console.log(sumArray(largeArray))
+// console.timeEnd('Large Array')
