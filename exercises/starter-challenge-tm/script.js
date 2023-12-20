@@ -691,25 +691,36 @@
 
 // console.log(flattenArray([1, 2, 3, [4, 5, [6, 7, 8], 9], 10]))
 
-function permutations(str) {
-    const result = []
+// PERMUTATIONS -------------------------------------------------------------------------------------------
+// function permutations(str) {
+//     const result = []
 
-    if(str.length === 0) {
-        result.push('')
-        return result
-    }
+//     if(str.length === 0) {
+//         result.push('')
+//         return result
+//     }
 
-    for(let i = 0; i < str.length; i++) {
-        const firstChar = str[i]
-        const restOfString = str.slice(0, i) + str.slice(i + 1)
-        const subPermutations = permutations(restOfString)
+//     for(let i = 0; i < str.length; i++) {
+//         const firstChar = str[i]
+//         const restOfString = str.slice(0, i) + str.slice(i + 1)
+//         const subPermutations = permutations(restOfString)
 
-        for(let j = 0; j < subPermutations.length; j++) {
-            result.push(firstChar + subPermutations[j])
-        }
-    }
+//         for(let j = 0; j < subPermutations.length; j++) {
+//             result.push(firstChar + subPermutations[j])
+//         }
+//     }
 
-    return result
-}
+//     return result
+// }
 
-console.log(permutations('abc'))
+// console.log(permutations('abcd'))
+
+
+// function accessElement(arr, index) {
+//     return arr[index]
+// }
+
+// const largeArray = Array.from({ length: 1000000 }, (_, index) => index + 1)
+// console.time('Access Element 1')
+// console.log(accessElement(largeArray, 500))
+// console.timeEnd('Access Element 1')
