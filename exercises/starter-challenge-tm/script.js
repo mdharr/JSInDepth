@@ -800,72 +800,100 @@
     Time Complexity: O(1)
 */
 
-function add(num1, num2) {
-    return num1 + num2
-}
+// function add(num1, num2) {
+//     return num1 + num2
+// }
 
 /*
     Space Complexity: O(n)
     Time Complexity: O(n)
 */
 
-function createArray(num) {
-    const arr = []
+// function createArray(num) {
+//     const arr = []
 
-    for (let i = 0; i < num; i++) {
-        arr.push(i)
-    }
-    return arr
-}
+//     for (let i = 0; i < num; i++) {
+//         arr.push(i)
+//     }
+//     return arr
+// }
 
 /*
     Space Complexity: O(n^2)
     Time Complexity: O(n^2)
 */
 
-function createMatrix(num) {
-    const matrix = []
+// function createMatrix(num) {
+//     const matrix = []
 
-    for (let i = 0; i < num; i++) {
-        matrix[i] = []
+//     for (let i = 0; i < num; i++) {
+//         matrix[i] = []
 
-        for (let j = 0; j < num; j++) {
-            matrix[i][j] = i + j
-        }
-    }
-    return matrix
-}
+//         for (let j = 0; j < num; j++) {
+//             matrix[i][j] = i + j
+//         }
+//     }
+//     return matrix
+// }
 
 /*
     Space Complexity: O(log n)
     Time Complexity: O(log n)
 */
 
-function findPower(base, exponent) {
-    if (exponent === 0) {
-        return 1
-    }
+// function findPower(base, exponent) {
+//     if (exponent === 0) {
+//         return 1
+//     }
 
-    if (exponent % 2 === 0) {
-        const halfPower = findPower(base, exponent / 2)
-        return halfPower * halfPower
-    } else {
-        const halfPower = findPower(base, (exponent - 1) / 2)
-        return base * halfPower * halfPower
-    }
-}
+//     if (exponent % 2 === 0) {
+//         const halfPower = findPower(base, exponent / 2)
+//         return halfPower * halfPower
+//     } else {
+//         const halfPower = findPower(base, (exponent - 1) / 2)
+//         return base * halfPower * halfPower
+//     }
+// }
 
 /*
     Space Complexity: O(1)
     Time Complexity: O(n)
 */
 
-function findSum(arr) {
-    let sum = 0
+// function findSum(arr) {
+//     let sum = 0
 
-    for (let i = 0; i < arr.length; i++) {
-        sum += arr[i]
+//     for (let i = 0; i < arr.length; i++) {
+//         sum += arr[i]
+//     }
+//     return sum
+// }
+
+const arr1 = [2, 5, 3, 1, 11, 7, 6, 4]
+const arr2 = [-2, -5, -3, -1, -11, -7, -6, -4]
+
+// function maxSubarraySum(arr, number) {
+//     return [...arr]
+//         .sort((a, b) => b - a)
+//         .slice(0, number)
+//         .reduce((acc, current) => acc + current, 0)
+// }
+
+function maxSubarraySum(arr, k) {
+    let maxSum = -Infinity
+
+    for (let i = 0; i <= arr.length - k; i++) {
+        let currentSum = 0
+
+        for (let j = i; j < i + k; j++) {
+            currentSum += arr[j]
+        }
+        maxSum = Math.max(maxSum, currentSum)
     }
-    return sum
+    return maxSum
 }
+
+
+console.log(maxSubarraySum(arr1, 3))
+// console.log(maxSubarraySum(arr2, 4))
 
