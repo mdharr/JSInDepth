@@ -836,3 +836,22 @@ function createMatrix(num) {
     return matrix
 }
 
+/*
+    Space Complexity: O(log n)
+    Time Complexity: O(log n)
+*/
+
+function findPower(base, exponent) {
+    if (exponent === 0) {
+        return 1
+    }
+
+    if (exponent % 2 === 0) {
+        const halfPower = findPower(base, exponent / 2)
+        return halfPower * halfPower
+    } else {
+        const halfPower = findPower(base, (exponent - 1) / 2)
+        return base * halfPower * halfPower
+    }
+}
+
