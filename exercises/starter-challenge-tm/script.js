@@ -1059,30 +1059,59 @@
 // in javascript, inheritance is supported through the
 // concept of `prototypes` and is referred to as
 // `prototypal inheritance`
-function Person(fName, lName) {
-    this.firstName = fName
-    this.lastName = lName
+// function Person(fName, lName) {
+//     this.firstName = fName
+//     this.lastName = lName
+// }
+
+// Person.prototype.getFullName = function() {
+//     return this.firstName + ' ' + this.lastName
+// }
+
+// function SuperHero(fName, lName) {
+//     // the `this` keyword in the Person.call function
+//     // makes it so that `this` in SuperHero is now
+//     // `this` in Person so we have access to first
+//     // and last name properties
+//     Person.call(this, fName, lName)
+//     this.isSuperHero = true
+// }
+// SuperHero.prototype.fightCrime = function() {
+//     console.log('Fighting crime')
+// }
+// // this gives SuperHero access to Person prototype's
+// // getFullName method through prototypal inheritance
+// SuperHero.prototype = Object.create(Person.prototype)
+
+// const batman = new SuperHero('Bruce', 'Wayne')
+// SuperHero.prototype.constructor = SuperHero
+// console.log(batman.getFullName())
+
+
+// rewriting prototypal inheritance using class keyword
+class Person {
+    constructor(fName, lName) {
+        this.firstName = fName
+        this.lastName = lName
+    }
+
+    sayMyName() {
+        return this.firstName + ' ' + this.lastName
+    }
 }
 
-Person.prototype.getFullName = function() {
-    return this.firstName + ' ' + this.lastName
-}
+const classP1 = new Person('Bruce', 'Wayne')
+console.log(classP1.sayMyName())
 
-function SuperHero(fName, lName) {
-    // the `this` keyword in the Person.call function
-    // makes it so that `this` in SuperHero is now
-    // `this` in Person so we have access to first
-    // and last name properties
-    Person.call(this, fName, lName)
-    this.isSuperHero = true
+class SuperHero extends Person {
+    constructor(fName, lName) {
+        super(fName, lName)
+        this.isSuperHero = true
+    }
+    fightCrime() {
+        console.log('Fighting crime')
+    }
 }
-SuperHero.prototype.fightCrime = function () {
-    console.log('Fighting crime')
-}
-// this gives SuperHero access to Person prototype's
-// getFullName method through prototypal inheritance
-SuperHero.prototype = Object.create(Person.prototype)
 
 const batman = new SuperHero('Bruce', 'Wayne')
-SuperHero.prototype.constructor = SuperHero
-console.log(batman.getFullName())
+console.log(batman.sayMyName())
