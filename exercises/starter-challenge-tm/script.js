@@ -1020,3 +1020,38 @@
 
 // const curriedSum = curry(sum)
 // console.log(curriedSum(2)(3)(5))
+
+// function Person(fName, lName) {
+//     this.firstName = fName
+//     this.lastName = lName
+// }
+
+// const person1 = new Person('Bruce', 'Lee')
+// const person2 = new Person('Jackie', 'Chan')
+
+// this function is only applied to person1 instance
+// person1.getFullName = function() {
+//     return this.firstName + ' ' + this.lastName
+// }
+
+// if we want to give all Person objects the
+// getFullName function, we would use prototype
+// Person.prototype.getFullName = function() {
+//     return this.firstName + ' ' + this.lastName
+// }
+
+// console.log(person1.getFullName())
+// console.log(person2.getFullName())
+
+Array.prototype.getEveryOther = function() {
+    if(!this.length) return []
+    let result = []
+    for(let i = 0; i < this.length; i++) {
+        if(i % 2 === 0) {
+            result.push(this[i])
+        }
+    }
+    return result
+}
+
+console.log([1, 2, 3, 4, 5, 6, 7, 8, 11, 15].getEveryOther())
