@@ -927,52 +927,76 @@
 // console.log(`Highest: ${JSON.stringify(findHighest(products))}`)
 // console.log(`Lowest: ${JSON.stringify(findLowest(products))}`)
 
-function generateRandomNumbers(n) {
-    const result = [];
-    for(let i = 0; i < n; i++) {
-        result[i] = Math.floor(Math.random() * n) + 1;
+// function generateRandomNumbers(n) {
+//     const result = [];
+//     for(let i = 0; i < n; i++) {
+//         result[i] = Math.floor(Math.random() * n) + 1;
+//     }
+//     return result;
+// }
+
+// function bubbleSort(arr) {
+//     for(let i = 0; i < arr.length; i++) {
+//         for(let j = 0; j < arr.length - 1 - i; j++) {
+//             if(arr[j] > arr[j + 1]) {
+//                 const tmp = arr[j];
+//                 arr[j] = arr[j + 1];
+//                 arr[j + 1] = tmp;
+//             }
+//         }
+//     }
+//     return arr;
+// }
+
+// function sortNumbers(arr) {
+//     return arr.sort((a, b) => a - b);
+// }
+
+// const nums = generateRandomNumbers(100000);
+
+// const bubbleSortPromise = new Promise((resolve, reject) => {
+//     console.time('Bubble Sort Time');
+//     const sorted = bubbleSort([...nums]);
+//     console.timeEnd('Bubble Sort Time');
+//     resolve(sorted);
+// });
+
+// const vanillaJavaScriptSortPromise = new Promise((resolve, reject) => {
+//     console.time('JS Sort Time');
+//     const sorted = sortNumbers([...nums]);
+//     console.timeEnd('JS Sort Time');
+//     resolve(sorted);
+// });
+
+// Promise.all([bubbleSortPromise, vanillaJavaScriptSortPromise]).then((values) => {
+//     console.log('Both sorting operations complete');
+// });
+
+// CLOSURES
+// first example
+// result is 1 1 due to scope
+// function outer() {
+//     let counter = 0
+//     function inner() {
+//         counter++
+//         console.log(counter)
+//     }
+//     inner()
+// }
+// outer()
+// outer()
+
+// second example
+// result is 1 2 due to the function `fn` 
+// not only receiving the value, but also the scope of inner
+function outer() {
+    let counter = 0
+    function inner() {
+        counter++
+        console.log(counter)
     }
-    return result;
+    return inner
 }
-
-function bubbleSort(arr) {
-    for(let i = 0; i < arr.length; i++) {
-        for(let j = 0; j < arr.length - 1 - i; j++) {
-            if(arr[j] > arr[j + 1]) {
-                const tmp = arr[j];
-                arr[j] = arr[j + 1];
-                arr[j + 1] = tmp;
-            }
-        }
-    }
-    return arr;
-}
-
-function sortNumbers(arr) {
-    return arr.sort((a, b) => a - b);
-}
-
-const nums = generateRandomNumbers(100000);
-
-const bubbleSortPromise = new Promise((resolve, reject) => {
-    console.time('Bubble Sort Time');
-    const sorted = bubbleSort([...nums]);
-    console.timeEnd('Bubble Sort Time');
-    resolve(sorted);
-});
-
-const vanillaJavaScriptSortPromise = new Promise((resolve, reject) => {
-    console.time('JS Sort Time');
-    const sorted = sortNumbers([...nums]);
-    console.timeEnd('JS Sort Time');
-    resolve(sorted);
-});
-
-Promise.all([bubbleSortPromise, vanillaJavaScriptSortPromise]).then((values) => {
-    // values[0] will be the result from bubbleSortPromise
-    // values[1] will be the result from vanillaJavaScriptSortPromise
-    // console.log(values[0])
-    // console.log(values[1])
-    console.log('Both sorting operations complete');
-});
-
+const fn = outer()
+fn()
+fn()
