@@ -989,14 +989,34 @@
 // second example
 // result is 1 2 due to the function `fn` 
 // not only receiving the value, but also the scope of inner
-function outer() {
-    let counter = 0
-    function inner() {
-        counter++
-        console.log(counter)
-    }
-    return inner
-}
-const fn = outer()
-fn()
-fn()
+// function outer() {
+//     let counter = 0
+//     function inner() {
+//         counter++
+//         console.log(counter)
+//     }
+//     return inner
+// }
+// const fn = outer()
+// fn()
+// fn()
+
+// CURRYING
+// function sum(a, b, c) {
+//     return a + b + c
+// }
+
+// // console.log(sum(2, 3, 5))
+
+// function curry(fn) {
+//     return function(a) {
+//         return function(b) {
+//             return function(c) {
+//                 return fn(a, b, c)
+//             }
+//         }
+//     }
+// }
+
+// const curriedSum = curry(sum)
+// console.log(curriedSum(2)(3)(5))
