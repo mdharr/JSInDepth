@@ -1043,15 +1043,46 @@
 // console.log(person1.getFullName())
 // console.log(person2.getFullName())
 
-Array.prototype.getEveryOther = function() {
-    if(!this.length) return []
-    let result = []
-    for(let i = 0; i < this.length; i++) {
-        if(i % 2 === 0) {
-            result.push(this[i])
-        }
-    }
-    return result
+// Array.prototype.getEveryOther = function() {
+//     if(!this.length) return []
+//     let result = []
+//     for(let i = 0; i < this.length; i++) {
+//         if(i % 2 === 0) {
+//             result.push(this[i])
+//         }
+//     }
+//     return result
+// }
+
+// console.log([1, 2, 3, 4, 5, 6, 7, 8, 11, 15].getEveryOther())
+
+// in javascript, inheritance is supported through the
+// concept of `prototypes` and is referred to as
+// `prototypal inheritance`
+function Person(fName, lName) {
+    this.firstName = fName
+    this.lastName = lName
 }
 
-console.log([1, 2, 3, 4, 5, 6, 7, 8, 11, 15].getEveryOther())
+Person.prototype.getFullName = function() {
+    return this.firstName + ' ' + this.lastName
+}
+
+function SuperHero(fName, lName) {
+    // the `this` keyword in the Person.call function
+    // makes it so that `this` in SuperHero is now
+    // `this` in Person so we have access to first
+    // and last name properties
+    Person.call(this, fName, lName)
+    this.isSuperHero = true
+}
+SuperHero.prototype.fightCrime = function () {
+    console.log('Fighting crime')
+}
+// this gives SuperHero access to Person prototype's
+// getFullName method through prototypal inheritance
+SuperHero.prototype = Object.create(Person.prototype)
+
+const batman = new SuperHero('Bruce', 'Wayne')
+SuperHero.prototype.constructor = SuperHero
+console.log(batman.getFullName())
