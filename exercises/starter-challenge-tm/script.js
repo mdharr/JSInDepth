@@ -869,8 +869,8 @@
 //     return sum
 // }
 
-const arr1 = [2, 5, 3, 1, 11, 7, 6, 4]
-const arr2 = [-2, -5, -3, -1, -11, -7, -6, -4]
+// const arr1 = [2, 5, 3, 1, 11, 7, 6, 4]
+// const arr2 = [-2, -5, -3, -1, -11, -7, -6, -4]
 
 // function maxSubarraySum(arr, number) {
 //     return [...arr]
@@ -879,21 +879,39 @@ const arr2 = [-2, -5, -3, -1, -11, -7, -6, -4]
 //         .reduce((acc, current) => acc + current, 0)
 // }
 
-function maxSubarraySum(arr, k) {
-    let maxSum = -Infinity
+// function maxSubarraySum(arr, k) {
+//     let maxSum = -Infinity
 
-    for (let i = 0; i <= arr.length - k; i++) {
-        let currentSum = 0
+//     for (let i = 0; i <= arr.length - k; i++) {
+//         let currentSum = 0
 
-        for (let j = i; j < i + k; j++) {
-            currentSum += arr[j]
-        }
-        maxSum = Math.max(maxSum, currentSum)
-    }
-    return maxSum
-}
+//         for (let j = i; j < i + k; j++) {
+//             currentSum += arr[j]
+//         }
+//         maxSum = Math.max(maxSum, currentSum)
+//     }
+//     return maxSum
+// }
 
 
-console.log(maxSubarraySum(arr1, 3))
+// console.log(maxSubarraySum(arr1, 3))
 // console.log(maxSubarraySum(arr2, 4))
 
+// BUBBLE SORT EXAMPLE
+function bubbleSort(arr) {
+    for(let i = 0 ; i < arr.length; i++) {
+        for (let j = 0; j < arr.length - 1 - i; j++) {
+
+            if (arr[j] > arr[j + 1]) {
+                const tmp = arr[j]
+                arr[j] = arr[j + 1]
+                arr[j + 1] = tmp
+            }
+        }
+    }
+    return arr
+}
+
+const nums = [0, 5, 1, 3, 7, 3, 2, 4, 9, 8, 77, 90, 60, 40, 33, 2, 7, 4, 8]
+
+console.log(bubbleSort(nums))
