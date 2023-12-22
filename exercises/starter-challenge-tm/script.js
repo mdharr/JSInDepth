@@ -897,21 +897,82 @@
 // console.log(maxSubarraySum(arr1, 3))
 // console.log(maxSubarraySum(arr2, 4))
 
-// BUBBLE SORT EXAMPLE
-function bubbleSort(arr) {
-    for(let i = 0 ; i < arr.length; i++) {
-        for (let j = 0; j < arr.length - 1 - i; j++) {
+// const nums = [0, 5, 1, 3, 7, 3, 2, 4, 9, 8, 77, 90, 60, 40, 33, 2, 7, 4, 8]
 
-            if (arr[j] > arr[j + 1]) {
-                const tmp = arr[j]
-                arr[j] = arr[j + 1]
-                arr[j + 1] = tmp
+// console.log(bubbleSort(nums))
+
+// const products = [
+//     { name: 'Apple', price: 0.5, quantity: 10 },
+//     { name: 'Banana', price: 0.3, quantity: 20 },
+//     { name: 'Orange', price: 0.6, quantity: 15 },
+//     { name: 'Chocolate', price: 2.5, quantity: 5 },
+//     { name: 'Chips', price: 1.2, quantity: 10 },
+//     { name: 'Soda', price: 1.0, quantity: 8 },
+//     { name: 'Candy', price: 0.5, quantity: 15 }
+// ]
+
+// function findHighest(arr) {
+//     const result = arr.reduce((acc, current) => {
+//         return current.price > acc.price ? current : acc
+//     }, arr[0])
+//     return result
+// }
+// function findLowest(arr) {
+//     const result = arr.reduce((acc, current) => {
+//         return current.price < acc.price ? current : acc
+//     }, arr[0])
+//     return result
+// }
+
+// console.log(`Highest: ${JSON.stringify(findHighest(products))}`)
+// console.log(`Lowest: ${JSON.stringify(findLowest(products))}`)
+
+function generateRandomNumbers(n) {
+    const result = [];
+    for(let i = 0; i < n; i++) {
+        result[i] = Math.floor(Math.random() * n) + 1;
+    }
+    return result;
+}
+
+function bubbleSort(arr) {
+    for(let i = 0; i < arr.length; i++) {
+        for(let j = 0; j < arr.length - 1 - i; j++) {
+            if(arr[j] > arr[j + 1]) {
+                const tmp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = tmp;
             }
         }
     }
-    return arr
+    return arr;
 }
 
-const nums = [0, 5, 1, 3, 7, 3, 2, 4, 9, 8, 77, 90, 60, 40, 33, 2, 7, 4, 8]
+function sortNumbers(arr) {
+    return arr.sort((a, b) => a - b);
+}
 
-console.log(bubbleSort(nums))
+const nums = generateRandomNumbers(100000);
+
+const bubbleSortPromise = new Promise((resolve, reject) => {
+    console.time('Bubble Sort Time');
+    const sorted = bubbleSort([...nums]);
+    console.timeEnd('Bubble Sort Time');
+    resolve(sorted);
+});
+
+const vanillaJavaScriptSortPromise = new Promise((resolve, reject) => {
+    console.time('JS Sort Time');
+    const sorted = sortNumbers([...nums]);
+    console.timeEnd('JS Sort Time');
+    resolve(sorted);
+});
+
+Promise.all([bubbleSortPromise, vanillaJavaScriptSortPromise]).then((values) => {
+    // values[0] will be the result from bubbleSortPromise
+    // values[1] will be the result from vanillaJavaScriptSortPromise
+    // console.log(values[0])
+    // console.log(values[1])
+    console.log('Both sorting operations complete');
+});
+
