@@ -1262,5 +1262,22 @@ const fighterJet = new Fighter();
 
 // console.log(findBinary(233, ""))
 
-function sumUp(n) { if(n <= 1) {return 1} return n + sumUp(--n) }
-console.log(sumUp(10))
+// function sumUp(n) { if(n <= 1) {return 1} return n + sumUp(--n) }
+// console.log(sumUp(10))
+
+// BINARY SEARCH IMPLEMENTATION
+function binarySearch(arr, left, right, x) {
+    if (left > right) return -1
+
+    let mid = Math.floor((left + right) / 2);
+
+    if(x === arr[mid]) return mid
+
+    if(x < arr[mid]) return binarySearch(arr, left, mid - 1, x)
+
+    return binarySearch(arr, mid + 1, right, x)
+}
+
+const arr = [-1, 0, 1, 2, 3, 4, 7, 9, 10, 20]
+
+console.log(binarySearch(arr, arr[0], arr.length - 1, 10))
