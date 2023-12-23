@@ -1247,5 +1247,17 @@ const fighterJet = new Fighter();
 // console.log(prepareInput('Cigar? Toss it in a can. It is so tragic.'))
 // console.log(isPalindrome(prepareInput('Cigar? Toss it in a can. It is so tragic.')))
 
-console.log((233 / 2) | 0) // implicit Math.floor using bitwise OR operator `|`
+// console.log((233 / 2) | 0) // implicit Math.floor using bitwise OR operator `|`
 // rounds down to nearest whole number
+
+// finding the binary code of a number using recursion
+function findBinary(decimal, result) {
+    if(decimal === 0) {
+        return result
+    }
+
+    result = decimal % 2 + result
+    return findBinary(Math.floor(decimal / 2), result)
+}
+
+console.log(findBinary(500, ""))
