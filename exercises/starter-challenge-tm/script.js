@@ -1161,11 +1161,34 @@ class Fighter extends Jet {
 }
 
 const fighterJet = new Fighter();
-console.log(fighterJet.type);         // Output: 'Fighter'
-console.log(fighterJet.hasWings);     // Output: true (inherited from Aircraft)
-console.log(fighterJet.hasJetEngine); // Output: true (inherited from Jet)
-console.log(fighterJet.isArmed);      // Output: true (specific to Fighter)
-fighterJet.start();       // Inherited from Vehicle
-fighterJet.fly();         // Inherited from Aircraft
-fighterJet.accelerate();  // Inherited from Jet
-fighterJet.engage();      // Specific to Fighter
+// console.log(fighterJet.type);         // Output: 'Fighter'
+// console.log(fighterJet.hasWings);     // Output: true (inherited from Aircraft)
+// console.log(fighterJet.hasJetEngine); // Output: true (inherited from Jet)
+// console.log(fighterJet.isArmed);      // Output: true (specific to Fighter)
+// fighterJet.start();       // Inherited from Vehicle
+// fighterJet.fly();         // Inherited from Aircraft
+// fighterJet.accelerate();  // Inherited from Jet
+// fighterJet.engage();      // Specific to Fighter
+
+
+const obj = {
+    [Symbol.iterator]: function() {
+        let step = 0
+        const iterator = {
+            next: function() {
+                step++
+                if(step === 1) {
+                    return { value: 'Hello', done: false }
+                } else if (step === 2) {
+                    return { value: 'World', done: false }
+                }
+                return { value: undefined, done: true }
+            }
+        }
+        return iterator
+    }
+}
+
+for(const word of obj) {
+    console.log(word)
+}
