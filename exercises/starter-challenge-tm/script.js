@@ -1246,3 +1246,6 @@ const fighterJet = new Fighter();
 // }
 // console.log(prepareInput('Cigar? Toss it in a can. It is so tragic.'))
 // console.log(isPalindrome(prepareInput('Cigar? Toss it in a can. It is so tragic.')))
+
+console.log((233 / 2) | 0) // implicit Math.floor using bitwise OR operator `|`
+// rounds down to nearest whole number
