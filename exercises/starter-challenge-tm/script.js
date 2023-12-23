@@ -1119,30 +1119,52 @@
 // example of class hierarchy and inheritance using
 // JavaScript
 class Vehicle {
+    constructor() {
+        this.type = 'Generic Vehicle';
+    }
     start() {
         console.log('Vehicle is starting');
     }
 }
 
 class Aircraft extends Vehicle {
+    constructor() {
+        super(); // Calls the parent class constructor
+        this.type = 'Aircraft';
+        this.hasWings = true;
+    }
     fly() {
         console.log('Aircraft is flying');
     }
 }
 
 class Jet extends Aircraft {
+    constructor() {
+        super(); // Calls the parent class constructor
+        this.type = 'Jet';
+        this.hasJetEngine = true;
+    }
     accelerate() {
         console.log('Jet is accelerating');
     }
 }
 
 class Fighter extends Jet {
+    constructor() {
+        super(); // Calls the parent class constructor
+        this.type = 'Fighter';
+        this.isArmed = true;
+    }
     engage() {
         console.log('Fighter is engaging the enemy');
     }
 }
 
 const fighterJet = new Fighter();
+console.log(fighterJet.type);         // Output: 'Fighter'
+console.log(fighterJet.hasWings);     // Output: true (inherited from Aircraft)
+console.log(fighterJet.hasJetEngine); // Output: true (inherited from Jet)
+console.log(fighterJet.isArmed);      // Output: true (specific to Fighter)
 fighterJet.start();       // Inherited from Vehicle
 fighterJet.fly();         // Inherited from Aircraft
 fighterJet.accelerate();  // Inherited from Jet
