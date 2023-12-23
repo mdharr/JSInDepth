@@ -1089,29 +1089,61 @@
 
 
 // rewriting prototypal inheritance using class keyword
-class Person {
-    constructor(fName, lName) {
-        this.firstName = fName
-        this.lastName = lName
-    }
+// class Person {
+//     constructor(fName, lName) {
+//         this.firstName = fName
+//         this.lastName = lName
+//     }
 
-    sayMyName() {
-        return this.firstName + ' ' + this.lastName
+//     sayMyName() {
+//         return this.firstName + ' ' + this.lastName
+//     }
+// }
+
+// const classP1 = new Person('Bruce', 'Wayne')
+// console.log(classP1.sayMyName())
+
+// class SuperHero extends Person {
+//     constructor(fName, lName) {
+//         super(fName, lName)
+//         this.isSuperHero = true
+//     }
+//     fightCrime() {
+//         console.log('Fighting crime')
+//     }
+// }
+
+// const batman = new SuperHero('Bruce', 'Wayne')
+// console.log(batman.sayMyName())
+
+// example of class hierarchy and inheritance using
+// JavaScript
+class Vehicle {
+    start() {
+        console.log('Vehicle is starting');
     }
 }
 
-const classP1 = new Person('Bruce', 'Wayne')
-console.log(classP1.sayMyName())
-
-class SuperHero extends Person {
-    constructor(fName, lName) {
-        super(fName, lName)
-        this.isSuperHero = true
-    }
-    fightCrime() {
-        console.log('Fighting crime')
+class Aircraft extends Vehicle {
+    fly() {
+        console.log('Aircraft is flying');
     }
 }
 
-const batman = new SuperHero('Bruce', 'Wayne')
-console.log(batman.sayMyName())
+class Jet extends Aircraft {
+    accelerate() {
+        console.log('Jet is accelerating');
+    }
+}
+
+class Fighter extends Jet {
+    engage() {
+        console.log('Fighter is engaging the enemy');
+    }
+}
+
+const fighterJet = new Fighter();
+fighterJet.start();       // Inherited from Vehicle
+fighterJet.fly();         // Inherited from Aircraft
+fighterJet.accelerate();  // Inherited from Jet
+fighterJet.engage();      // Specific to Fighter
