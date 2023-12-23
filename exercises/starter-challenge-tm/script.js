@@ -1251,13 +1251,16 @@ const fighterJet = new Fighter();
 // rounds down to nearest whole number
 
 // finding the binary code of a number using recursion
-function findBinary(decimal, result) {
-    if(decimal === 0) {
-        return result
-    }
+// function findBinary(decimal, result) {
+//     if(decimal === 0) {
+//         return result
+//     }
 
-    result = decimal % 2 + result
-    return findBinary(Math.floor(decimal / 2), result)
-}
+//     result = decimal % 2 + result
+//     return findBinary(Math.floor(decimal / 2), result)
+// }
 
-console.log(findBinary(500, ""))
+// console.log(findBinary(233, ""))
+
+function sumUp(n) { if(n <= 1) {return 1} return n + sumUp(--n) }
+console.log(sumUp(10))
