@@ -1197,18 +1197,52 @@ const fighterJet = new Fighter();
 // generator (rewriting iterable/iterator example
 // above using generators)
 
-function normalFunction() {
-    console.log('Hello')
-    console.log('World')
-}
+// function normalFunction() {
+//     console.log('Hello')
+//     console.log('World')
+// }
 
-function* generatorFunction() {
-    yield 'Hello'
-    yield 'World'
-}
+// function* generatorFunction() {
+//     yield 'Hello'
+//     yield 'World'
+// }
 
-const generatorObject = generatorFunction()
+// const generatorObject = generatorFunction()
 
-for(const word of generatorObject) {
-    console.log(word)
-}
+// for(const word of generatorObject) {
+//     console.log(word)
+// }
+
+// reverseString and isPalindrome using recursion example 1
+// function reverseString(input) {
+//     if(input === '') {
+//         return ''
+//     }
+//     return reverseString(input.slice(1)) + input.charAt(0)
+// }
+
+// function isPalindrome(str) {
+//     return str === reverseString(str)
+// }
+
+// console.log(isPalindrome('racecar'))
+
+// reverseString and isPalindrome using recursion example 2
+
+// function isPalindrome(input) {
+//     if(input.length === 0 || input.length === 1) {
+//         return true
+//     }
+
+//     if(input.charAt(0) === input.charAt(input.length - 1)) {
+//         return isPalindrome(input.slice(1, input.length - 1))
+//     }
+
+//     return false
+// }
+
+// function prepareInput(str) {
+//     return str.toLowerCase().replace(/[^a-z]/g, '')
+// }
+// console.log(prepareInput('Cigar? Toss it in a can. It is so tragic.'))
+// console.log(isPalindrome(prepareInput('Cigar? Toss it in a can. It is so tragic.')))
