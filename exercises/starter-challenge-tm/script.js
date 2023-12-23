@@ -1170,25 +1170,45 @@ const fighterJet = new Fighter();
 // fighterJet.accelerate();  // Inherited from Jet
 // fighterJet.engage();      // Specific to Fighter
 
+// iterable and iterator
+// const obj = {
+//     [Symbol.iterator]: function() {
+//         let step = 0
+//         const iterator = {
+//             next: function() {
+//                 step++
+//                 if(step === 1) {
+//                     return { value: 'Hello', done: false }
+//                 } else if (step === 2) {
+//                     return { value: 'World', done: false }
+//                 }
+//                 return { value: undefined, done: true }
+//             }
+//         }
+//         return iterator
+//     }
+// }
 
-const obj = {
-    [Symbol.iterator]: function() {
-        let step = 0
-        const iterator = {
-            next: function() {
-                step++
-                if(step === 1) {
-                    return { value: 'Hello', done: false }
-                } else if (step === 2) {
-                    return { value: 'World', done: false }
-                }
-                return { value: undefined, done: true }
-            }
-        }
-        return iterator
-    }
+// for(const word of obj) {
+//     console.log(word)
+// }
+
+
+// generator (rewriting iterable/iterator example
+// above using generators)
+
+function normalFunction() {
+    console.log('Hello')
+    console.log('World')
 }
 
-for(const word of obj) {
+function* generatorFunction() {
+    yield 'Hello'
+    yield 'World'
+}
+
+const generatorObject = generatorFunction()
+
+for(const word of generatorObject) {
     console.log(word)
 }
