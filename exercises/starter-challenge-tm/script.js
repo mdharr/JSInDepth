@@ -1118,49 +1118,49 @@
 
 // example of class hierarchy and inheritance using
 // JavaScript
-class Vehicle {
-    constructor() {
-        this.type = 'Generic Vehicle';
-    }
-    start() {
-        console.log('Vehicle is starting');
-    }
-}
+// class Vehicle {
+//     constructor() {
+//         this.type = 'Generic Vehicle';
+//     }
+//     start() {
+//         console.log('Vehicle is starting');
+//     }
+// }
 
-class Aircraft extends Vehicle {
-    constructor() {
-        super(); // Calls the parent class constructor
-        this.type = 'Aircraft';
-        this.hasWings = true;
-    }
-    fly() {
-        console.log('Aircraft is flying');
-    }
-}
+// class Aircraft extends Vehicle {
+//     constructor() {
+//         super(); // Calls the parent class constructor
+//         this.type = 'Aircraft';
+//         this.hasWings = true;
+//     }
+//     fly() {
+//         console.log('Aircraft is flying');
+//     }
+// }
 
-class Jet extends Aircraft {
-    constructor() {
-        super(); // Calls the parent class constructor
-        this.type = 'Jet';
-        this.hasJetEngine = true;
-    }
-    accelerate() {
-        console.log('Jet is accelerating');
-    }
-}
+// class Jet extends Aircraft {
+//     constructor() {
+//         super(); // Calls the parent class constructor
+//         this.type = 'Jet';
+//         this.hasJetEngine = true;
+//     }
+//     accelerate() {
+//         console.log('Jet is accelerating');
+//     }
+// }
 
-class Fighter extends Jet {
-    constructor() {
-        super(); // Calls the parent class constructor
-        this.type = 'Fighter';
-        this.isArmed = true;
-    }
-    engage() {
-        console.log('Fighter is engaging the enemy');
-    }
-}
+// class Fighter extends Jet {
+//     constructor() {
+//         super(); // Calls the parent class constructor
+//         this.type = 'Fighter';
+//         this.isArmed = true;
+//     }
+//     engage() {
+//         console.log('Fighter is engaging the enemy');
+//     }
+// }
 
-const fighterJet = new Fighter();
+// const fighterJet = new Fighter();
 // console.log(fighterJet.type);         // Output: 'Fighter'
 // console.log(fighterJet.hasWings);     // Output: true (inherited from Aircraft)
 // console.log(fighterJet.hasJetEngine); // Output: true (inherited from Jet)
@@ -1260,94 +1260,153 @@ const fighterJet = new Fighter();
 // }
 // console.log(findBinary(1000000000000000000000000000000000, ""))
 
-function sumUp(n) { 
-    if(n <= 1) {
-        return 1
-    } 
-    return n + sumUp(n - 1) }
-// console.log(sumUp(10))
+// function sumUp(n) { 
+//     if(n <= 1) {
+//         return 1
+//     } 
+//     return n + sumUp(n - 1) }
+// // console.log(sumUp(10))
 
-function crazyMath(n, operator) {
-    const num1 = Math.floor(Math.random() * 100) + 1
-    const num2 = Math.floor(Math.random() * 100) + 1
-    console.log(`Num1: ${num1}`)
-    console.log(`Num2: ${num2}`)
-    let result = 0
-    for(let i = 0; i < n; i++) {
-        if(operator === "+") {
-            result = result + (num1 + num2)
-        } else if (operator === "-") {
-            result = result + (num1 - num2)
-        } else if (operator === "*") {
-            result = result + (num1 * num2)
-        } else if (operator === "/") {
-            result = result + (num1 / num2)
-        }
-    }
-    return result
-}
-
-// console.log(crazyMath(10, "+"))
-
-// BINARY SEARCH IMPLEMENTATION
-function binarySearch(arr, left, right, x) {
-    if (left > right) return -1
-
-    let mid = Math.floor((left + right) / 2);
-
-    if(x === arr[mid]) return mid
-
-    if(x < arr[mid]) return binarySearch(arr, left, mid - 1, x)
-
-    return binarySearch(arr, mid + 1, right, x)
-}
-
-const arr = [-1, 0, 1, 2, 3, 4, 7, 9, 10, 20]
-
-// console.log(binarySearch(arr, arr[0], arr.length - 1, 10))
-
-function fibonacci(n) {
-    let fib = [0,1]
-    for(let i = 2; i < n; i++) {
-        fib[i] = fib[i-1] + fib[i-2]
-    }
-    return fib
-}
-
-// console.log(fibonacci(20))
-
-function findFibonacci(n) {
-    if(n < 2) return n
-    return findFibonacci(n-1) + findFibonacci(n-2)
-}
-
-// console.log(findFibonacci(15))
-
-function reverseString(str) {
-    if(str === '') return ''
-    return reverseString(str.slice(1)) + str.charAt(0)
-}
-
-console.log(reverseString(prepareString('JJKL !! lomfdua')))
-
-function prepareString(str) {
-    return str.toLowerCase().replace(/[^a-z]/g, '')
-}
-
-// function isPalindrome(str) {
-//     return prepareString(str) === reverseString(prepareString(str))
+// function crazyMath(n, operator) {
+//     const num1 = Math.floor(Math.random() * 100) + 1
+//     const num2 = Math.floor(Math.random() * 100) + 1
+//     console.log(`Num1: ${num1}`)
+//     console.log(`Num2: ${num2}`)
+//     let result = 0
+//     for(let i = 0; i < n; i++) {
+//         if(operator === "+") {
+//             result = result + (num1 + num2)
+//         } else if (operator === "-") {
+//             result = result + (num1 - num2)
+//         } else if (operator === "*") {
+//             result = result + (num1 * num2)
+//         } else if (operator === "/") {
+//             result = result + (num1 / num2)
+//         }
+//     }
+//     return result
 // }
 
-function isPalindrome(input) {
-    if(input.length === 0 || input.length === 1) return true
-    if(input.charAt(0) === input.charAt(input.length - 1)) {
-        return isPalindrome(input.slice(1, input.length - 1))
+// // console.log(crazyMath(10, "+"))
+
+// // BINARY SEARCH IMPLEMENTATION
+// function binarySearch(arr, left, right, x) {
+//     if (left > right) return -1
+
+//     let mid = Math.floor((left + right) / 2);
+
+//     if(x === arr[mid]) return mid
+
+//     if(x < arr[mid]) return binarySearch(arr, left, mid - 1, x)
+
+//     return binarySearch(arr, mid + 1, right, x)
+// }
+
+// const arr = [-1, 0, 1, 2, 3, 4, 7, 9, 10, 20]
+
+// // console.log(binarySearch(arr, arr[0], arr.length - 1, 10))
+
+// function fibonacci(n) {
+//     let fib = [0,1]
+//     for(let i = 2; i < n; i++) {
+//         fib[i] = fib[i-1] + fib[i-2]
+//     }
+//     return fib
+// }
+
+// // console.log(fibonacci(20))
+
+// function findFibonacci(n) {
+//     if(n < 2) return n
+//     return findFibonacci(n-1) + findFibonacci(n-2)
+// }
+
+// // console.log(findFibonacci(15))
+
+// function reverseString(str) {
+//     if(str === '') return ''
+//     return reverseString(str.slice(1)) + str.charAt(0)
+// }
+
+// console.log(reverseString(prepareString('JJKL !! lomfdua')))
+
+// function prepareString(str) {
+//     return str.toLowerCase().replace(/[^a-z]/g, '')
+// }
+
+// // function isPalindrome(str) {
+// //     return prepareString(str) === reverseString(prepareString(str))
+// // }
+
+// function isPalindrome(input) {
+//     if(input.length === 0 || input.length === 1) return true
+//     if(input.charAt(0) === input.charAt(input.length - 1)) {
+//         return isPalindrome(input.slice(1, input.length - 1))
+//     }
+//     return false
+// }
+
+// // console.log(isPalindrome('Cigar? Toss it in a can. It is so tragic.')
+// console.log(isPalindrome(prepareString('Cigar? Toss it in a can. It is so tragic.')))
+
+
+// RECURSIVE ALGORITHM USING MERGE SORT
+
+function mergeSort(arr, start, end) {
+    if (start < end) {
+        let mid = Math.floor((start + end) / 2); // Ensure 'mid' is an integer
+        mergeSort(arr, start, mid);              // Sort the left half
+        mergeSort(arr, mid + 1, end);            // Sort the right half
+        merge(arr, start, mid, end);             // Merge the sorted halves
     }
-    return false
 }
 
-// console.log(isPalindrome('Cigar? Toss it in a can. It is so tragic.')
-console.log(isPalindrome(prepareString('Cigar? Toss it in a can. It is so tragic.')))
+function merge(arr, start, mid, end) {
+    // build temp array to avoid modifying the original
+    let temp = []
 
+    let i = start
+    let j = mid + 1
+    let k = 0
+    // while both subarrays have values, then try 
+    // and merge them in sorted order
+    while (i <= mid && j <= end) {
+        if (arr[i] < arr[j]) {
+            // temp[k++] = arr[i++]
+            temp[k] = arr[i]
+            i++
+            k++
+        } else {
+            // temp[k++] = arr[j++]
+            temp[k] = arr[j]
+            k++
+            j++
+        }
+    }
+
+    // add the rest of the values from the left subarray
+    // to the result
+    while (i <= mid) {
+        temp[k] = arr[i]
+        k++
+        i++
+    }
+
+    // add the rest of the values from the right
+    // subarray to the result
+    while (j <= end) {
+        temp[k] = arr[j]
+        k++
+        j++
+    }
+
+    for(i = start; i <= end; i++) {
+        arr[i] = temp[i - start]
+    }
+}
+
+let data = [-5, 20, 10, 3, 2, 0]
+mergeSort(data, 0, data.length - 1)
+console.log(data)
 
 
