@@ -70,3 +70,15 @@ for (i = 1; i <= n; i++) { // outmost loop
 // Object.keys() - O(n)
 // Object.values() - O(n)
 // Object.entires() - O(n)
+
+
+// Arrays - Big-O ---------------------------------
+
+// An array is an ordered collection of values
+// Insert / remove element at end of array - O(1)
+// Insert / remove at beginning - O(n)
+// Access an element index - O(1)
+// Searching for an element - O(n)
+// Push / pop - O(1)
+// Shift / unshift / concat / slice / splice - O(n)
+// forEach / map / filter / reduce - O(n)
