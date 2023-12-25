@@ -58,3 +58,15 @@ for (i = 1; i <= n; i++) { // outmost loop
 // logarithmic space complexity is when the extra
 // space needed grows, but not at the same rate 
 // as the input size
+
+
+// Objects - Big-O --------------------------------
+
+// An object is a collection of key value pairs
+// Insert property - O(1)
+// Remove property - O(1)
+// Access value with key - O(1)
+// Search for a value - O(n)
+// Object.keys() - O(n)
+// Object.values() - O(n)
+// Object.entires() - O(n)
