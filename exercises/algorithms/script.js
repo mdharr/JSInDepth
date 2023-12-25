@@ -190,3 +190,61 @@
 // console.log(isPrime3(5))
 // console.log(isPrime3(4))
 // this solution's Big-O = O(sqrt(n)) time complexity
+
+
+// Power of Two ------------------------------------
+// Problem - Given a positive integer `n`, determine
+// if the number is a power of 2 or not
+// An integer is a power of two if there exists an
+// integer `x` such that `n` === 2^x
+
+// example isPowerOfTwo(1) = true (2^0)
+// example isPowerOfTwo(2) = true (2^1)
+// example isPowerOfTwo(5) = false
+
+// my solution
+function isPowerOfTwo(n) {
+    if (n <= 0) return false;
+    if(n === 1) return true // base case
+    if(n >= 2) return isPowerOfTwo(n / 2)
+    return false
+}
+console.log(isPowerOfTwo(16))
+// this solution's Big-O = O(log n) time complexity
+// this solution's space complexity can be rather
+// high due to reliance on recursive calls, which
+// fill up the call stack
+
+// other solution
+// this solution is more efficient due to not
+// relying on recursion, which can lead to stack
+// overflow when handling very large numbers
+function isPowerOfTwoAlt(n) {
+    if(n < 1) {
+        return false
+    }
+    while(n > 1) {
+        if(n % 2 !== 0) {
+            return false
+        }
+        n = n / 2
+    }
+    return true
+}
+// this solution's Big-O = O(log n) time complexity
+
+// constant solution
+// this solution is most efficient
+function isPowerOfTwoBitWise(n) {
+    if(n < 1) {
+        return false
+    }
+    return (n & (n-1)) === 0
+}
+// this solution's Big-O = O(1) time complexity
+console.log(isPowerOfTwoAlt(1))
+console.log(isPowerOfTwoAlt(2))
+console.log(isPowerOfTwoAlt(5))
+console.log(isPowerOfTwoBitWise(1))
+console.log(isPowerOfTwoBitWise(2))
+console.log(isPowerOfTwoBitWise(5))
