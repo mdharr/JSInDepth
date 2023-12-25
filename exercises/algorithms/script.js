@@ -248,3 +248,31 @@
 // console.log(isPowerOfTwoBitWise(1))
 // console.log(isPowerOfTwoBitWise(2))
 // console.log(isPowerOfTwoBitWise(5))
+
+// Fibonacci using recursion
+// function recursiveFibonacci(n) {
+//     if(n < 2) {
+//         return n
+//     }
+//     return recursiveFibonacci(n-1) + recursiveFibonacci(n-2)
+// }
+
+// console.log(recursiveFibonacci(0)) // 0
+// console.log(recursiveFibonacci(1)) // 1
+// console.log(recursiveFibonacci(6)) // 8
+
+// Sum of Numbers ------------------------------
+function sumOfNumbers(arr) {
+    const sorted = [...arr].sort((a, b) => a - b)
+    const result = []
+    let first = sorted[0]
+    const last = sorted[1]
+    for(let i = 0; first <= last; i++, first++) {
+        result[i] = first
+    }
+    const sum = result.reduce((acc, current) => {
+        return acc + current
+    }, 0)
+    return sum
+}
+console.log(sumOfNumbers([4,1]))
