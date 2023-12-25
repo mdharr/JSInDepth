@@ -86,17 +86,48 @@
 
 // Math Algorithms ---------------------------------
 
-// Fibonacci sequence
+// Fibonacci sequence ------------------
 // Problem - Given a number `n`, find the first `n`
 // elements of the Fibonacci sequence
 
 // my solution
-function fibonacci(n) {
-    const fib = [0, 1]
-    for(let i = 2; i < n; i++) {
-        fib[i] = fib[i-1] + fib[i-2]
-    }
-    return fib
-}
-console.log(fibonacci(10))
+// function fibonacci(n) {
+//     const fib = [0, 1]
+//     for(let i = 2; i < n; i++) {
+//         fib[i] = fib[i-1] + fib[i-2]
+//     }
+//     return fib
+// }
+// console.log(fibonacci(10))
+// Big-O = O(n) time complexity
+
+
+// Factorial of a number sequence -------
+// Problem - Given an integer `n`, find the factorial
+// of that integer
+// In mathematics, the factorial of a non-negative
+// integer `n`, denoted n!, is the product of all
+// positive integers less than or equal to `n`.
+
+// Factorial of zero is 1.
+
+// my solution using recursion
+// function findFactorial(n) {
+//     // base case
+//     if(n === 0) {
+//         return 1
+//     }
+//     return n * findFactorial(n - 1)
+// }
+// console.log(findFactorial(5))
+
+// other solution
+// function factorial(n) {
+//     let result = 1
+//     for (let i = 2; i <= n; i++) {
+//         result *= i
+//     }
+//     return result
+// }
+// console.log(factorial(5))
 // Big-O = O(n) time complexity
