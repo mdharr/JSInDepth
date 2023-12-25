@@ -131,3 +131,62 @@
 // }
 // console.log(factorial(5))
 // Big-O = O(n) time complexity
+
+
+
+// Prime Number -----------------------------
+
+// Problem - Given a natural number `n`, determine
+// if the number is prime or not
+
+// A prime number is a natural number greater than
+// 1 that is not a product of two smaller natural
+// numbers.
+
+// example: isPrime(5) = true(1*5 or 5*1)
+//          isPrime(4) = false (1*4 or 2*2 or 4*1)
+
+// my solution
+// function isPrime(n) {
+//     if(n < 2) return false
+//     return Math.floor(n / 2) * 2 !== n
+// }
+
+// console.log(isPrime(1))
+// console.log(isPrime(5))
+// console.log(isPrime(4))
+// my solution's Big-O = O(1) time complexity
+
+// other solution
+// function isPrime2(n) {
+//     if(n < 2) {
+//         return false
+//     }
+//     for(let i = 2; i < n; i++) {
+//         if(n % i === 0) {
+//             return false
+//         }
+//     }
+//     return true
+// }
+// console.log(isPrime2(1))
+// console.log(isPrime2(5))
+// console.log(isPrime2(4))
+// this solution's Big-O = O(n) time complexity
+
+// another solution
+// function isPrime3(n) {
+//     if(n < 2) {
+//         return false
+//     }
+//     for(let i = 2; i <= Math.sqrt(n); i++) {
+//         if(n % i === 0) {
+//             return false
+//         }
+//     }
+//     return true
+// }
+// console.log(isPrime3(1))
+// console.log(isPrime3(5))
+// console.log(isPrime3(4))
+// this solution's Big-O = O(sqrt(n)) time complexity
