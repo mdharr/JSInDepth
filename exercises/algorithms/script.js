@@ -1,37 +1,37 @@
 // Big-O Time complexity --------------------------
-function summation(n) {
-    let sum = 0 // executed once
-    for (let i = 1; i <= n; i++) {
-        sum += i // executed n times
-    }
-    return sum // executed once
-}
-// O(n) - Linear time complexity
+// function summation(n) {
+//     let sum = 0 // executed once
+//     for (let i = 1; i <= n; i++) {
+//         sum += i // executed n times
+//     }
+//     return sum // executed once
+// }
+// // O(n) - Linear time complexity
 
 
-function summation2(n) {
-    return (n * (n + 1)) / 2 // only executed once
-}
-// O(1) - Constant time complexity
+// function summation2(n) {
+//     return (n * (n + 1)) / 2 // only executed once
+// }
+// // O(1) - Constant time complexity
 
 
-// nested loops generally mean O of n squared
-for (i = 1; i <= n; i++) { // outer loop
-    for(j = 1; j <= i; j++) { // inner loop
-        // some code
-    }
-}
-// O(n^2) - Quadratic time complexity
+// // nested loops generally mean O of n squared
+// for (i = 1; i <= n; i++) { // outer loop
+//     for(j = 1; j <= i; j++) { // inner loop
+//         // some code
+//     }
+// }
+// // O(n^2) - Quadratic time complexity
 
 
-// triple nested loops generally mean O of n cubed
-for (i = 1; i <= n; i++) { // outmost loop
-    for (j = 1; j <= i; j++) { // inner loop
-        for (k = 1; k <= j; k++) { // inmost loop
-            // some code
-        }
-    }
-}
+// // triple nested loops generally mean O of n cubed
+// for (i = 1; i <= n; i++) { // outmost loop
+//     for (j = 1; j <= i; j++) { // inner loop
+//         for (k = 1; k <= j; k++) { // inmost loop
+//             // some code
+//         }
+//     }
+// }
 // O(n^3) - Cubic time complexity
 
 
@@ -82,3 +82,21 @@ for (i = 1; i <= n; i++) { // outmost loop
 // Push / pop - O(1)
 // Shift / unshift / concat / slice / splice - O(n)
 // forEach / map / filter / reduce - O(n)
+
+
+// Math Algorithms ---------------------------------
+
+// Fibonacci sequence
+// Problem - Given a number `n`, find the first `n`
+// elements of the Fibonacci sequence
+
+// my solution
+function fibonacci(n) {
+    const fib = [0, 1]
+    for(let i = 2; i < n; i++) {
+        fib[i] = fib[i-1] + fib[i-2]
+    }
+    return fib
+}
+console.log(fibonacci(10))
+// Big-O = O(n) time complexity
