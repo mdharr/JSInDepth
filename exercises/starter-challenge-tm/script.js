@@ -1352,61 +1352,61 @@
 
 // RECURSIVE ALGORITHM USING MERGE SORT
 
-function mergeSort(arr, start, end) {
-    if (start < end) {
-        let mid = Math.floor((start + end) / 2); // Ensure 'mid' is an integer
-        mergeSort(arr, start, mid);              // Sort the left half
-        mergeSort(arr, mid + 1, end);            // Sort the right half
-        merge(arr, start, mid, end);             // Merge the sorted halves
-    }
-}
+// function mergeSort(arr, start, end) {
+//     if (start < end) {
+//         let mid = Math.floor((start + end) / 2); // Ensure 'mid' is an integer
+//         mergeSort(arr, start, mid);              // Sort the left half
+//         mergeSort(arr, mid + 1, end);            // Sort the right half
+//         merge(arr, start, mid, end);             // Merge the sorted halves
+//     }
+// }
 
-function merge(arr, start, mid, end) {
-    // build temp array to avoid modifying the original
-    let temp = []
+// function merge(arr, start, mid, end) {
+//     // build temp array to avoid modifying the original
+//     let temp = []
 
-    let i = start
-    let j = mid + 1
-    let k = 0
-    // while both subarrays have values, then try 
-    // and merge them in sorted order
-    while (i <= mid && j <= end) {
-        if (arr[i] < arr[j]) {
-            // temp[k++] = arr[i++]
-            temp[k] = arr[i]
-            i++
-            k++
-        } else {
-            // temp[k++] = arr[j++]
-            temp[k] = arr[j]
-            k++
-            j++
-        }
-    }
+//     let i = start
+//     let j = mid + 1
+//     let k = 0
+//     // while both subarrays have values, then try 
+//     // and merge them in sorted order
+//     while (i <= mid && j <= end) {
+//         if (arr[i] < arr[j]) {
+//             // temp[k++] = arr[i++]
+//             temp[k] = arr[i]
+//             i++
+//             k++
+//         } else {
+//             // temp[k++] = arr[j++]
+//             temp[k] = arr[j]
+//             k++
+//             j++
+//         }
+//     }
 
-    // add the rest of the values from the left subarray
-    // to the result
-    while (i <= mid) {
-        temp[k] = arr[i]
-        k++
-        i++
-    }
+//     // add the rest of the values from the left subarray
+//     // to the result
+//     while (i <= mid) {
+//         temp[k] = arr[i]
+//         k++
+//         i++
+//     }
 
-    // add the rest of the values from the right
-    // subarray to the result
-    while (j <= end) {
-        temp[k] = arr[j]
-        k++
-        j++
-    }
+//     // add the rest of the values from the right
+//     // subarray to the result
+//     while (j <= end) {
+//         temp[k] = arr[j]
+//         k++
+//         j++
+//     }
 
-    for(i = start; i <= end; i++) {
-        arr[i] = temp[i - start]
-    }
-}
+//     for(i = start; i <= end; i++) {
+//         arr[i] = temp[i - start]
+//     }
+// }
 
-let data = [-5, 20, 10, 3, 2, 0]
-mergeSort(data, 0, data.length - 1)
-console.log(data)
+// let data = [-5, 20, 10, 3, 2, 0]
+// mergeSort(data, 0, data.length - 1)
+// console.log(data)
 
 
