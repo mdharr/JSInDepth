@@ -7,3 +7,11 @@ function summation(n) {
     return sum // executed once
 }
 // O(n) - Linear time complexity
+
+
+function summation2(n) {
+    return (n * (n + 1)) / 2 // only executed once
+}
+// O(1) - Constant time complexity
+
+console.log(summation2(4))
