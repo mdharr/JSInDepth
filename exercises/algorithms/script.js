@@ -262,17 +262,35 @@
 // console.log(recursiveFibonacci(6)) // 8
 
 // Sum of Numbers ------------------------------
+
+// my first solution
+// function sumOfNumbers(arr) {
+//     const sorted = [...arr].sort((a, b) => a - b)
+//     const result = []
+//     let first = sorted[0]
+//     const last = sorted[1]
+//     for(let i = 0; first <= last; i++, first++) {
+//         result[i] = first
+//     }
+//     const sum = result.reduce((acc, current) => {
+//         return acc + current
+//     }, 0)
+//     return sum
+// }
+// console.log(sumOfNumbers([4,1]))
+
+// my second solution without sort and reduce
 function sumOfNumbers(arr) {
-    const sorted = [...arr].sort((a, b) => a - b)
-    const result = []
-    let first = sorted[0]
-    const last = sorted[1]
-    for(let i = 0; first <= last; i++, first++) {
-        result[i] = first
+    const sorted = [...arr].sort((a,b) => a - b)
+    const first = sorted[0] < sorted[sorted.length-1] ? sorted[0] : sorted[sorted.length-1]
+    const last = first === sorted[0] ? sorted[sorted.length-1] : sorted[0]
+    console.log(first)
+    console.log(last)
+    let sum = 0
+    for(let i = first; i <= last; i++) {
+        sum += i
     }
-    const sum = result.reduce((acc, current) => {
-        return acc + current
-    }, 0)
     return sum
 }
-console.log(sumOfNumbers([4,1]))
+
+console.log(sumOfNumbers([4,1,2,5,9,22,10]))
