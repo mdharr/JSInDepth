@@ -476,31 +476,58 @@
 // of O(log n)
 
 // alternate recursive binary search
-function recursiveBinarySearch(arr, target) {
-    return search(arr, target, 0, arr.length-1)
-}
+// function recursiveBinarySearch(arr, target) {
+//     return search(arr, target, 0, arr.length-1)
+// }
 
-function search(arr, target, left, right) {
-    // base case
-    if(left > right) {
-        return -1
-    }
+// function search(arr, target, left, right) {
+//     // base case
+//     if(left > right) {
+//         return -1
+//     }
 
-    let mid = Math.floor((left + right)/2)
-    if(target === arr[mid] ) {
-        return mid
-    }
+//     let mid = Math.floor((left + right)/2)
+//     if(target === arr[mid] ) {
+//         return mid
+//     }
 
-    if(target < arr[mid]) {
-        return search(arr, target, left, mid-1)
-    }
-    if(target > arr[mid]) {
-        return search(arr, target, mid+1, right)
-    }
-}
+//     if(target < arr[mid]) {
+//         return search(arr, target, left, mid-1)
+//     }
+//     if(target > arr[mid]) {
+//         return search(arr, target, mid+1, right)
+//     }
+// }
 
-console.log(recursiveBinarySearch([-5, 2, 4, 6, 10], 10))
-console.log(recursiveBinarySearch([-5, 2, 4, 6, 10], 6))
-console.log(recursiveBinarySearch([-5, 2, 4, 6, 10], 20))
+// console.log(recursiveBinarySearch([-5, 2, 4, 6, 10], 10))
+// console.log(recursiveBinarySearch([-5, 2, 4, 6, 10], 6))
+// console.log(recursiveBinarySearch([-5, 2, 4, 6, 10], 20))
 // Recursive binary search has Big-O time complexity
 // of O(log n)
+
+
+// Sorting Algorithms -----------------------------------
+
+// Bubble Sort
+// Problem - Given an array of integers, sort the array.
+
+// my solution with do while loop
+function bubbleSort(arr) {
+    let swapped;
+    do {
+        swapped = false
+        for(let i = 0; i < arr.length-1; i++) {
+            if(arr[i] > arr[i+1]) {
+                let temp = arr[i]
+                arr[i] = arr[i+1]
+                arr[i+1] = temp
+                swapped = true
+            }
+        }
+    } while(swapped)
+    return arr
+}
+
+console.log(bubbleSort([-6, 20, 8, -2, 4]))
+// this bubble sort algorithm has a Big-O time complexity
+// of O(n^2) / quadratic time complexity
