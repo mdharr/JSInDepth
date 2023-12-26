@@ -355,14 +355,17 @@
 // of that integer
 
 // my solution
-function recursiveFactorial(n) {
-    // base case
-    if(n === 0) {
-        return 1
-    }
-    return n * recursiveFactorial(n-1)
-}
+// function recursiveFactorial(n) {
+//     // base case
+//     if(n === 0) {
+//         return 1
+//     }
+//     return n * recursiveFactorial(n-1)
+// }
 
-console.log(recursiveFactorial(0))
-console.log(recursiveFactorial(4))
-console.log(recursiveFactorial(5))
+// console.log(recursiveFactorial(0))
+// console.log(recursiveFactorial(4))
+// console.log(recursiveFactorial(5))
+
+// Recursive Factorial has a Big-O time complexity
+// of O(n)
