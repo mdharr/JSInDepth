@@ -298,16 +298,16 @@
 // Anagram -------------------------------------
 
 // my solution
-function isAnagram(str1, str2) {
-    if(str1.length !== str2.length) {
-        return false
-    }
-    const result1 = [...str1].sort().join('')
-    const result2 = [...str2].sort().join('')
-    console.log(result1)
-    console.log(result2)
-    return result1 === result2
-}
+// function isAnagram(str1, str2) {
+//     if(str1.length !== str2.length) {
+//         return false
+//     }
+//     const result1 = [...str1].sort().join('')
+//     const result2 = [...str2].sort().join('')
+//     console.log(result1)
+//     console.log(result2)
+//     return result1 === result2
+// }
 
 // console.log(isAnagram('racecar', 'carrace'))
 // console.log(isAnagram('racecar', 'carrac'))
@@ -336,4 +336,13 @@ function isAnagram(str1, str2) {
 
 // console.log(recursiveAnagram(sortString('racecar'),sortString('carrace')))
 // console.log(recursiveAnagram(sortString('racecar'),sortString('carrac')))
+
+// function recursiveFibonacci(n) {
+//     if(n < 2) return n
+//     return recursiveFibonacci(n-1) + recursiveFibonacci(n-2)
+// }
+
+// console.log(recursiveFibonacci(0)) // 0
+// console.log(recursiveFibonacci(1)) // 1
+// console.log(recursiveFibonacci(6)) // 8
 
