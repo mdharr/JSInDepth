@@ -421,27 +421,86 @@
 //     return -1;
 // }
 
-console.log(binarySearch([-5, 2, 4, 6, 10], 10))
-console.log(binarySearch([-5, 2, 4, 6, 10], 6))
-console.log(binarySearch([-5, 2, 4, 6, 10], 20))
+// console.log(binarySearch([-5, 2, 4, 6, 10], 10))
+// console.log(binarySearch([-5, 2, 4, 6, 10], 6))
+// console.log(binarySearch([-5, 2, 4, 6, 10], 20))
 
+// function binarySearch(arr, target) {
+//     let left = 0
+//     let right = arr.length - 1
 
-function binarySearch(arr, target) {
-    if(arr.length === 0) {
+//     while(left <= right) {
+//         let mid = Math.floor((left + right) / 2)
+//         if(target === arr[mid]) {
+//             return mid
+//         }
+//         if(target < arr[mid]) {
+//             right = mid - 1
+//         } else {
+//             left = mid + 1
+//         }
+//     }
+//     return -1
+// }
+
+// console.log(binarySearch([-5, 2, 4, 6, 10], 10))
+// console.log(binarySearch([-5, 2, 4, 6, 10], 6))
+// console.log(binarySearch([-5, 2, 4, 6, 10], 20))
+// Non-recursive binary search has Big-O time complexity
+// of O(log n)
+
+// function recursiveBinarySearch(arr, target) {
+//     if(arr.length === 0) {
+//         return -1
+//     }
+//     let mid = Math.floor(arr.length/2)
+//     if(target === arr[mid]) return mid
+//     let left = arr.slice(0, mid)
+//     let right = arr.slice(mid+1)
+//     if(target < arr[mid]) {
+//         return recursiveBinarySearch(left, target)
+//     }
+//     if(target > arr[mid]) {
+//         let rightResult = recursiveBinarySearch(right, target)
+//         if(rightResult !== -1) {
+//             return mid + 1 + rightResult
+//         }
+//     }
+//     return -1
+// }
+
+// console.log(recursiveBinarySearch([-5, 2, 4, 6, 10], 10))
+// console.log(recursiveBinarySearch([-5, 2, 4, 6, 10], 6))
+// console.log(recursiveBinarySearch([-5, 2, 4, 6, 10], 20))
+// Recursive binary search has Big-O time complexity
+// of O(log n)
+
+// alternate recursive binary search
+function recursiveBinarySearch(arr, target) {
+    return search(arr, target, 0, arr.length-1)
+}
+
+function search(arr, target, left, right) {
+    // base case
+    if(left > right) {
         return -1
     }
-    let mid = Math.floor(arr.length/2)
-    if(target === arr[mid]) return mid
-    let left = arr.slice(0, mid)
-    let right = arr.slice(mid+1)
+
+    let mid = Math.floor((left + right)/2)
+    if(target === arr[mid] ) {
+        return mid
+    }
+
     if(target < arr[mid]) {
-        return binarySearch(left, target)
+        return search(arr, target, left, mid-1)
     }
     if(target > arr[mid]) {
-        let rightResult = binarySearch(right, target)
-        if(rightResult !== -1) {
-            return mid + 1 + rightResult
-        }
+        return search(arr, target, mid+1, right)
     }
-    return -1
 }
+
+console.log(recursiveBinarySearch([-5, 2, 4, 6, 10], 10))
+console.log(recursiveBinarySearch([-5, 2, 4, 6, 10], 6))
+console.log(recursiveBinarySearch([-5, 2, 4, 6, 10], 20))
+// Recursive binary search has Big-O time complexity
+// of O(log n)
