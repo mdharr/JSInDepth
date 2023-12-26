@@ -309,5 +309,31 @@ function isAnagram(str1, str2) {
     return result1 === result2
 }
 
-console.log(isAnagram('racecar', 'carrace'))
-console.log(isAnagram('racecar', 'carrac'))
+// console.log(isAnagram('racecar', 'carrace'))
+// console.log(isAnagram('racecar', 'carrac'))
+
+// another solution using recursion
+// function recursiveAnagram(str1, str2) {
+//     if(str1.length !== str2.length) {
+//         return false
+//     }
+//     if(str1 === '' || str2 === '') {
+//         return true
+//     }
+//     if(str1.charAt(0) === str2.charAt(0) && str1.charAt(str1.length-1) === str2.charAt(str2.length-1)) {
+//         console.log(str1)
+//         console.log(str2)
+//         return recursiveAnagram(str1.slice(1, str1.length-1), str2.slice(1, str2.length-1))
+//     }
+//     return false
+// }
+// function sortString(str) {
+//     if(!str) {
+//         return
+//     }
+//     return str.toLowerCase().split('').sort().join('')
+// }
+
+// console.log(recursiveAnagram(sortString('racecar'),sortString('carrace')))
+// console.log(recursiveAnagram(sortString('racecar'),sortString('carrac')))
+
