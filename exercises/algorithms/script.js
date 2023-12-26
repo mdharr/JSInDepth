@@ -345,4 +345,24 @@
 // console.log(recursiveFibonacci(0)) // 0
 // console.log(recursiveFibonacci(1)) // 1
 // console.log(recursiveFibonacci(6)) // 8
+// console.log(recursiveFibonacci(7)) // 13
+// Recursive Fibonacci has a Big-O time complexity of
+// O(2^n) `O 2 to the power of n`
 
+
+// Recursive Factorial of a Number -------------------
+// Problem - Given an integer `n`, find the factorial
+// of that integer
+
+// my solution
+function recursiveFactorial(n) {
+    // base case
+    if(n === 0) {
+        return 1
+    }
+    return n * recursiveFactorial(n-1)
+}
+
+console.log(recursiveFactorial(0))
+console.log(recursiveFactorial(4))
+console.log(recursiveFactorial(5))
