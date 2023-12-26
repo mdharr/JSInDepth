@@ -379,13 +379,69 @@
 // Return -1 if the target element is not found.
 
 // my solution
-function linearSearch(arr, target) {
-    for(let i = 0; i < arr.length; i++) {
-        if(arr[i] === target) return i
+// function linearSearch(arr, target) {
+//     for(let i = 0; i < arr.length; i++) {
+//         if(arr[i] === target) return i
+//     }
+//     return -1
+// }
+
+// console.log(linearSearch([-5, 2, 10, 4, 6], 10))
+// console.log(linearSearch([-5, 2, 10, 4, 6], 6))
+// console.log(linearSearch([-5, 2, 10, 4, 6], 20))
+// Linear Search has a Big-O time complexity of
+// O(n)
+
+
+
+// Binary Search ------------------------------------
+// Problem - Given a sorted array of `n` elements and a
+// target element `t`, find the index of `t` in the array.
+// Return -1 if the target element is not found.
+
+// function binarySearch(arr, target) {
+//     if (arr.length === 0) {
+//         return -1;
+//     }
+//     let mid = Math.floor(arr.length / 2);
+//     if (target === arr[mid]) {
+//         return mid;
+//     }
+//     let left = arr.slice(0, mid);
+//     let right = arr.slice(mid + 1);
+//     if(target < arr[mid]) {
+//         return binarySearch(left, target)
+//     }
+//     if(target > arr[mid]) {
+//         let rightResult = binarySearch(right, target);
+//         if (rightResult !== -1) {
+//             return mid + 1 + rightResult;
+//         }
+//     }
+//     return -1;
+// }
+
+console.log(binarySearch([-5, 2, 4, 6, 10], 10))
+console.log(binarySearch([-5, 2, 4, 6, 10], 6))
+console.log(binarySearch([-5, 2, 4, 6, 10], 20))
+
+
+function binarySearch(arr, target) {
+    if(arr.length === 0) {
+        return -1
+    }
+    let mid = Math.floor(arr.length/2)
+    if(target === arr[mid]) return mid
+    let left = arr.slice(0, mid)
+    let right = arr.slice(mid+1)
+    if(target < arr[mid]) {
+        return binarySearch(left, target)
+    }
+    if(target > arr[mid]) {
+        let rightResult = binarySearch(right, target)
+        if(rightResult !== -1) {
+            return mid + 1 + rightResult
+        }
     }
     return -1
 }
-
-console.log(linearSearch([-5, 2, 10, 4, 6], 10))
-console.log(linearSearch([-5, 2, 10, 4, 6], 6))
-console.log(linearSearch([-5, 2, 10, 4, 6], 20))
