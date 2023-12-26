@@ -280,17 +280,34 @@
 // console.log(sumOfNumbers([4,1]))
 
 // my second solution without sort and reduce
-function sumOfNumbers(arr) {
-    const sorted = [...arr].sort((a,b) => a - b)
-    const first = sorted[0] < sorted[sorted.length-1] ? sorted[0] : sorted[sorted.length-1]
-    const last = first === sorted[0] ? sorted[sorted.length-1] : sorted[0]
-    console.log(first)
-    console.log(last)
-    let sum = 0
-    for(let i = first; i <= last; i++) {
-        sum += i
+// function sumOfNumbers(arr) {
+//     const sorted = [...arr].sort((a,b) => a - b)
+//     const first = sorted[0] < sorted[sorted.length-1] ? sorted[0] : sorted[sorted.length-1]
+//     const last = first === sorted[0] ? sorted[sorted.length-1] : sorted[0]
+//     console.log(first)
+//     console.log(last)
+//     let sum = 0
+//     for(let i = first; i <= last; i++) {
+//         sum += i
+//     }
+//     return sum
+// }
+
+// console.log(sumOfNumbers([4,1,2,5,9,22,10]))
+
+// Anagram -------------------------------------
+
+// my solution
+function isAnagram(str1, str2) {
+    if(str1.length !== str2.length) {
+        return false
     }
-    return sum
+    const result1 = [...str1].sort().join('')
+    const result2 = [...str2].sort().join('')
+    console.log(result1)
+    console.log(result2)
+    return result1 === result2
 }
 
-console.log(sumOfNumbers([4,1,2,5,9,22,10]))
+console.log(isAnagram('racecar', 'carrace'))
+console.log(isAnagram('racecar', 'carrac'))
