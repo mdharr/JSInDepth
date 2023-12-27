@@ -581,14 +581,35 @@
 
 const nums = [-6, 20, 8, -2, 4]
 
+// my solution
+// function quickSort(arr) {
+//     if(arr.length <= 1) {
+//         return arr
+//     }
+
+//     const pivot = arr[arr.length-1]
+//     const left = []
+//     const right = []
+//     for(let i = 0; i < arr.length-1; i++) {
+//         if(arr[i] < pivot) {
+//             left.push(arr[i])
+//         } else {
+//             right.push(arr[i])
+//         }
+//     }
+//     return [...quickSort(left), pivot, ...quickSort(right)]
+// }
+
+// console.log(quickSort(nums))
+
+// another solution
 function quickSort(arr) {
-    if(arr.length <= 1) {
+    if(arr.length < 2) {
         return arr
     }
-
-    const pivot = arr[arr.length-1]
-    const left = []
-    const right = []
+    let pivot = arr[arr.length-1]
+    let left = []
+    let right = []
     for(let i = 0; i < arr.length-1; i++) {
         if(arr[i] < pivot) {
             left.push(arr[i])
@@ -599,4 +620,9 @@ function quickSort(arr) {
     return [...quickSort(left), pivot, ...quickSort(right)]
 }
 
-console.log(quickSort(nums))
+const arr = [8, 20, -2, 4, -6]
+console.log(quickSort(arr))
+// Quick Sort has a worst case Big-O time complexity of
+// O(n^2) / quadratic
+// And has an average case Big-O time complexity of
+// O(n log n)
