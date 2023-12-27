@@ -579,7 +579,7 @@
 // Quick Sort -------------------------------------
 // Problem - Given an array of integers, sort the array
 
-const nums = [-6, 20, 8, -2, 4]
+// const nums = [-6, 20, 8, -2, 4]
 
 // my solution
 // function quickSort(arr) {
@@ -603,26 +603,61 @@ const nums = [-6, 20, 8, -2, 4]
 // console.log(quickSort(nums))
 
 // another solution
-function quickSort(arr) {
-    if(arr.length < 2) {
-        return arr
-    }
-    let pivot = arr[arr.length-1]
-    let left = []
-    let right = []
-    for(let i = 0; i < arr.length-1; i++) {
-        if(arr[i] < pivot) {
-            left.push(arr[i])
-        } else {
-            right.push(arr[i])
-        }
-    }
-    return [...quickSort(left), pivot, ...quickSort(right)]
-}
+// function quickSort(arr) {
+//     if(arr.length < 2) {
+//         return arr
+//     }
+//     let pivot = arr[arr.length-1]
+//     let left = []
+//     let right = []
+//     for(let i = 0; i < arr.length-1; i++) {
+//         if(arr[i] < pivot) {
+//             left.push(arr[i])
+//         } else {
+//             right.push(arr[i])
+//         }
+//     }
+//     return [...quickSort(left), pivot, ...quickSort(right)]
+// }
 
-const arr = [8, 20, -2, 4, -6]
-console.log(quickSort(arr))
+// const arr = [8, 20, -2, 4, -6]
+// console.log(quickSort(arr))
 // Quick Sort has a worst case Big-O time complexity of
 // O(n^2) / quadratic
 // And has an average case Big-O time complexity of
 // O(n log n)
+
+
+
+// Merge Sort ------------------------------------------
+// Problem - Given an array of integers, sort the array
+
+const arr = [-6, 20, 8, -2, 4]
+
+// my solution
+function mergeSort(arr) {
+    if(arr.length < 2) {
+        return arr
+    }
+    const mid = Math.floor(arr.length / 2)
+    const left = arr.slice(0,mid)
+    const right = arr.slice(mid)
+    return merge(mergeSort(left), mergeSort(right))
+}
+
+function merge(left, right) {
+    let sortedArray = []
+    while(left.length && right.length) {
+        if(left[0] <= right[0]) {
+            sortedArray.push(left.shift())
+        } else {
+            sortedArray.push(right.shift())
+        }
+    }
+    return [...sortedArray, ...left, ...right]
+}
+
+console.log(mergeSort(arr))
+
+// Merge Sort algorithm has Big-O time complexity of
+// O(nlogn)
