@@ -665,25 +665,58 @@
 
 
 // Cartesian Product -------------------------------------
-// Product - Given two finite non-empty sets, find their
+// Problem - Given two finite non-empty sets, find their
 // cartesian product
 
 // my solution
-function cartesianProduct(arr1, arr2) {
-    const result = []
-    for(let i = 0; i < arr1.length; i++) {
-        for(let j = 0; j < arr2.length; j++) {
-            result.push([arr1[i], arr2[j]])
-        }
-    }
-    return result
-}
+// function cartesianProduct(arr1, arr2) {
+//     const result = []
+//     for(let i = 0; i < arr1.length; i++) {
+//         for(let j = 0; j < arr2.length; j++) {
+//             result.push([arr1[i], arr2[j]])
+//         }
+//     }
+//     return result
+// }
 
-const arr1 = [1, 2]
-const arr2 = [3, 4, 5]
+// const arr1 = [1, 2]
+// const arr2 = [3, 4, 5]
 
-console.log(cartesianProduct(arr1, arr2))
+// console.log(cartesianProduct(arr1, arr2))
 // In this case, Cartesian Product has a Big-O time
 // complexity of O(mn)
 // If arr1 and arr2 were the same length, it would have
 // a time complexity of O(n^2)
+
+
+
+// Climbing Staircase ------------------------------------
+// Problem - Given a staircase of 'n' steps, count the number
+// of distinct ways to climb to the top.
+
+// my solution using recursion
+// function climbingStaircase(n) {
+//     if(n <= 2) {
+//         return n
+//     }
+//     return climbingStaircase(n-1) + climbingStaircase(n-2)
+// }
+
+// console.log(climbingStaircase(3))
+
+// my solution without recursion
+function climbingStaircase(n) {
+    const steps = [1, 2]
+    for(let i = 2; i < n; i++) {
+        steps[i] = steps[i-1] + steps[i-2]
+    }
+    return steps[n-1]
+}
+
+console.log(climbingStaircase(1))
+console.log(climbingStaircase(2))
+console.log(climbingStaircase(3))
+console.log(climbingStaircase(4))
+console.log(climbingStaircase(5))
+// The Big-O time complexity of non-recursive climbing
+// staircase is O(n) / linear
