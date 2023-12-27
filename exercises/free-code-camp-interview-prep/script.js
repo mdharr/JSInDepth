@@ -81,41 +81,164 @@
 
 
 
+// function permute(str) {
+//     if (str.length <= 1) {
+//         return [str]
+//     }
+
+//     const permutations = []
+//     for (let i = 0; i < str.length; i++) {
+//         const char = str[i]
+//         const remainingChars = str.slice(0, i) + str.slice(i + 1);
+//         for (const permutation of permute(remainingChars)) {
+//             permutations.push(char + permutation)
+//         }
+//     }
+//     return permutations
+// }
+
+// function noConsecutives(arr) {
+//     return arr.filter(perm => {
+//         for (let i = 0; i < perm.length - 1; i++) {
+//             if (perm[i] === perm[i+1]) {
+//                 return false
+//             }
+//         }
+//         return true
+//     }).length
+// }
+
+// function permAlone(str) {
+//     const allPerms = permute(str)
+//     return noConsecutives(allPerms)
+// }
+
+// Test cases
+// console.log(permAlone("aab"))
+// console.log(permAlone("aaa"))
+// console.log(permAlone("aabb"))
+
+
+
 function permute(str) {
-    if (str.length <= 1) {
+    if(str.length <= 1) {
         return [str]
     }
-
     const permutations = []
-    for (let i = 0; i < str.length; i++) {
+    for(let i = 0; i < str.length; i++) {
         const char = str[i]
-        const remainingChars = str.slice(0, i) + str.slice(i + 1);
-        for (const permutation of permute(remainingChars)) {
-            permutations.push(char + permutation)
+        const rest = str.slice(0,i) + str.slice(i+1)
+        for(const perms of permute(rest)) {
+            permutations.push(char + perms)
         }
     }
     return permutations
 }
 
-function noConsecutives(arr) {
-    return arr.filter(perm => {
-        for (let i = 0; i < perm.length - 1; i++) {
-            if (perm[i] === perm[i + 1]) {
-                return false
-            }
+const letters = 'abcdefghijk';
+
+console.time('Permute 1')
+// console.log(permute(letters))
+permute(letters)
+console.timeEnd('Permute 1')
+
+
+// console.log(permAlone("aab"))
+// console.log(permAlone("aaa"))
+// console.log(permAlone("aabb"))
+
+
+
+function heapPermute(array, size, result) {
+    if (size === 1) {
+        result.push(array.join(''));
+        return;
+    }
+
+    for (let i = 0; i < size; i++) {
+        heapPermute(array, size - 1, result);
+
+        // If size is odd, swap the first and last element
+        // If size is even, swap the ith and last element
+        const j = (size % 2) ? 0 : i;
+        [array[j], array[size - 1]] = [array[size - 1], array[j]];
+    }
+}
+
+function permuteString(str) {
+    const array = str.split('');
+    const result = [];
+    heapPermute(array, array.length, result);
+    return result;
+}
+
+console.time('Permute 2')
+// console.log(permuteString(letters));
+permuteString(letters)
+console.timeEnd('Permute 2')
+
+
+
+function heapPermute2(array, size, result) {
+    if (size === 1) {
+        result.push(array.join(''));
+        return;
+    }
+
+    for (let i = 0; i < size; i++) {
+        if (i !== 0 && array[i] === array[i - 1]) {
+            continue;
         }
-        return true
-    }).length
+
+        heapPermute2(array, size - 1, result);
+
+        const j = (size % 2) ? 0 : i;
+        [array[j], array[size - 1]] = [array[size - 1], array[j]];
+    }
 }
 
-function permAlone(str) {
-    const allPerms = permute(str)
-    return noConsecutives(allPerms)
+function permuteString2(str) {
+    const array = str.split('').sort();
+    const result = [];
+    heapPermute2(array, array.length, result);
+    return result;
 }
 
-// Test cases
-console.log(permAlone("aab"))
-console.log(permAlone("aaa"))
-console.log(permAlone("aabb"))
+console.time('Permute 3')
+// console.log(permuteString2(letters));
+permuteString2(letters)
+console.timeEnd('Permute 3')
 
+
+
+function heapPermute3(array, size, result) {
+    if (size === 1) {
+        result.push([...array].join(''));  // Pushing a copy of the array instead of a string
+        return;
+    }
+
+    for (let i = 0; i < size; i++) {
+        if (i !== 0 && array[i] === array[i - 1]) {
+            continue;
+        }
+
+        heapPermute3(array, size - 1, result);
+
+        const j = (size % 2) ? 0 : i;
+        [array[j], array[size - 1]] = [array[size - 1], array[j]];
+    }
+}
+
+function permuteString3(str) {
+    const array = str.split('').sort();
+    const result = [];
+    heapPermute3(array, array.length, result);
+    return result;  // Returns arrays of characters instead of strings
+}
+
+
+console.time('Permute 4')
+// console.log(permuteString3(letters));
+permuteString3(letters)
+console.timeEnd('Permute 4')
 
