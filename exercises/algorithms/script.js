@@ -632,32 +632,58 @@
 // Merge Sort ------------------------------------------
 // Problem - Given an array of integers, sort the array
 
-const arr = [-6, 20, 8, -2, 4]
+// const arr = [-6, 20, 8, -2, 4]
 
 // my solution
-function mergeSort(arr) {
-    if(arr.length < 2) {
-        return arr
-    }
-    const mid = Math.floor(arr.length / 2)
-    const left = arr.slice(0,mid)
-    const right = arr.slice(mid)
-    return merge(mergeSort(left), mergeSort(right))
-}
+// function mergeSort(arr) {
+//     if(arr.length < 2) {
+//         return arr
+//     }
+//     const mid = Math.floor(arr.length / 2)
+//     const left = arr.slice(0,mid)
+//     const right = arr.slice(mid)
+//     return merge(mergeSort(left), mergeSort(right))
+// }
 
-function merge(left, right) {
-    let sortedArray = []
-    while(left.length && right.length) {
-        if(left[0] <= right[0]) {
-            sortedArray.push(left.shift())
-        } else {
-            sortedArray.push(right.shift())
-        }
-    }
-    return [...sortedArray, ...left, ...right]
-}
+// function merge(left, right) {
+//     let sortedArray = []
+//     while(left.length && right.length) {
+//         if(left[0] <= right[0]) {
+//             sortedArray.push(left.shift())
+//         } else {
+//             sortedArray.push(right.shift())
+//         }
+//     }
+//     return [...sortedArray, ...left, ...right]
+// }
 
-console.log(mergeSort(arr))
+// console.log(mergeSort(arr))
 
 // Merge Sort algorithm has Big-O time complexity of
 // O(nlogn)
+
+
+
+// Cartesian Product -------------------------------------
+// Product - Given two finite non-empty sets, find their
+// cartesian product
+
+// my solution
+function cartesianProduct(arr1, arr2) {
+    const result = []
+    for(let i = 0; i < arr1.length; i++) {
+        for(let j = 0; j < arr2.length; j++) {
+            result.push([arr1[i], arr2[j]])
+        }
+    }
+    return result
+}
+
+const arr1 = [1, 2]
+const arr2 = [3, 4, 5]
+
+console.log(cartesianProduct(arr1, arr2))
+// In this case, Cartesian Product has a Big-O time
+// complexity of O(mn)
+// If arr1 and arr2 were the same length, it would have
+// a time complexity of O(n^2)
