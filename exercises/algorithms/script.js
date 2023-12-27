@@ -537,18 +537,34 @@
 // Problem - Given an array of integers, sort the array
 
 // my solution
-function insertionSort(arr) {
-    for(let i = 1; i < arr.length; i++) {
-        let numberToInsert = arr[i]
-        let j = i - 1
-        while(j >= 0 && arr[j] > numberToInsert) {
-            arr[j+1] = arr[j]
-            j = j - 1
-        }
-        arr[j+1] = numberToInsert
-    }
-}
+// function insertionSort(arr) {
+//     for(let i = 1; i < arr.length; i++) {
+//         let numberToInsert = arr[i]
+//         let j = i - 1
+//         while(j >= 0 && arr[j] > numberToInsert) {
+//             arr[j+1] = arr[j]
+//             j = j - 1
+//         }
+//         arr[j+1] = numberToInsert
+//     }
+// }
 
 const arr = [8, 20, -2, 4, -6]
 insertionSort(arr)
 console.log(arr)
+
+// my second solution
+function insertionSort(arr) {
+    for(let i = 1; i < arr.length; i++) {
+        for(let j = i; j > 0; j--) {
+            if(arr[j] < arr[j-1]) {
+                let temp = arr[j]
+                arr[j] = arr[j-1]
+                arr[j-1] = temp
+            }
+        }
+    }
+    return arr
+}
+// Insertion Sort Big-O time complexity is O(n^2)
+// quadratic
