@@ -549,22 +549,34 @@
 //     }
 // }
 
-const arr = [8, 20, -2, 4, -6]
-insertionSort(arr)
-console.log(arr)
+// const arr = [8, 20, -2, 4, -6]
+// console.log(arr)
+// console.log(insertionSort(arr))
 
-// my second solution
-function insertionSort(arr) {
-    for(let i = 1; i < arr.length; i++) {
-        for(let j = i; j > 0; j--) {
-            if(arr[j] < arr[j-1]) {
-                let temp = arr[j]
-                arr[j] = arr[j-1]
-                arr[j-1] = temp
-            }
-        }
-    }
-    return arr
-}
+// // my second solution
+// function insertionSort(arr) {
+//     const copy = arr.slice()
+//     for(let i = 1; i < copy.length; i++) {
+//         for(let j = i; j > 0; j--) {
+//             if(copy[j] < copy[j-1]) {
+//                 // one way of swapping using temp var
+//                 // let temp = copy[j]
+//                 // copy[j] = copy[j-1]
+//                 // copy[j-1] = temp
+
+//                 // swapping using destructuring
+//                 [copy[j], copy[j-1]] = [copy[j-1], copy[j]]
+//             }
+//         }
+//     }
+//     return copy
+// }
 // Insertion Sort Big-O time complexity is O(n^2)
 // quadratic
+
+
+
+// Quick Sort -------------------------------------
+// Problem - Given an array of integers, sort the array
+
+// const arr = [-6, 20, 8, -2, 4]
