@@ -733,26 +733,26 @@
 // one of the stacks and placing it on top of another
 // stack or on an empty rod.
 // No disk may be placed on top of a disk that is smaller
-let depth = 0
-function towerOfHanoi(n, fromRod, toRod, usingRod) {
-    if(n === 1) {
-        console.log(`Depth: ${depth} (inside base case)`)
-        console.log(`Move disk 1 from ${fromRod} to ${toRod} (base case)`)
-        console.log(`Return to previous depth`)
-        --depth
-        return
-    }
-    console.log(`Depth: ${depth} (before first recursive call)`)
-    towerOfHanoi(n-1, fromRod, usingRod, toRod, ++depth)
-    console.log(`Depth: ${depth} (after first recursive call and before second recursive call)`)
-    console.log(`Move disk ${n} from ${fromRod} to ${toRod} (after first recursive call)`)
-    towerOfHanoi(n-1, usingRod, toRod, fromRod, ++depth)
-    console.log(`Depth: ${depth} (after second recursive call)`)
-    --depth
-    console.log(`Return to previous depth`)
-}
+// let depth = 0
+// function towerOfHanoi(n, fromRod, toRod, usingRod) {
+//     if(n === 1) {
+//         console.log(`Depth: ${depth} (inside base case)`)
+//         console.log(`Move disk 1 from ${fromRod} to ${toRod} (base case)`)
+//         console.log(`Return to previous depth`)
+//         --depth
+//         return
+//     }
+//     console.log(`Depth: ${depth} (before first recursive call)`)
+//     towerOfHanoi(n-1, fromRod, usingRod, toRod, ++depth)
+//     console.log(`Depth: ${depth} (after first recursive call and before second recursive call)`)
+//     console.log(`Move disk ${n} from ${fromRod} to ${toRod} (after first recursive call)`)
+//     towerOfHanoi(n-1, usingRod, toRod, fromRod, ++depth)
+//     console.log(`Depth: ${depth} (after second recursive call)`)
+//     --depth
+//     console.log(`Return to previous depth`)
+// }
 
-towerOfHanoi(3, 'A', 'C', 'B')
+// towerOfHanoi(3, 'A', 'C', 'B')
 // The Big-O time complexity of Tower of Hanoi is
 // O(2^n)
 
@@ -783,3 +783,15 @@ towerOfHanoi(3, 'A', 'C', 'B')
 
 // When n is 1, the base case is reached. It executes the console log statement to indicate a move, and then it returns.
 // After returning, the execution continues from the point after the recursive call that reached the base case.
+
+function hanoi(n, from, to, using) {
+    if(n === 1) {
+        console.log(`Move Disk 1 from ${from} to ${to}`)
+        return
+    }
+    hanoi(n-1, from, using, to)
+    console.log(`Move Disk ${n} from ${from} to ${to} `)
+    hanoi(n-1, using, to, from)
+}
+
+hanoi(5, 'A', 'C', 'B')
