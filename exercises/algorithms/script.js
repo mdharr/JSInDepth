@@ -705,18 +705,81 @@
 // console.log(climbingStaircase(3))
 
 // my solution without recursion
-function climbingStaircase(n) {
-    const steps = [1, 2]
-    for(let i = 2; i < n; i++) {
-        steps[i] = steps[i-1] + steps[i-2]
-    }
-    return steps[n-1]
-}
+// function climbingStaircase(n) {
+//     const steps = [1, 2]
+//     for(let i = 2; i < n; i++) {
+//         steps[i] = steps[i-1] + steps[i-2]
+//     }
+//     return steps[n-1]
+// }
 
-console.log(climbingStaircase(1))
-console.log(climbingStaircase(2))
-console.log(climbingStaircase(3))
-console.log(climbingStaircase(4))
-console.log(climbingStaircase(5))
+// console.log(climbingStaircase(1))
+// console.log(climbingStaircase(2))
+// console.log(climbingStaircase(3))
+// console.log(climbingStaircase(4))
+// console.log(climbingStaircase(5))
 // The Big-O time complexity of non-recursive climbing
 // staircase is O(n) / linear
+
+
+
+
+// Tower of Hanoi ------------------------------------
+// Problem - The objective of the puzzle is to move the
+// entire stack to the last rod, obeying the following
+// rules:
+// Only one disk may be moved at a time
+// Each move consists of taking the upper disk from
+// one of the stacks and placing it on top of another
+// stack or on an empty rod.
+// No disk may be placed on top of a disk that is smaller
+let depth = 0
+function towerOfHanoi(n, fromRod, toRod, usingRod) {
+    if(n === 1) {
+        console.log(`Depth: ${depth} (inside base case)`)
+        console.log(`Move disk 1 from ${fromRod} to ${toRod} (base case)`)
+        console.log(`Return to previous depth`)
+        --depth
+        return
+    }
+    console.log(`Depth: ${depth} (before first recursive call)`)
+    towerOfHanoi(n-1, fromRod, usingRod, toRod, ++depth)
+    console.log(`Depth: ${depth} (after first recursive call and before second recursive call)`)
+    console.log(`Move disk ${n} from ${fromRod} to ${toRod} (after first recursive call)`)
+    towerOfHanoi(n-1, usingRod, toRod, fromRod, ++depth)
+    console.log(`Depth: ${depth} (after second recursive call)`)
+    --depth
+    console.log(`Return to previous depth`)
+}
+
+towerOfHanoi(3, 'A', 'C', 'B')
+// The Big-O time complexity of Tower of Hanoi is
+// O(2^n)
+
+// 1. towerOfHanoi(3, 'A', 'C', 'B')
+//    |
+//    |-- 2. towerOfHanoi(2, 'A', 'B', 'C')  // First main recursive call
+//    |   |
+//    |   |-- 3. towerOfHanoi(1, 'A', 'C', 'B')  // First sub-call for 2 disks
+//    |   |   (4. Move disk 1 from A to C)
+//    |   |   
+//    |   (5. Move disk 2 from A to B)
+//    |   |
+//    |   |-- 6. towerOfHanoi(1, 'C', 'B', 'A')  // Second sub-call for 2 disks
+//    |       (7. Move disk 1 from C to B)
+//    |
+//    (8. Move disk 3 from A to C)  // Moving the largest disk
+//    |
+//    |-- 9. towerOfHanoi(2, 'B', 'C', 'A')  // Second main recursive call
+//        |
+//        |-- 10. towerOfHanoi(1, 'B', 'A', 'C')  // First sub-call for the second main call
+//        |   (11. Move disk 1 from B to A)
+//        |
+//        (12. Move disk 2 from B to C)
+//        |
+//        |-- 13. towerOfHanoi(1, 'A', 'C', 'B')  // Second sub-call for the second main call
+//            (14. Move disk 1 from A to C)
+
+
+// When n is 1, the base case is reached. It executes the console log statement to indicate a move, and then it returns.
+// After returning, the execution continues from the point after the recursive call that reached the base case.
