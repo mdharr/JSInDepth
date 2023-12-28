@@ -784,14 +784,14 @@
 // When n is 1, the base case is reached. It executes the console log statement to indicate a move, and then it returns.
 // After returning, the execution continues from the point after the recursive call that reached the base case.
 
-function hanoi(n, from, to, using) {
-    if(n === 1) {
-        console.log(`Move Disk 1 from ${from} to ${to}`)
-        return
-    }
-    hanoi(n-1, from, using, to)
-    console.log(`Move Disk ${n} from ${from} to ${to} `)
-    hanoi(n-1, using, to, from)
-}
+// function hanoi(n, from, to, using) {
+//     if(n === 1) {
+//         console.log(`Move Disk 1 from ${from} to ${to}`)
+//         return
+//     }
+//     hanoi(n-1, from, using, to)
+//     console.log(`Move Disk ${n} from ${from} to ${to} `)
+//     hanoi(n-1, using, to, from)
+// }
 
-hanoi(5, 'A', 'C', 'B')
+// hanoi(5, 'A', 'C', 'B')
