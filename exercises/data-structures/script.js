@@ -143,48 +143,48 @@
  */
 
 
-const inventory1 = [
-    [25, "Elden Ring", 2022],
-    [14, "Sekiro", 2019],
-    [1, "Dark Souls", 2011],
-    [5, "Bloodborne", 2015],
-    [32, "Dark Souls 3", 2016]
-];
+// const inventory1 = [
+//     [25, "Elden Ring", 2022],
+//     [14, "Sekiro", 2019],
+//     [1, "Dark Souls", 2011],
+//     [5, "Bloodborne", 2015],
+//     [32, "Dark Souls 3", 2016]
+// ];
 
-const inventory2 = [
-    [2, "Elden Ring", 2022],
-    [3, "King's Field IV: The Ancient City", 2001],
-    [67, "Dark Souls 2: Scholar of the First Sin", 2014],
-    [7, "Dark Souls 3", 2016]
-];
+// const inventory2 = [
+//     [2, "Elden Ring", 2022],
+//     [3, "King's Field IV: The Ancient City", 2001],
+//     [67, "Dark Souls 2: Scholar of the First Sin", 2014],
+//     [7, "Dark Souls 3", 2016]
+// ];
 
-const oops = 1000
+// const oops = 1000
 
-function updateInventory(currentInventory, newItems) {
-    if(!Array.isArray(currentInventory) || !Array.isArray(newItems)) {
-        throw new Error('Invalid input: expected arrays for currentInventory and newItems')
-    }
-    const inventoryMap = currentInventory.reduce((map, [quantity, item, year]) => {
-        map.set(item, [quantity, year])
-        return map
-    }, new Map())
-    for(const [quantity, item, year] of newItems) {
-        const current = inventoryMap.get(item)
-        if(current) {
-            inventoryMap.set(item, [current[0] + quantity, year])
-        } else {
-            inventoryMap.set(item, [quantity, year])
-        }
-    }
-    return Array.from(inventoryMap, ([item, [quantity, year]]) => [quantity, item, year])
-        .sort((a,b) => a[2] - b[2])
-}
+// function updateInventory(currentInventory, newItems) {
+//     if(!Array.isArray(currentInventory) || !Array.isArray(newItems)) {
+//         throw new Error('Invalid input: expected arrays for currentInventory and newItems')
+//     }
+//     const inventoryMap = currentInventory.reduce((map, [quantity, item, year]) => {
+//         map.set(item, [quantity, year])
+//         return map
+//     }, new Map())
+//     for(const [quantity, item, year] of newItems) {
+//         const current = inventoryMap.get(item)
+//         if(current) {
+//             inventoryMap.set(item, [current[0] + quantity, year])
+//         } else {
+//             inventoryMap.set(item, [quantity, year])
+//         }
+//     }
+//     return Array.from(inventoryMap, ([item, [quantity, year]]) => [quantity, item, year])
+//         .sort((a,b) => a[2] - b[2])
+// }
 
-try {
-    console.log(updateInventory(inventory1, inventory2))
-} catch (error) {
-    console.error(error)
-}
+// try {
+//     console.log(updateInventory(inventory1, inventory2))
+// } catch (error) {
+//     console.error(error)
+// }
 
 // class Person {
 //     constructor(name, age, familySize, primaryLanguage, hobby) {
@@ -214,3 +214,46 @@ try {
 
 // console.log(obj.type)
 // obj.makeSound()
+
+
+
+// Sets ---------------------------------------------
+/*
+    A set is a data structure that can hold a collection of values.
+    The values however must be unique.
+
+    Sets can contain a mix of different data types.
+    You can store strings, booleans, numbers or even
+    objects all in the same set.
+
+    Sets are dynamically sized. You don't have to declare
+    the size of a set before creating it.
+
+    Sets do no maintain an insertion order.
+
+    Sets are iterables. They can be used with a for...of loop.
+*/
+
+// Sets vs Arrays
+/* 
+    Arrays can contain duplicate values whereas
+    Sets cannot.
+
+    Insertion order is maintained in arrays but
+    it is not the case with sets.
+
+    Searching and deleting an element in a set
+    is faster compared to arrays.
+*/
+
+const set = new Set([1, 2, 3])
+set.add(4)
+console.log(set.has(4))
+set.delete(3)
+console.log(set.size)
+set.clear()
+
+for(const item of set) {
+    console.log(item)
+}
+
