@@ -246,16 +246,16 @@
     is faster compared to arrays.
 */
 
-const set = new Set([1, 2, 3])
-set.add(4)
-console.log(set.has(4))
-set.delete(3)
-console.log(set.size)
-set.clear()
+// const set = new Set([1, 2, 3])
+// set.add(4)
+// console.log(set.has(4))
+// set.delete(3)
+// console.log(set.size)
+// set.clear()
 
-for(const item of set) {
-    console.log(item)
-}
+// for(const item of set) {
+//     console.log(item)
+// }
 
 // Maps ------------------------------------------------------
 /* 
@@ -290,17 +290,54 @@ for(const item of set) {
     data.
 */
 
-const map = new Map([['a', 1], ['b', 2]])
+// const map = new Map([['a', 1], ['b', 2]])
 
-map.set('c', 3)
-map.delete('c')
-console.log(map.has('a'))
-console.log(map.size)
-console.log(map.get('a'))
-map.clear()
+// map.set('c', 3)
+// map.delete('c')
+// console.log(map.has('a'))
+// console.log(map.size)
+// console.log(map.get('a'))
+// map.clear()
 
 
-for(const [key,value] of map) {
-    console.log(`${key}: ${value}`)
-}
+// for(const [key,value] of map) {
+//     console.log(`${key}: ${value}`)
+// }
+
+
+
+// Stack --------------------------------------
+
+/* 
+    The stack data structure is a sequential collection 
+    of elements that follows the principle of Last In First
+    Out (LIFO).
+
+    The last element inserted into the stack is first element
+    to be removed.
+
+    A stack of plates. The last plate placed on top of the stack
+    is also the first plate removed from the stack.
+
+    Stack is an abstract data type. It is defined by its behavior
+    rather than being a mathematical model.
+
+    The Stack data structure supports two main operations
+        - Push, which adds an element to the collection
+        - Pop, which removes the most recently added element
+        from the collection.
+*/
+
+// Stack Usage
+
+/* 
+    Browser history tracking
+
+    Undo operation when typing
+
+    Expression conversions
+
+    Call stack in JavaScript runtime
+    
+*/
 
