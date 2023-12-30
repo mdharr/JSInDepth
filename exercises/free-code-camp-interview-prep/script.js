@@ -241,3 +241,112 @@
 // permuteString3(letters)
 // console.timeEnd('Permute 4')
 
+
+// function capEvens(str) {
+//     return str
+//         .split('')
+//         .reduce((acc, letter, index) => {
+//             return index % 2 === 0 ?
+//                    acc += letter.toUpperCase() :
+//                    acc += letter.toLowerCase()
+//         }, '')
+// }
+
+// const string = 'Hello there young man'
+// console.log(capEvens(string))
+
+// const htmlString = '<div><div><div><div><div></div><div></div>'
+// function replaceDivWithCounter(inputString) {
+//     let counter = 0;
+
+//     return inputString.replace(/<\/?div>/g, () => {
+//         counter++;
+//         if (counter % 2 === 0) {
+//             return '</div>';
+//         }
+//         return '<div>';
+//     });
+// }
+
+// const resultString = replaceDivWithCounter(htmlString);
+
+// console.log(resultString);
+
+// const myString = 'barfbdarfbdarfbarfbarfbdarfbarfbarfbdarfbarf'
+
+// function replaceString(input) {
+//     let counter = 0
+
+//     return input.toLowerCase().replace(/b(d)?arf/g, () => {
+//         counter++
+//         if (counter % 2 === 0) {
+//             return 'bdarf'
+//         }
+//         return 'barf'
+//     })
+// }
+
+// console.log(replaceString(myString))
+
+
+
+function add(num1, num2) {
+    return num1 + num2
+}
+
+console.log('add', add(2, 3))
+
+function sum(...nums) {
+    return nums.reduce((total, number) => {
+        return total + number
+    }, 0)
+}
+
+console.log('sum', sum(2, 3, 4, 5))
+
+function stringIncludes(str1, str2) {
+    return str1.toLowerCase().includes(str2.toLowerCase())
+}
+
+console.log('stringIncludes', stringIncludes("I drove to New York in a van with my friend", "new"))
+
+
+function getNames(arr) {
+    return arr.reduce((acc, current) => {
+        if(current.name) {
+            acc.push(current.name)
+        }
+        return acc
+    }, [])
+}
+
+const myArray = [
+    { a: 1 },
+    { name: "Jane" },
+    {},
+    { name: "Mark" },
+    { name: "Sophia" },
+    { b: 2 }
+]
+
+console.log("getNames", getNames(myArray))
+
+function getLargestNumberIndex(nums) {
+    return nums.reduce((acc, current, index, arr) => {
+        return current > arr[acc] ? index : acc
+    }, 0)
+}
+
+console.log('getLargestNumberIndex', getLargestNumberIndex([7, 1, 4, 12, 9]))
+
+
+
+function delayedPromise() {
+    return new Promise(resolve => {
+        setTimeout(() => {
+            resolve('Resolved after 3 seconds')
+        }, 3000)
+    })
+}
+
+delayedPromise().then(message => console.log(message))
