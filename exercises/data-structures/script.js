@@ -533,51 +533,72 @@
 
 // Queue Data Structure Optimized
 
-class Queue {
-    constructor() {
-        this.items = {}
-        this.rear = 0
-        this.front = 0
-    }
+// class Queue {
+//     constructor() {
+//         this.items = {}
+//         this.rear = 0
+//         this.front = 0
+//     }
 
-    enqueue(element) {
-        this.items[this.rear] = element
-        this.rear++
-    }
+//     enqueue(element) {
+//         this.items[this.rear] = element
+//         this.rear++
+//     }
 
-    dequeue() {
-        const item = this.items[this.front]
-        delete this.items[this.front]
-        this.front++
-        return item
-    }
+//     dequeue() {
+//         const item = this.items[this.front]
+//         delete this.items[this.front]
+//         this.front++
+//         return item
+//     }
 
-    isEmpty() {
-        return this.rear - this.front === 0
-    }
+//     isEmpty() {
+//         return this.rear - this.front === 0
+//     }
 
-    peek() {
-        return this.items[this.front]
-    }
+//     peek() {
+//         return this.items[this.front]
+//     }
 
-    size() {
-        return this.rear - this.front
-    }
+//     size() {
+//         return this.rear - this.front
+//     }
 
-    print() {
-        console.log(this.items)
-    }
-}
+//     print() {
+//         console.log(this.items)
+//     }
+// }
 
-const queue = new Queue()
-console.log(queue.isEmpty())
-queue.enqueue(10)
-queue.enqueue(20)
-queue.enqueue(30)
-console.log(queue.size())
-queue.print()
-console.log(queue.dequeue())
-console.log(queue.peek())
+// const queue = new Queue()
+// console.log(queue.isEmpty())
+// queue.enqueue(10)
+// queue.enqueue(20)
+// queue.enqueue(30)
+// console.log(queue.size())
+// queue.print()
+// console.log(queue.dequeue())
+// console.log(queue.peek())
 
 // enqueue and dequeue have constant big-o time complexity
 // O(1)
+
+
+// Circular Queue ---------------------------------------------
+/* 
+    Useful in Clock
+    Streaming data
+    Traffic lights
+    FIFO
+*/
+
+// Circular Queue Implementation
+
+/* 
+    enqueue(element) - add an element to the queue
+    dequeue() - remove the oldest element from the queue
+    isFull() - check if the queue is full
+    isEmpty() - check if the queue is empty
+    peek() - get the value of the element at the front of the queue without removing it
+    size() - get the number of elements in the queue
+    print() - visualize the elements in the queue
+*/
