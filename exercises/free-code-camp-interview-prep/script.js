@@ -350,3 +350,14 @@ function delayedPromise() {
 }
 
 delayedPromise().then(message => console.log(message))
+
+
+function delayedPromiseRejected() {
+    return new Promise(reject => {
+        setTimeout(() => {
+            reject('Rejected after 3 seconds')
+        }, 3000)
+    })
+}
+
+delayedPromiseRejected().then(message => console.log(message))
