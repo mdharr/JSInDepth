@@ -290,74 +290,81 @@
 
 
 
-function add(num1, num2) {
-    return num1 + num2
+// function add(num1, num2) {
+//     return num1 + num2
+// }
+
+// console.log('add', add(2, 3))
+
+// function sum(...nums) {
+//     return nums.reduce((total, number) => {
+//         return total + number
+//     }, 0)
+// }
+
+// console.log('sum', sum(2, 3, 4, 5))
+
+// function stringIncludes(str1, str2) {
+//     return str1.toLowerCase().includes(str2.toLowerCase())
+// }
+
+// console.log('stringIncludes', stringIncludes("I drove to New York in a van with my friend", "new"))
+
+
+// function getNames(arr) {
+//     return arr.reduce((acc, current) => {
+//         if(current.name) {
+//             acc.push(current.name)
+//         }
+//         return acc
+//     }, [])
+// }
+
+// const myArray = [
+//     { a: 1 },
+//     { name: "Jane" },
+//     {},
+//     { name: "Mark" },
+//     { name: "Sophia" },
+//     { b: 2 }
+// ]
+
+// console.log("getNames", getNames(myArray))
+
+// function getLargestNumberIndex(nums) {
+//     return nums.reduce((acc, current, index, arr) => {
+//         return current > arr[acc] ? index : acc
+//     }, 0)
+// }
+
+// console.log('getLargestNumberIndex', getLargestNumberIndex([7, 1, 4, 12, 9]))
+
+
+
+// function delayedPromise() {
+//     return new Promise(resolve => {
+//         setTimeout(() => {
+//             resolve('Resolved after 3 seconds')
+//         }, 3000)
+//     })
+// }
+
+// delayedPromise().then(message => console.log(message))
+
+
+// function delayedPromiseRejected() {
+//     return new Promise(reject => {
+//         setTimeout(() => {
+//             reject('Rejected after 3 seconds')
+//         }, 3000)
+//     })
+// }
+
+// delayedPromiseRejected().then(message => console.log(message))
+
+
+function capitalize(str) {
+    return str.split('').map(letter => letter.toUpperCase()).join('')
 }
 
-console.log('add', add(2, 3))
-
-function sum(...nums) {
-    return nums.reduce((total, number) => {
-        return total + number
-    }, 0)
-}
-
-console.log('sum', sum(2, 3, 4, 5))
-
-function stringIncludes(str1, str2) {
-    return str1.toLowerCase().includes(str2.toLowerCase())
-}
-
-console.log('stringIncludes', stringIncludes("I drove to New York in a van with my friend", "new"))
-
-
-function getNames(arr) {
-    return arr.reduce((acc, current) => {
-        if(current.name) {
-            acc.push(current.name)
-        }
-        return acc
-    }, [])
-}
-
-const myArray = [
-    { a: 1 },
-    { name: "Jane" },
-    {},
-    { name: "Mark" },
-    { name: "Sophia" },
-    { b: 2 }
-]
-
-console.log("getNames", getNames(myArray))
-
-function getLargestNumberIndex(nums) {
-    return nums.reduce((acc, current, index, arr) => {
-        return current > arr[acc] ? index : acc
-    }, 0)
-}
-
-console.log('getLargestNumberIndex', getLargestNumberIndex([7, 1, 4, 12, 9]))
-
-
-
-function delayedPromise() {
-    return new Promise(resolve => {
-        setTimeout(() => {
-            resolve('Resolved after 3 seconds')
-        }, 3000)
-    })
-}
-
-delayedPromise().then(message => console.log(message))
-
-
-function delayedPromiseRejected() {
-    return new Promise(reject => {
-        setTimeout(() => {
-            reject('Rejected after 3 seconds')
-        }, 3000)
-    })
-}
-
-delayedPromiseRejected().then(message => console.log(message))
+console.log(capitalize('happy new year'))
