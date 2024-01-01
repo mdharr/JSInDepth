@@ -363,8 +363,22 @@
 // delayedPromiseRejected().then(message => console.log(message))
 
 
-function capitalize(str) {
-    return str.split('').map(letter => letter.toUpperCase()).join('')
+// function capitalize(str) {
+//     return str.split('').map(letter => letter.toUpperCase()).join('')
+// }
+
+// console.log(capitalize('happy new year'))
+
+
+
+function swapCase(str) {
+    return str
+        .split(' ')
+        .map((word, index) => 
+            index % 2 === 0 ? 
+            word.toUpperCase() : 
+            word.toLowerCase())
+        .join(' ')
 }
 
-console.log(capitalize('happy new year'))
+console.log(swapCase('hey gurl, lets javascript together sometime'))
