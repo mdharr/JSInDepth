@@ -383,10 +383,23 @@
 
 // console.log(swapCase('hey gurl, lets javascript together sometime'))
 
-function shiftLetters(str) {
-    return str.split('').map(letter => letter === 'z' ? 'a' : letter === 'Z' ? 'A' : String.fromCharCode(letter.charCodeAt(0)+1)).join('')
+// function shiftLetters(str) {
+//     return str.split('').map(letter => letter === 'z' ? 'a' : letter === 'Z' ? 'A' : String.fromCharCode(letter.charCodeAt(0)+1)).join('')
+// }
+
+// console.log(shiftLetters('hello'))
+// console.log(shiftLetters('helloz'))
+// console.log(shiftLetters('helloZ'))
+
+function countLetters(str) {
+    return str.split('').reduce((obj, letter) => {
+        if(!obj[letter]) {
+            obj[letter] = 1
+        } else {
+            obj[letter]++
+        }
+        return obj
+    }, {})
 }
 
-console.log(shiftLetters('hello'))
-console.log(shiftLetters('helloz'))
-console.log(shiftLetters('helloZ'))
+console.log(countLetters('abbcccddddeeeee'))
