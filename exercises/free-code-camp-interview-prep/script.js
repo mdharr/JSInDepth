@@ -418,18 +418,31 @@
 
 
 
-function shoppingSpree(arr) {
-    return arr.reduce((total, item) => {
-        return total + item.price
-    }, 0)   
+// function shoppingSpree(arr) {
+//     return arr.reduce((total, item) => {
+//         return total + item.price
+//     }, 0)   
+//  }
+ 
+//  const wishlist = [
+//      { title: "Tesla Model S", price: 90000 },
+//      { title: "4 carat diamond ring", price: 45000 },
+//      { title: "Fancy hacky Sack", price: 5 },
+//      { title: "Gold fidgit spinner", price: 2000 },
+//      { title: "A second Tesla Model S", price: 90000 }
+//  ];
+ 
+//  console.log(shoppingSpree(wishlist));
+
+
+function flatten(arr) {
+    return arr.flat()   
  }
  
- const wishlist = [
-     { title: "Tesla Model S", price: 90000 },
-     { title: "4 carat diamond ring", price: 45000 },
-     { title: "Fancy hacky Sack", price: 5 },
-     { title: "Gold fidgit spinner", price: 2000 },
-     { title: "A second Tesla Model S", price: 90000 }
+ const arrays = [
+     ["1", "2", "3"],
+     [true],
+     [4, 5, 6]
  ];
  
- console.log(shoppingSpree(wishlist));
+ console.log(flatten(arrays));
