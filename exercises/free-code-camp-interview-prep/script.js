@@ -391,14 +391,27 @@
 // console.log(shiftLetters('helloz'))
 // console.log(shiftLetters('helloZ'))
 
-function countLetters(str) {
-    return str.split('').reduce((obj, letter) => {
-        if(!obj[letter]) {
-            obj[letter] = 0
+// function countLetters(str) {
+//     return str.split('').reduce((obj, letter) => {
+//         if(!obj[letter]) {
+//             obj[letter] = 0
+//         }
+//         obj[letter]++
+//         return obj
+//     }, {})
+// }
+
+// console.log(countLetters('abbcccddddeeeee'))
+
+
+function isPresent(str, target) {
+    return str.split('').reduce((acc, letter) => {
+        if(letter === target || acc === true) {
+            return true
         }
-        obj[letter]++
-        return obj
-    }, {})
+        return false
+    }, false)
 }
 
-console.log(countLetters('abbcccddddeeeee'))
+console.log(isPresent('abcd', 'b'))
+console.log(isPresent('efghi', 'a'))
