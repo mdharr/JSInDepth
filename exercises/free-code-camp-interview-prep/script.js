@@ -371,14 +371,20 @@
 
 
 
-function swapCase(str) {
-    return str
-        .split(' ')
-        .map((word, index) => 
-            index % 2 === 0 ? 
-            word.toUpperCase() : 
-            word.toLowerCase())
-        .join(' ')
+// function swapCase(str) {
+//     return str
+//         .split(' ')
+//         .map((word, index) => 
+//             index % 2 === 0 ? 
+//             word.toUpperCase() : 
+//             word.toLowerCase())
+//         .join(' ')
+// }
+
+// console.log(swapCase('hey gurl, lets javascript together sometime'))
+
+function shiftLetters(str) {
+    return str.split('').map(letter => String.fromCharCode(letter.charCodeAt(0)+1)).join('')
 }
 
-console.log(swapCase('hey gurl, lets javascript together sometime'))
+console.log(shiftLetters('hello'))
