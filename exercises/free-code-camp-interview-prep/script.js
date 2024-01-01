@@ -384,7 +384,9 @@
 // console.log(swapCase('hey gurl, lets javascript together sometime'))
 
 function shiftLetters(str) {
-    return str.split('').map(letter => String.fromCharCode(letter.charCodeAt(0)+1)).join('')
+    return str.split('').map(letter => letter === 'z' ? 'a' : letter === 'Z' ? 'A' : String.fromCharCode(letter.charCodeAt(0)+1)).join('')
 }
 
 console.log(shiftLetters('hello'))
+console.log(shiftLetters('helloz'))
+console.log(shiftLetters('helloZ'))
