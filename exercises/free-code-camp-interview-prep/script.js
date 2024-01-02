@@ -511,21 +511,7 @@
 
 // function romanNumbers(num) {
 //     let values = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1]
-//     let romanNumerals = [
-//       "M",
-//       "CM",
-//       "D",
-//       "CD",
-//       "C",
-//       "XC",
-//       "L",
-//       "XL",
-//       "X",
-//       "IX",
-//       "V",
-//       "IV",
-//       "I"
-//     ]
+//     let romanNumerals = ["M","CM","D","CD","C","XC","L","XL","X","IX","V","IV","I"]
   
 //     let roman = "";
   
@@ -538,7 +524,25 @@
 //     return roman
 //   }
   
-//   console.log(romanNumbers(1989))
+//   console.log(romanNumbers(9999))
+
+
+// function romanNumerals(num) {
+//     let values = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1]
+//     let romanNumbers = ['M','MC','D','CD','C','XC','L','XL','X','IX','V','IV','I']
+
+//     let roman = ''
+
+//     for(let i = 0; i < values.length; i++) {
+//         while(values[i] <= num) {
+//             roman += romanNumbers[i]
+//             num -= values[i]
+//         }
+//     }
+//     return roman
+// }
+
+// console.log(romanNumerals(9999))
 
 
 
@@ -552,18 +556,48 @@
 
 
 
-function printDate() {
-    const date = new Date()
-    const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
-    console.log(`Today is: ${days[date.getDay()]}`)
-    console.log(`Current time is: ${convertHours(date.getHours())}:${date.getMinutes()}:${date.getSeconds()}`)
-}
+// function printDate() {
+//     const date = new Date()
+//     const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+//     console.log(`Today is: ${days[date.getDay()]}`)
+//     console.log(`Current time is: ${convertHours(date.getHours())}:${date.getMinutes()}:${date.getSeconds()}`)
+// }
 
-function convertHours(hour) {
-    if(hour > 12) {
-        return (hour - 12) + 'PM'
-    }
-    return hour + 'AM'
-}
+// function convertHours(hour) {
+//     if(hour > 12) {
+//         return (hour - 12) + 'PM'
+//     }
+//     return hour + 'AM'
+// }
 
-printDate()
+// printDate()
+// console.log(new Date().getYear)
+
+
+// function factorial(n) {
+//     if(n === 0) {
+//         return 1
+//     }
+//     return n * factorial(n-1)
+// }
+
+// console.log(factorial(4))
+
+// greatest common divisor
+// function gcd(a, b) {
+//     if(b === 0) {
+//         return a
+//     }
+//     return gcd(b, a % b)
+// }
+
+// console.log(gcd(6, 12))
+
+// function gcd(n1, n2) {
+//     if(n2 === 0) {
+//         return n1
+//     }
+//     return gcd(n2, n1 % n2)
+// }
+
+// console.log(gcd(8, 100))
