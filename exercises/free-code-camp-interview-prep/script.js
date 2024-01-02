@@ -449,61 +449,103 @@
 
 
 
-const voters = [
-    {name:'Bob' , age: 30, voted: true},
-    {name:'Jake' , age: 32, voted: true},
-    {name:'Kate' , age: 25, voted: false},
-    {name:'Sam' , age: 20, voted: false},
-    {name:'Phil' , age: 21, voted: true},
-    {name:'Ed' , age:55, voted:true},
-    {name:'Tami' , age: 54, voted:true},
-    {name: 'Mary', age: 31, voted: false},
-    {name: 'Becky', age: 43, voted: false},
-    {name: 'Joey', age: 41, voted: true},
-    {name: 'Jeff', age: 30, voted: true},
-    {name: 'Zack', age: 19, voted: false}
-];
+// const voters = [
+//     {name:'Bob' , age: 30, voted: true},
+//     {name:'Jake' , age: 32, voted: true},
+//     {name:'Kate' , age: 25, voted: false},
+//     {name:'Sam' , age: 20, voted: false},
+//     {name:'Phil' , age: 21, voted: true},
+//     {name:'Ed' , age:55, voted:true},
+//     {name:'Tami' , age: 54, voted:true},
+//     {name: 'Mary', age: 31, voted: false},
+//     {name: 'Becky', age: 43, voted: false},
+//     {name: 'Joey', age: 41, voted: true},
+//     {name: 'Jeff', age: 30, voted: true},
+//     {name: 'Zack', age: 19, voted: false}
+// ];
 
-function voterResults(arr) {
-   return arr.reduce((obj, voter) => {
-    if(voter.age >= 18 && voter.age <= 25) {
-        if(!obj['numYoungVotes']) {
-            obj['numYoungVotes'] = 0
-        }
-        if(!obj['numYoungPeople']) {
-            obj['numYoungPeople'] = 0
-        }
-        if(voter.voted) {
-            obj['numYoungVotes']++
-        }
-        obj['numYoungPeople']++
-    }
-    if(voter.age >= 26 && voter.age <= 35) {
-        if(!obj['numMidVotesPeople']) {
-            obj['numMidVotesPeople'] = 0
-        }
-        if(!obj['numMidsPeople']) {
-            obj['numMidsPeople'] = 0
-        }
-        if(voter.voted) {
-            obj['numMidVotesPeople']++
-        }
-        obj['numMidsPeople']++
-    }
-    if(voter.age >= 36 && voter.age <= 55) {
-        if(!obj['numOldVotesPeople']) {
-            obj['numOldVotesPeople'] = 0
-        }
-        if(!obj['numOldsPeople']) {
-            obj['numOldsPeople'] = 0
-        }
-        if(voter.voted) {
-            obj['numOldVotesPeople']++
-        }
-        obj['numOldsPeople']++
-    }
-    return obj
-   }, {})
-}
+// function voterResults(arr) {
+//    return arr.reduce((obj, voter) => {
+//     if(voter.age >= 18 && voter.age <= 25) {
+//         if(!obj['numYoungVotes']) {
+//             obj['numYoungVotes'] = 0
+//         }
+//         if(!obj['numYoungPeople']) {
+//             obj['numYoungPeople'] = 0
+//         }
+//         if(voter.voted) {
+//             obj['numYoungVotes']++
+//         }
+//         obj['numYoungPeople']++
+//     }
+//     if(voter.age >= 26 && voter.age <= 35) {
+//         if(!obj['numMidVotesPeople']) {
+//             obj['numMidVotesPeople'] = 0
+//         }
+//         if(!obj['numMidsPeople']) {
+//             obj['numMidsPeople'] = 0
+//         }
+//         if(voter.voted) {
+//             obj['numMidVotesPeople']++
+//         }
+//         obj['numMidsPeople']++
+//     }
+//     if(voter.age >= 36 && voter.age <= 55) {
+//         if(!obj['numOldVotesPeople']) {
+//             obj['numOldVotesPeople'] = 0
+//         }
+//         if(!obj['numOldsPeople']) {
+//             obj['numOldsPeople'] = 0
+//         }
+//         if(voter.voted) {
+//             obj['numOldVotesPeople']++
+//         }
+//         obj['numOldsPeople']++
+//     }
+//     return obj
+//    }, {})
+// }
 
-console.log(voterResults(voters)); // Returned value shown below:
+// console.log(voterResults(voters))
+
+
+// function romanNumbers(num) {
+//     let values = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1]
+//     let romanNumerals = [
+//       "M",
+//       "CM",
+//       "D",
+//       "CD",
+//       "C",
+//       "XC",
+//       "L",
+//       "XL",
+//       "X",
+//       "IX",
+//       "V",
+//       "IV",
+//       "I"
+//     ]
+  
+//     let roman = "";
+  
+//     for (i = 0; i < values.length; i++) {
+//       while (values[i] <= num) {
+//         roman += romanNumerals[i]
+//         num -= values[i]
+//       }
+//     }
+//     return roman
+//   }
+  
+//   console.log(romanNumbers(1989))
+
+
+
+//   const numbers = [10, 20, 30, 40, 50, 60]
+
+//   function findMaxNum(arr) {
+//     return Math.max(...arr)
+//   }
+
+//   console.log(findMaxNum(numbers))
