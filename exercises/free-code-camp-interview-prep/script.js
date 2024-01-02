@@ -549,3 +549,21 @@
 //   }
 
 //   console.log(findMaxNum(numbers))
+
+
+
+function printDate() {
+    const date = new Date()
+    const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+    console.log(`Today is: ${days[date.getDay()]}`)
+    console.log(`Current time is: ${convertHours(date.getHours())}:${date.getMinutes()}:${date.getSeconds()}`)
+}
+
+function convertHours(hour) {
+    if(hour > 12) {
+        return (hour - 12) + 'PM'
+    }
+    return hour + 'AM'
+}
+
+printDate()
