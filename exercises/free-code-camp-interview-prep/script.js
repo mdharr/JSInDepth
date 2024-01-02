@@ -449,7 +449,7 @@
 
 
 
-var voters = [
+const voters = [
     {name:'Bob' , age: 30, voted: true},
     {name:'Jake' , age: 32, voted: true},
     {name:'Kate' , age: 25, voted: false},
@@ -465,16 +465,45 @@ var voters = [
 ];
 
 function voterResults(arr) {
-   // your code here
+   return arr.reduce((obj, voter) => {
+    if(voter.age >= 18 && voter.age <= 25) {
+        if(!obj['numYoungVotes']) {
+            obj['numYoungVotes'] = 0
+        }
+        if(!obj['numYoungPeople']) {
+            obj['numYoungPeople'] = 0
+        }
+        if(voter.voted) {
+            obj['numYoungVotes']++
+        }
+        obj['numYoungPeople']++
+    }
+    if(voter.age >= 26 && voter.age <= 35) {
+        if(!obj['numMidVotesPeople']) {
+            obj['numMidVotesPeople'] = 0
+        }
+        if(!obj['numMidsPeople']) {
+            obj['numMidsPeople'] = 0
+        }
+        if(voter.voted) {
+            obj['numMidVotesPeople']++
+        }
+        obj['numMidsPeople']++
+    }
+    if(voter.age >= 36 && voter.age <= 55) {
+        if(!obj['numOldVotesPeople']) {
+            obj['numOldVotesPeople'] = 0
+        }
+        if(!obj['numOldsPeople']) {
+            obj['numOldsPeople'] = 0
+        }
+        if(voter.voted) {
+            obj['numOldVotesPeople']++
+        }
+        obj['numOldsPeople']++
+    }
+    return obj
+   }, {})
 }
 
 console.log(voterResults(voters)); // Returned value shown below:
-/*
-{ numYoungVotes: 1,
-  numYoungPeople: 4,
-  numMidVotesPeople: 3,
-  numMidsPeople: 4,
-  numOldVotesPeople: 3,
-  numOldsPeople: 4 
-}
-*/
