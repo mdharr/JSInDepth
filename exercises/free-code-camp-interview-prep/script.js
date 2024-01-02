@@ -601,3 +601,32 @@
 // }
 
 // console.log(gcd(8, 100))
+
+
+// inclusive
+function rangeInclusive(n1, n2) {
+    if (n1 > n2) {
+        return [];
+    }
+    if (n1 === n2) {
+        return [n2];
+    }
+    const nums = rangeInclusive(n1, n2 - 1);
+    nums.push(n2);
+    return nums;
+}
+console.log(rangeInclusive(2, 9))
+
+// exclusive
+function rangeExclusive(n1, n2) {
+    if (n2 - n1 <= 1) {
+        return [];
+    }
+    const nums = rangeExclusive(n1, n2 - 1);
+    if (n2 - 1 !== n1) {
+        nums.push(n2 - 1);
+    }
+    return nums;
+}
+
+console.log(rangeExclusive(2, 9))
