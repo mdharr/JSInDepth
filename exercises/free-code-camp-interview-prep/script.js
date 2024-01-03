@@ -529,22 +529,31 @@
 
 // function romanNumerals(num) {
 //     let values = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1]
+//                 // 0,    1,   2,   3,   4,   5,  6,  7,  8, 9, 10, 11, 12
 //     let romanNumbers = ['M','MC','D','CD','C','XC','L','XL','X','IX','V','IV','I']
+//                     //   0,  1,   2,   3,  4,  5,   6,   7,  8,   9,  10, 11,  12
 
-//     let roman = ''
-
+//     let result = ''
+//         // counter; condition; counter + 1
 //     for(let i = 0; i < values.length; i++) {
+//         //   (50 < = 60)
 //         while(values[i] <= num) {
-//             roman += romanNumbers[i]
+//             result += romanNumbers[i]
+//             // result = '' + 'L'
+//             // result = 'L' + 'X'
 //             num -= values[i]
+//         //  60  =  60 - 50
+//         //  num =  10
+//         //  10  =  10 - 10
+//         //  num =  0
 //         }
 //     }
-//     return roman
+
+//     return result
+//     // 'LX'
 // }
 
-// console.log(romanNumerals(9999))
-
-
+// console.log(romanNumerals(60))
 
 //   const numbers = [10, 20, 30, 40, 50, 60]
 
@@ -594,39 +603,54 @@
 // console.log(gcd(6, 12))
 
 // function gcd(n1, n2) {
+//     // base case
 //     if(n2 === 0) {
 //         return n1
 //     }
 //     return gcd(n2, n1 % n2)
+//     //     gcd(100, 10 % 100 or 10)
+//     //     gcd(10, 100 % 10 or 0)
+//     //     gcd(base case reached) return n1 which is 10
 // }
 
-// console.log(gcd(8, 100))
+// console.log(gcd(10, 100))
+
+
+// function sumUp(num) {
+//     // base case
+//     if(num === 0) {
+//         return num
+//     }
+//     return num + sumUp(num - 1)
+// }
+
+// console.log(sumUp(4))
 
 
 // inclusive
-function rangeInclusive(n1, n2) {
-    if (n1 > n2) {
-        return [];
-    }
-    if (n1 === n2) {
-        return [n2];
-    }
-    const nums = rangeInclusive(n1, n2 - 1);
-    nums.push(n2);
-    return nums;
-}
-console.log(rangeInclusive(2, 9))
+// function rangeInclusive(n1, n2) {
+//     if (n1 > n2) {
+//         return [];
+//     }
+//     if (n1 === n2) {
+//         return [n2];
+//     }
+//     const nums = rangeInclusive(n1, n2 - 1);
+//     nums.push(n2);
+//     return nums;
+// }
+// console.log(rangeInclusive(2, 9))
 
-// exclusive
-function rangeExclusive(n1, n2) {
-    if (n2 - n1 <= 1) {
-        return [];
-    }
-    const nums = rangeExclusive(n1, n2 - 1);
-    if (n2 - 1 !== n1) {
-        nums.push(n2 - 1);
-    }
-    return nums;
-}
+// // exclusive
+// function rangeExclusive(n1, n2) {
+//     if (n2 - n1 <= 1) {
+//         return [];
+//     }
+//     const nums = rangeExclusive(n1, n2 - 1);
+//     if (n2 - 1 !== n1) {
+//         nums.push(n2 - 1);
+//     }
+//     return nums;
+// }
 
-console.log(rangeExclusive(2, 9))
+// console.log(rangeExclusive(2, 9))
