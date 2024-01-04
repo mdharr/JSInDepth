@@ -641,16 +641,16 @@
 // }
 // console.log(rangeInclusive(2, 9))
 
-// // exclusive
-// function rangeExclusive(n1, n2) {
-//     if (n2 - n1 <= 1) {
-//         return [];
-//     }
-//     const nums = rangeExclusive(n1, n2 - 1);
-//     if (n2 - 1 !== n1) {
-//         nums.push(n2 - 1);
-//     }
-//     return nums;
-// }
+// exclusive
+function rangeExclusive(n1, n2) {
+    if (n2 - n1 <= 1) {
+        return [];
+    }
+    const nums = rangeExclusive(n1, n2 - 1);
+    if (n2 - 1 !== n1) {
+        nums.push(n2 - 1);
+    }
+    return nums;
+}
 
-// console.log(rangeExclusive(2, 9))
+console.log(rangeExclusive(2, 9))
