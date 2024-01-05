@@ -655,8 +655,23 @@
 
 // console.log(rangeExclusive(2, 9))
 
-function removeVowels (str) {
-    return str.replace(/[aeiou]/g, '')
+// function removeVowels (str) {
+//     return str.replace(/[aeiou]/g, '')
+// }
+
+// console.log(removeVowels('Hello World'))
+
+
+const names = [
+    {firstname: 'Bruce', lastname: 'Wayne'},
+    {firstname: 'Clark', lastname: 'Kent'}
+]
+
+function fullNames(names) {
+    return names.reduce((acc, current) => {
+        acc.push(`${current.firstname} ${current.lastname}`)
+        return acc
+    }, [])
 }
 
-console.log(removeVowels('Hello World'))
+console.log(fullNames(names))
