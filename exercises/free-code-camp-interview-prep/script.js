@@ -662,16 +662,27 @@
 // console.log(removeVowels('Hello World'))
 
 
-const names = [
-    {firstname: 'Bruce', lastname: 'Wayne'},
-    {firstname: 'Clark', lastname: 'Kent'}
-]
+// const names = [
+//     {firstname: 'Bruce', lastname: 'Wayne'},
+//     {firstname: 'Clark', lastname: 'Kent'}
+// ]
 
-function fullNames(names) {
-    return names.reduce((acc, current) => {
-        acc.push(`${current.firstname} ${current.lastname}`)
-        return acc
-    }, [])
+// function fullNames(names) {
+//     return names.reduce((acc, current) => {
+//         acc.push(`${current.firstname} ${current.lastname}`)
+//         return acc
+//     }, [])
+// }
+
+// console.log(fullNames(names))
+
+
+
+const str1 = 'Hello world' 
+const str2 = 'Hello Vishwas'
+
+function nonRepeatingWords(str1, str2) {
+    return [...new Set(str1.split(' ').concat(str2.split(' ')))]
 }
 
-console.log(fullNames(names))
+console.log(nonRepeatingWords(str1, str2))
