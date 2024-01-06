@@ -43,11 +43,11 @@
 //     return "Taking a Nappa..."
 // }
 
-function over9000(num) {
-    return num > 9000 ? "It's over 9000!!!" : "Taking a Nappa..."
-}
+// function over9000(num) {
+//     return num > 9000 ? "It's over 9000!!!" : "Taking a Nappa..."
+// }
 
-console.log(over9000(10000))
+// console.log(over9000(10000))
 
 
 
@@ -68,7 +68,19 @@ console.log(over9000(10000))
            expression" syntax?
 */
 
+const wizards = ["Gandalf", "Voldemort", "Harry", "Jafar", "Saruman", "Merlin"]
 
+// const result = wizards.map(wizard => {
+//     if(wizard.includes("n")) {
+//         return wizard.replace(/[n]/g, "*")
+//     } else {
+//         return wizard.toUpperCase()
+//     }
+// })
+
+const result = wizards.map(wizard => wizard.includes("n") ? wizard.replace(/[n]/g, "*") : wizard.toUpperCase())
+
+console.log(result)
 
 
 
