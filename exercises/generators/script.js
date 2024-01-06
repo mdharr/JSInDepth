@@ -141,28 +141,28 @@
        - randomAmountFromRange(10, 1000, 2000)
 */
 
-const randomAmountFromRange = function* (amount, min, max) {
-    for(let i = 0; i < amount; i++) {
-        yield Math.floor(Math.random() * (max - min + 1)) + min
-    }
-}
+// const randomAmountFromRange = function* (amount, min, max) {
+//     for(let i = 0; i < amount; i++) {
+//         yield Math.floor(Math.random() * (max - min + 1)) + min
+//     }
+// }
 
-const generatorObject1 = randomAmountFromRange(3, 10, 20)
-const generatorObject2 = randomAmountFromRange(5, 100, 200)
-const generatorObject3 = randomAmountFromRange(10, 1000, 2000)
-// const generatorObjects = [generatorObject1,generatorObject2,generatorObject3]
+// const generatorObject1 = randomAmountFromRange(3, 10, 20)
+// const generatorObject2 = randomAmountFromRange(5, 100, 200)
+// const generatorObject3 = randomAmountFromRange(10, 1000, 2000)
+// // const generatorObjects = [generatorObject1,generatorObject2,generatorObject3]
 
-for(const value of generatorObject1) {
-    console.log(value)
-}
+// for(const value of generatorObject1) {
+//     console.log(value)
+// }
 
-for(const value of generatorObject2) {
-    console.log(value)
-}
+// for(const value of generatorObject2) {
+//     console.log(value)
+// }
 
-for(const value of generatorObject3) {
-    console.log(value)
-}
+// for(const value of generatorObject3) {
+//     console.log(value)
+// }
 
 
 /*
@@ -172,7 +172,7 @@ for(const value of generatorObject3) {
 
     2. Create another generator function called "groceryList"
 
-       Inside of "groceryList", create an variable called
+       Inside of "groceryList", create a variable called
        "groceries" that points at:
        ["Avocado", "Cookie", "Milk", "Soup", "Soda"]
 
@@ -191,3 +191,29 @@ for(const value of generatorObject3) {
        Eg: 5 Avocado
            10 Soup
 */
+
+// random number generator
+const getRandomNumber = function* () {
+    for(let i = 0; i < 5; i++) {
+        yield Math.floor(Math.random() * (10 - 1 + 1) + 1)
+    }
+}
+
+const randomNumGenerator = getRandomNumber()
+
+// grocery list generator
+const groceryList = function* () {
+    const groceries = ["Avocado", "Cookie", "Milk", "Soup", "Soda"]
+    const groceryLength = groceries.length
+    for(let i = 0; i < groceryLength; i++) {
+        yield groceries.splice(Math.floor(Math.random() * groceries.length), 1)
+    }
+}
+
+const randomGroceryGenerator = groceryList()
+
+for(let i = 0; i < 5; i++) {
+    const randomNumber = randomNumGenerator.next().value
+    const randomGrocery = randomGroceryGenerator.next().value
+    console.log(`${randomNumber} ${randomGrocery}`)
+}
