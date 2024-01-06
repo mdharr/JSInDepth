@@ -32,16 +32,16 @@
   3. Print out the variables pointing at the "candy" and "fruit" Objects
 */
 
-const snacks = {
-    chips: { name: "Pringles", salty: true },
-    candy: { name: "Twizzlers", salty: false },
-    chocolate: { name: "Mars", salty: false },
-}
+// const snacks = {
+//     chips: { name: "Pringles", salty: true },
+//     candy: { name: "Twizzlers", salty: false },
+//     chocolate: { name: "Mars", salty: false },
+// }
 
-const { candy, fruit = { name: "Banana", salty: false } } = snacks
+// const { candy, fruit = { name: "Banana", salty: false } } = snacks
 
-console.log(candy)
-console.log(fruit)
+// console.log(candy)
+// console.log(fruit)
 
 
 
@@ -63,13 +63,13 @@ console.log(fruit)
        (The loop's body should only have one line of code)
 */
 
-const store = new Map()
-store.set("Cups", 46)
-store.set("Candles", 121)
-store.set("Vases", 15)
-for(const [item, value] of store) {
-    console.log(`${item} => ${value}`)
-}
+// const store = new Map()
+// store.set("Cups", 46)
+// store.set("Candles", 121)
+// store.set("Vases", 15)
+// for(const [item, value] of store) {
+//     console.log(`${item} => ${value}`)
+// }
 
 
 
@@ -100,8 +100,17 @@ for(const [item, value] of store) {
     ** Which method is more clear?
 */
 
+// function xyzCalc(obj) {
+//     return 5 * obj.x - 2 * obj.y - obj.z
+// }
 
+function xyzCalc({x, y, z}) {
+    return 5 * x - 2 * y - z
+}
 
+console.log(xyzCalc({ x: 20, y: 2, z: 7 }))
+console.log(xyzCalc({ x: 2, y: 1, z: 20 }))
+console.log(xyzCalc({ x: 100, y: 100, z: 100 }))
 
 
 
