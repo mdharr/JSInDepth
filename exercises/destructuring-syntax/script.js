@@ -63,7 +63,13 @@ console.log(fruit)
        (The loop's body should only have one line of code)
 */
 
-
+const store = new Map()
+store.set("Cups", 46)
+store.set("Candles", 121)
+store.set("Vases", 15)
+for(const [item, value] of store) {
+    console.log(`${item} => ${value}`)
+}
 
 
 
