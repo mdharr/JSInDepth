@@ -100,7 +100,7 @@
 */
 
 
-const characters = ["Han Solo", "Spock", "Darth Vader", "Yoda", "Neo", "Sarah Connor"]
-const result = characters.filter(character => character.includes(" "))
+// const characters = ["Han Solo", "Spock", "Darth Vader", "Yoda", "Neo", "Sarah Connor"]
+// const result = characters.filter(character => character.includes(" "))
 
-console.log(result)
+// console.log(result)
