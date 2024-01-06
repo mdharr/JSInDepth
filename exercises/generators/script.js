@@ -70,19 +70,19 @@
        for...of loop.
 */
 
-const countTo10 = function* () {
-    let i = 0
-    while(i <= 10) {
-        yield i
-        i++
-    }
-}
+// const countTo10 = function* () {
+//     let i = 0
+//     while(i <= 10) {
+//         yield i
+//         i++
+//     }
+// }
 
-const generatorObject = countTo10()
+// const generatorObject = countTo10()
 
-for(const value of generatorObject) {
-    console.log(value)
-}
+// for(const value of generatorObject) {
+//     console.log(value)
+// }
 
 
 
@@ -94,7 +94,35 @@ for(const value of generatorObject) {
        generator Object you get from calling "randomNumber"
 */
 
+const randomNumber = function* () {
+    while(true) {
+        yield Math.random()
+    }
+}
 
+const generatorObject = randomNumber()
+
+// Standard for loop
+// for(let i = 0; i < 10; i++) {
+//     console.log(generatorObject.next().value)
+// }
+
+// While loop
+// let i = 0
+// while(i < 10) {
+//     console.log(generatorObject.next().value)
+//     i++
+// }
+
+// for...of loop
+let i = 0
+for(const value of generatorObject) {
+    console.log(value)
+    i++
+    if(i === 10) {
+        break
+    }
+}
 
 
 
