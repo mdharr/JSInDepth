@@ -54,36 +54,36 @@
     3. Run the code and make sure the correct messages get printed out
 */
 
-const activities = ["Swimming", "Hiking", "Rock Climbing", "Biking", "Running"]
+// const activities = ["Swimming", "Hiking", "Rock Climbing", "Biking", "Running"]
 
-for(let i = 0; i < activities.length; i++) {
-    switch(activities[i]) {
-        case "Swimming": {
-            console.log("Like a fish!")
-            break
-        }
-        case "Hiking": {
-            console.log("Like a hiker!")
-            break
-        }
-        case "Rock Climbing": {
-            console.log("Like a mountain goat!")
-            break
-        }
-        case "Biking": {
-            console.log("Like a biker!")
-            break
-        }
-        case "Running": {
-            console.log("Like a cheetah!")
-            break
-        }
-        default: {
-            console.log("I'm sure some animal does that...")
-            break
-        }
-    }
-}
+// for(let i = 0; i < activities.length; i++) {
+//     switch(activities[i]) {
+//         case "Swimming": {
+//             console.log("Like a fish!")
+//             break
+//         }
+//         case "Hiking": {
+//             console.log("Like a hiker!")
+//             break
+//         }
+//         case "Rock Climbing": {
+//             console.log("Like a mountain goat!")
+//             break
+//         }
+//         case "Biking": {
+//             console.log("Like a biker!")
+//             break
+//         }
+//         case "Running": {
+//             console.log("Like a cheetah!")
+//             break
+//         }
+//         default: {
+//             console.log("I'm sure some animal does that...")
+//             break
+//         }
+//     }
+// }
 
 
 /*
@@ -104,7 +104,27 @@ for(let i = 0; i < activities.length; i++) {
     3. Run the code and make sure the correct messages get printed out
 */
 
+const enemies = {
+    rat: { atk: 3, def: 2, hp: 20, class: 1 },
+    goblin: { atk: 10, def: 6, hp: 50, class: 1 },
+    troll: { atk: 30, def: 20, hp: 200, class: 2 },
+    giant: { atk: 50, def: 40, hp: 500, class: 2 },
+    dragon: { atk: 150, def: 75, hp: 1000, class: 3 },
+}
 
+for(const enemy in enemies) {
+    switch(enemies[enemy].class) {
+        case 1:
+            console.log(`${enemy.charAt(0).toUpperCase() + enemy.slice(1)} is an easy fight`);
+            break;
+        case 2:
+            console.log(`${enemy.charAt(0).toUpperCase() + enemy.slice(1)} will require some training`);
+            break;
+        default:
+            console.log(`The class of ${enemy.charAt(0).toUpperCase() + enemy.slice(1)} is not implemented yet...`);
+            break;
+    }
+}
 
 
 /*
