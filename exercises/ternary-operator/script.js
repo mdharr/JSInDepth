@@ -68,7 +68,7 @@
            expression" syntax?
 */
 
-const wizards = ["Gandalf", "Voldemort", "Harry", "Jafar", "Saruman", "Merlin"]
+// const wizards = ["Gandalf", "Voldemort", "Harry", "Jafar", "Saruman", "Merlin"]
 
 // const result = wizards.map(wizard => {
 //     if(wizard.includes("n")) {
@@ -78,9 +78,9 @@ const wizards = ["Gandalf", "Voldemort", "Harry", "Jafar", "Saruman", "Merlin"]
 //     }
 // })
 
-const result = wizards.map(wizard => wizard.includes("n") ? wizard.replace(/[n]/g, "*") : wizard.toUpperCase())
+// const result = wizards.map(wizard => wizard.includes("n") ? wizard.replace(/[n]/g, "*") : wizard.toUpperCase())
 
-console.log(result)
+// console.log(result)
 
 
 
@@ -98,3 +98,9 @@ console.log(result)
     BONUS: Can you shorten this with the short "arrow function
            expression" syntax?
 */
+
+
+const characters = ["Han Solo", "Spock", "Darth Vader", "Yoda", "Neo", "Sarah Connor"]
+const result = characters.filter(character => character.includes(" "))
+
+console.log(result)
