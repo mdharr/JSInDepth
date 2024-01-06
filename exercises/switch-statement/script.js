@@ -104,27 +104,27 @@
     3. Run the code and make sure the correct messages get printed out
 */
 
-const enemies = {
-    rat: { atk: 3, def: 2, hp: 20, class: 1 },
-    goblin: { atk: 10, def: 6, hp: 50, class: 1 },
-    troll: { atk: 30, def: 20, hp: 200, class: 2 },
-    giant: { atk: 50, def: 40, hp: 500, class: 2 },
-    dragon: { atk: 150, def: 75, hp: 1000, class: 3 },
-}
+// const enemies = {
+//     rat: { atk: 3, def: 2, hp: 20, class: 1 },
+//     goblin: { atk: 10, def: 6, hp: 50, class: 1 },
+//     troll: { atk: 30, def: 20, hp: 200, class: 2 },
+//     giant: { atk: 50, def: 40, hp: 500, class: 2 },
+//     dragon: { atk: 150, def: 75, hp: 1000, class: 3 },
+// }
 
-for(const enemy in enemies) {
-    switch(enemies[enemy].class) {
-        case 1:
-            console.log(`${enemy.charAt(0).toUpperCase() + enemy.slice(1)} is an easy fight`);
-            break;
-        case 2:
-            console.log(`${enemy.charAt(0).toUpperCase() + enemy.slice(1)} will require some training`);
-            break;
-        default:
-            console.log(`The class of ${enemy.charAt(0).toUpperCase() + enemy.slice(1)} is not implemented yet...`);
-            break;
-    }
-}
+// for(const enemy in enemies) {
+//     switch(enemies[enemy].class) {
+//         case 1:
+//             console.log(`${enemy.charAt(0).toUpperCase() + enemy.slice(1)} is an easy fight`);
+//             break;
+//         case 2:
+//             console.log(`${enemy.charAt(0).toUpperCase() + enemy.slice(1)} will require some training`);
+//             break;
+//         default:
+//             console.log(`The class of ${enemy.charAt(0).toUpperCase() + enemy.slice(1)} is not implemented yet...`);
+//             break;
+//     }
+// }
 
 
 /*
@@ -139,3 +139,27 @@ for(const enemy in enemies) {
 
     3. Run the code and make sure the correct messages get printed out
 */
+
+
+const points = [3, 4, 1, 0, 1, 5, 6]
+
+for(let i = 0; i < points.length; i++) {
+    switch(points[i]) {
+        case 0:
+        case 1:
+        case 2: {
+            console.log("Good try!")
+            break
+        }
+        case 3:
+        case 4:
+        case 5: {
+            console.log("Very well done!")
+            break
+        }
+        default: {
+            console.log("Wow, shooting for the moon!")
+            break
+        }
+    }
+}
