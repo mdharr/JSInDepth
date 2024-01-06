@@ -94,13 +94,13 @@
        generator Object you get from calling "randomNumber"
 */
 
-const randomNumber = function* () {
-    while(true) {
-        yield Math.random()
-    }
-}
+// const randomNumber = function* () {
+//     while(true) {
+//         yield Math.random()
+//     }
+// }
 
-const generatorObject = randomNumber()
+// const generatorObject = randomNumber()
 
 // Standard for loop
 // for(let i = 0; i < 10; i++) {
@@ -115,14 +115,14 @@ const generatorObject = randomNumber()
 // }
 
 // for...of loop
-let i = 0
-for(const value of generatorObject) {
-    console.log(value)
-    i++
-    if(i === 10) {
-        break
-    }
-}
+// let i = 0
+// for(const value of generatorObject) {
+//     console.log(value)
+//     i++
+//     if(i === 10) {
+//         break
+//     }
+// }
 
 
 
@@ -141,8 +141,28 @@ for(const value of generatorObject) {
        - randomAmountFromRange(10, 1000, 2000)
 */
 
+const randomAmountFromRange = function* (amount, min, max) {
+    for(let i = 0; i < amount; i++) {
+        yield Math.floor(Math.random() * (max - min + 1)) + min
+    }
+}
 
+const generatorObject1 = randomAmountFromRange(3, 10, 20)
+const generatorObject2 = randomAmountFromRange(5, 100, 200)
+const generatorObject3 = randomAmountFromRange(10, 1000, 2000)
+// const generatorObjects = [generatorObject1,generatorObject2,generatorObject3]
 
+for(const value of generatorObject1) {
+    console.log(value)
+}
+
+for(const value of generatorObject2) {
+    console.log(value)
+}
+
+for(const value of generatorObject3) {
+    console.log(value)
+}
 
 
 /*
