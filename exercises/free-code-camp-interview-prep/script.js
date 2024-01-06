@@ -678,11 +678,84 @@
 
 
 
-const str1 = 'Hello world' 
-const str2 = 'Hello Vishwas'
+// const str1 = 'Hello world' 
+// const str2 = 'Hello Vishwas'
 
-function nonRepeatingWords(str1, str2) {
-    return [...new Set(str1.split(' ').concat(str2.split(' ')))]
+// function nonRepeatingWords(str1, str2) {
+//     return [...new Set(str1.split(' ').concat(str2.split(' ')))]
+// }
+
+// console.log(nonRepeatingWords(str1, str2))
+
+
+
+// Linked List ----------------------------------------------------------------
+
+class ListNode {
+    constructor(data) {
+        this.data = data;
+        this.next = null;
+    }
 }
 
-console.log(nonRepeatingWords(str1, str2))
+class LinkedList {
+    constructor() {
+        this.head = null;
+    }
+
+    add(data) {
+        const newNode = new ListNode(data);
+        if (!this.head) {
+            this.head = newNode;
+        } else {
+            let current = this.head;
+            while (current.next) {
+                current = current.next;
+            }
+            current.next = newNode;
+        }
+    }
+
+    delete(value) {
+        let current = this.head;
+        let previous = null;
+
+        while (current != null) {
+            if (current.data === value) {
+                if (!previous) {
+                    this.head = current.next;
+                } else {
+                    previous.next = current.next;
+                }
+                return;
+            }
+            previous = current;
+            current = current.next;
+        }
+    }
+
+    display() {
+        let current = this.head;
+        let result = '';
+        while (current) {
+            result += current.data + ' -> ';
+            current = current.next;
+        }
+        return result + 'null';
+    }
+}
+
+// Example usage
+const ll = new LinkedList();
+ll.add(1);
+ll.add(2);
+ll.add(3);
+ll.add(4);
+ll.add(5);
+ll.add(6);
+ll.add(7);
+ll.add(8);
+console.log("Linked List: ", ll.display());
+
+ll.delete(2);
+console.log("After deleting 2: ", ll.display());
