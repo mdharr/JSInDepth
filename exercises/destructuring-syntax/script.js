@@ -40,8 +40,7 @@
 
 // const { candy, fruit = { name: "Banana", salty: false } } = snacks
 
-// console.log(candy)
-// console.log(fruit)
+// console.log(candy, fruit)
 
 
 
@@ -67,8 +66,9 @@
 // store.set("Cups", 46)
 // store.set("Candles", 121)
 // store.set("Vases", 15)
-// for(const [item, value] of store) {
-//     console.log(`${item} => ${value}`)
+
+// for(const [item, quantity] of store) {
+//     console.log(`${item} => ${quantity}`)
 // }
 
 
