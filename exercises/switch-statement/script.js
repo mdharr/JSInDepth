@@ -17,26 +17,26 @@
        make sure it works the same as the if/else if/else statements
 */
 
-const food = "Donut"
+// const food = "Donut"
 
-switch(food) {
-    case "Fish": {
-        console.log("Sounds fishy...")
-        break
-    }
-    case "Hummus": {
-        console.log("Want chips with that?")
-        break
-    }
-    case "Sushi": {
-        console.log("With or without seaweed?")
-        break
-    }
-    default: {
-        console.log("Food not in our database, sorry!")
-        break
-    }
-}
+// switch(food) {
+//     case "Fish": {
+//         console.log("Sounds fishy...")
+//         break
+//     }
+//     case "Hummus": {
+//         console.log("Want chips with that?")
+//         break
+//     }
+//     case "Sushi": {
+//         console.log("With or without seaweed?")
+//         break
+//     }
+//     default: {
+//         console.log("Food not in our database, sorry!")
+//         break
+//     }
+// }
 
 
 
@@ -54,7 +54,36 @@ switch(food) {
     3. Run the code and make sure the correct messages get printed out
 */
 
+const activities = ["Swimming", "Hiking", "Rock Climbing", "Biking", "Running"]
 
+for(let i = 0; i < activities.length; i++) {
+    switch(activities[i]) {
+        case "Swimming": {
+            console.log("Like a fish!")
+            break
+        }
+        case "Hiking": {
+            console.log("Like a hiker!")
+            break
+        }
+        case "Rock Climbing": {
+            console.log("Like a mountain goat!")
+            break
+        }
+        case "Biking": {
+            console.log("Like a biker!")
+            break
+        }
+        case "Running": {
+            console.log("Like a cheetah!")
+            break
+        }
+        default: {
+            console.log("I'm sure some animal does that...")
+            break
+        }
+    }
+}
 
 
 /*
