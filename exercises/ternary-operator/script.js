@@ -11,7 +11,7 @@
 */
 
 
-const hungry = true
+// const hungry = true
 
 // if(hungry) {
 //     console.log("Have a cookie!")
@@ -19,13 +19,9 @@ const hungry = true
 //     console.log("No cookies for you!")
 // }
 
-hungry
-? console.log("Have a cookie!")
-: console.log("No cookies for you!")
-
-
-
-
+// hungry
+// ? console.log("Have a cookie!")
+// : console.log("No cookies for you!")
 
 
 /*
@@ -42,7 +38,16 @@ hungry
          expression" syntax?
 */
 
+// function over9000(num) {
+//     if(num > 9000) return "It's over 9000!!!"
+//     return "Taking a Nappa..."
+// }
 
+function over9000(num) {
+    return num > 9000 ? "It's over 9000!!!" : "Taking a Nappa..."
+}
+
+console.log(over9000(10000))
 
 
 
