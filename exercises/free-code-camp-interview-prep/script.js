@@ -755,7 +755,15 @@ ll.add(5);
 ll.add(6);
 ll.add(7);
 ll.add(8);
-console.log("Linked List: ", ll.display());
+// console.log("Linked List: ", ll.display());
 
-ll.delete(2);
-console.log("After deleting 2: ", ll.display());
+// ll.delete(2);
+// console.log("After deleting 2: ", ll.display());
+
+
+
+function alphabetize(str) {
+    return str.split('').sort().join('')
+}
+
+console.log(alphabetize('jklhfjdklshauinvueibwqoyubnkjx'))
