@@ -762,8 +762,20 @@ ll.add(8);
 
 
 
-function alphabetize(str) {
-    return str.split('').sort().join('')
+// function alphabetize(str) {
+//     return str.split('').sort().join('')
+// }
+
+// console.log(alphabetize('jklhfjdklshauinvueibwqoyubnkjx'))
+
+
+function fib(n) {
+    if(n < 2) {
+        return n
+    }
+    return fib(n-1) + fib(n-2)
 }
 
-console.log(alphabetize('jklhfjdklshauinvueibwqoyubnkjx'))
+console.log(fib(6))
+
+// 0 1 1 2 3 5 8
