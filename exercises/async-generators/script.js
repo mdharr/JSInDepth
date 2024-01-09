@@ -9,25 +9,25 @@
        indefinitely (ctrl-c to force exit the program)
 */
 
-const randomNumbers = async function* () {
-    while(true) {
-        yield new Promise((resolve, reject) => {
-            setTimeout(() => {
-                resolve(Math.floor(Math.random() * 10))
-            }, 1000)
-        })
-    }
-}
+// const randomNumbers = async function* () {
+//     while(true) {
+//         yield new Promise((resolve, reject) => {
+//             setTimeout(() => {
+//                 resolve(Math.floor(Math.random() * 10))
+//             }, 1000)
+//         })
+//     }
+// }
 
-const randomNumbersObject = randomNumbers()
+// const randomNumbersObject = randomNumbers()
 
-const executeRandomNumbers = async () => {
-    for await (const number of randomNumbersObject) {
-        console.log(number)
-    }
-}
+// const executeRandomNumbers = async () => {
+//     for await (const number of randomNumbersObject) {
+//         console.log(number)
+//     }
+// }
 
-executeRandomNumbers()
+// executeRandomNumbers()
 
 
 
@@ -47,9 +47,34 @@ executeRandomNumbers()
     *HINT: Math.random() is your friend
 */
 
+const randomStrings = async function* () {
+    while(true) {
+        const randomResult = Math.floor(Math.random() * 2)
+        if(randomResult === 1) {
+            yield new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    resolve('Fast!')
+                }, 500)
+            })
+        } else {
+            yield new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    resolve('Slow!')
+                }, 3000)
+            })
+        }
+    }
+}
 
+const randomStringsObject = randomStrings()
 
+const executeRandomStrings = async () => {
+    for await (const string of randomStringsObject) {
+        console.log(string)
+    }
+}
 
+executeRandomStrings()
 
 
 
