@@ -9,23 +9,23 @@
        indefinitely (ctrl-c to force exit the program)
 */
 
-// const randomNumbers = async function* () {
-//     while(true) {
-//         yield new Promise((resolve, reject) => {
-//             setTimeout(() => {
-//                 resolve(Math.floor(Math.random() * 10))
-//             }, 1000)
-//         })
-//     }
-// }
+const randomNumbers = async function* () {
+    while(true) {
+        yield new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve(Math.floor(Math.random() * 10))
+            }, 1000)
+        })
+    }
+}
 
-// const randomNumbersObject = randomNumbers()
+const randomNumbersObject = randomNumbers()
 
-// const executeRandomNumbers = async () => {
-//     for await (const number of randomNumbersObject) {
-//         console.log(number)
-//     }
-// }
+const executeRandomNumbers = async () => {
+    for await (const number of randomNumbersObject) {
+        console.log(number)
+    }
+}
 
 // executeRandomNumbers()
 
@@ -74,7 +74,7 @@ const executeRandomStrings = async () => {
     }
 }
 
-executeRandomStrings()
+// executeRandomStrings()
 
 
 
@@ -95,11 +95,45 @@ executeRandomStrings()
 */
 
 
+const modifySentences = async function* (sentence) {
+    for(let i = 0; i < sentence.length; i++) {
+        yield new Promise((resolve, reject) => {
+            setTimeout(() => {
+                if(sentence[i].match(/[aeiouAEIOU]/)) {
+                    resolve('*')
+                } else {
+                    resolve(sentence[i].toUpperCase())
+                }
+            }, 100)
+        })
+    }
+}
+
+const modifySentencesObject = modifySentences("Monkeys are the coolest animal!")
+
+const executeModifySentences = async () => {
+    for await(const letter of modifySentencesObject) {
+        console.log(letter)
+    }
+}
 
 
+// executeModifySentences()
 
 
+const letterGenerator = function (sentence) {
+    for(let i = 0; i < sentence.length; i++) {
+        setTimeout(() => {
+            if(sentence[i].match(/[aeiouAEIOU]/)) {
+                console.log("*")
+            } else {
+                console.log(sentence[i].toUpperCase())
+            }
+        }, 100 * i)
+    }
+}
 
+letterGenerator("Monkeys are the coolest animal!")
 
 
 /*
