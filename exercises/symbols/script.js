@@ -53,9 +53,9 @@ const movie = {
 movie[Symbol("budget")] = 30
 movie[Symbol("boxOffice")] = 41.6
 
-for (const [key, value] of Object.entries(movie)) {
-    console.log(`${key} => ${value}`)
-}
+// for (const [key, value] of Object.entries(movie)) {
+//     console.log(`${key} => ${value}`)
+// }
 
 // console.log(Object.getOwnPropertySymbols(movie))
 
@@ -78,23 +78,23 @@ for (const [key, value] of Object.entries(movie)) {
 */
 
 
-const book = { 
-    name: "1984", 
-    author: "George Orwell", 
-    year: 1949,
-    rating: 4.6, 
-    genre: "Science Fiction", 
-    movie: true,
-    [Symbol.iterator]: function* () {
-        for(const [key, value] of Object.entries(this)) {
-            yield [key, value]
-        }
-    }
-}
+// const book = { 
+//     name: "1984", 
+//     author: "George Orwell", 
+//     year: 1949,
+//     rating: 4.6, 
+//     genre: "Science Fiction", 
+//     movie: true,
+//     [Symbol.iterator]: function* () {
+//         for(const [key, value] of Object.entries(this)) {
+//             yield [key, value]
+//         }
+//     }
+// }
 
-for(const value of book) {
-    console.log(value)
-}
+// for(const value of book) {
+//     console.log(value)
+// }
 
 
 
@@ -115,10 +115,32 @@ for(const value of book) {
 */
 
 
+const book = { 
+    name: "1984", 
+    author: "George Orwell", 
+    year: 1949,
+    rating: 4.6, 
+    genre: "Science Fiction", 
+    movie: true,
+}
 
+book[Symbol.asyncIterator] = async function* () {
+    for (const [key, value] of Object.entries(this)) {
+        yield new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve([key, value])
+            }, 1000)
+        })
+    }
+}
 
+const executeBook = async () => {
+    for await (const entry of book) {
+        console.log(entry)
+    }
+}
 
-
+executeBook()
 
 
 
