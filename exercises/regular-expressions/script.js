@@ -14,13 +14,13 @@
     5. Print out the results from steps 3 and 4
 */
 
-const quote = "What is this? A center for ants?"
+// const quote = "What is this? A center for ants?"
 
-const pattern = /ant/i
+// const pattern = /ant/i
 
-console.log(pattern.test(quote))
+// console.log(pattern.test(quote))
 
-console.log(quote.match(pattern))
+// console.log(quote.match(pattern))
 
 
 
@@ -44,6 +44,14 @@ console.log(quote.match(pattern))
     BONUS: What is an issue with this pattern?
 */
 
+
+// const email = "monkey@trees.com"
+
+// const emailPattern = /\.com$/
+
+// console.log(emailPattern.test(email))
+
+// console.log(email.match(emailPattern))
 
 
 
