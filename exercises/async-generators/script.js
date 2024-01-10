@@ -121,19 +121,40 @@ const executeModifySentences = async () => {
 // executeModifySentences()
 
 
+// const letterGenerator = function (sentence) {
+//     for(let i = 0; i < sentence.length; i++) {
+//         setTimeout(() => {
+//             if(sentence[i].match(/[aeiouAEIOU]/)) {
+//                 console.log("*")
+//             } else {
+//                 console.log(sentence[i].toUpperCase())
+//             }
+//         }, 100 * i)
+//     }
+// }
+
+// letterGenerator("Monkeys are the coolest animal!")
+
+
 const letterGenerator = function (sentence) {
-    for(let i = 0; i < sentence.length; i++) {
+    let cumulativeDelay = 0
+
+    for (let i = 0; i < sentence.length; i++) {
+        const additionalDelay = sentence[(i === 0 ? i : i-1)].match(/[.]/) ? 500 : 100
+        cumulativeDelay += additionalDelay
         setTimeout(() => {
-            if(sentence[i].match(/[aeiouAEIOU]/)) {
-                console.log("*")
-            } else {
-                console.log(sentence[i].toUpperCase())
-            }
-        }, 100 * i)
+            process.stdout.write(sentence[i]);
+        }, cumulativeDelay);
     }
+    setTimeout(() => {
+        process.stdout.write('\n');
+    }, cumulativeDelay);
 }
 
-letterGenerator("Monkeys are the coolest animal!")
+// letterGenerator("Good morning, Michael. Let's get to work shall we?");
+
+
+
 
 
 /*
