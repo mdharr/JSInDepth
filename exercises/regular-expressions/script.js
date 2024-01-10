@@ -82,11 +82,12 @@
     BONUS: What is an issue with this pattern?
 */
 
+// const email = "monkey@trees.com"
 
+// const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
-
-
-
+// console.log(emailPattern.test(email))
+// console.log(email.match(emailPattern))
 
 
 /*
@@ -107,3 +108,11 @@
 
     BONUS: What is an issue with this pattern?
 */
+
+
+const phoneNumber = "my number is 020-382-6940, nice to meet you"
+
+const phonePattern = /[0-9]{3}-[0-9]{3}-[0-9]{4}/
+
+console.log(phonePattern.test(phoneNumber))
+console.log(phoneNumber.match(phonePattern))
