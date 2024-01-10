@@ -176,3 +176,25 @@ const letterGenerator = function (sentence) {
           - ^ If we logged "time" each loop we'd get:
           - 100, 200, 400, 800, 1600, 3200 ... etc
 */
+
+
+const doubleTime = async function* (time) {
+    while(true) {
+        yield new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve(time)
+            }, time)
+        })
+        time *= 2
+    }
+}
+
+const doubleTimeGeneratorObject = doubleTime(1)
+
+const executeDoubleTime = async () => {
+    for await (const time of doubleTimeGeneratorObject) {
+        console.log(time)
+    }
+}
+
+executeDoubleTime()
