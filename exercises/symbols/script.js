@@ -57,7 +57,7 @@ for (const [key, value] of Object.entries(movie)) {
     console.log(`${key} => ${value}`)
 }
 
-console.log(Object.getOwnPropertySymbols(movie))
+// console.log(Object.getOwnPropertySymbols(movie))
 
 
 
@@ -78,9 +78,23 @@ console.log(Object.getOwnPropertySymbols(movie))
 */
 
 
+const book = { 
+    name: "1984", 
+    author: "George Orwell", 
+    year: 1949,
+    rating: 4.6, 
+    genre: "Science Fiction", 
+    movie: true,
+    [Symbol.iterator]: function* () {
+        for(const [key, value] of Object.entries(this)) {
+            yield [key, value]
+        }
+    }
+}
 
-
-
+for(const value of book) {
+    console.log(value)
+}
 
 
 
