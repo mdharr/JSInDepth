@@ -56,7 +56,13 @@
           to access the parsed JSON
 */
 
+const fetchData = async function() {
+    const result = await fetch("https://pokeapi.co/api/v2/pokemon/pikachu")
+    const json = await result.json()
+    console.log(json.sprites.other['official-artwork'].front_default)
+}
 
+fetchData()
 
 
 
