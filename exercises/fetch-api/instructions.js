@@ -56,13 +56,13 @@
           to access the parsed JSON
 */
 
-const fetchData = async function() {
-    const result = await fetch("https://pokeapi.co/api/v2/pokemon/pikachu")
-    const json = await result.json()
-    console.log(json.sprites.other['official-artwork'].front_default)
-}
+// const fetchData = async function() {
+//     const result = await fetch("https://pokeapi.co/api/v2/pokemon/pikachu")
+//     const json = await result.json()
+//     console.log(json.sprites.other['official-artwork'].front_default)
+// }
 
-fetchData()
+// fetchData()
 
 
 
@@ -88,3 +88,5 @@ fetchData()
     * This is purposefully challenging and will require lots of
       Googling to see how to parse the image and save it using Node.
 */
+
+
