@@ -8,12 +8,12 @@
        your Browser - what matches up?
 */
 
-const fetchData = async function() {
-    const result = await fetch("https://www.craigslist.org/about/")
-    const html = await result.text()
-    console.log(html)
-}
-fetchData()
+// const fetchData = async function() {
+//     const result = await fetch("https://www.craigslist.org/about/")
+//     const html = await result.text()
+//     console.log(html)
+// }
+// fetchData()
 
 
 
@@ -30,8 +30,12 @@ fetchData()
 */
 
 
-
-
+// const fetchData = async function() {
+//     const result = await fetch("https://jsonplaceholder.typicode.com/posts/1")
+//     const json = await result.json()
+//     console.log(json)
+// }
+// fetchData()
 
 
 
