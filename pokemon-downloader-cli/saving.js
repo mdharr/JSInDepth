@@ -5,7 +5,7 @@ const createFolder = async (folderName) => {
     try {
         const dirPath = path.join(process.cwd(), folderName);
         await fs.mkdir(dirPath, { recursive: true })
-        console.log(`Directory created at ${dirPath}`)
+        // console.log(`Directory created at ${dirPath}`)
         return dirPath
     } catch (error) {
         console.error(error)
@@ -17,15 +17,27 @@ const saveImageFile = async (filePath, arrayBuffer) => {
         const buffer = Buffer.from(arrayBuffer)
 
         await fs.writeFile(filePath, buffer)
-        console.log(`Image saved to ${filePath}`)
+        // console.log(`Image saved to ${filePath}`)
     } catch (error) {
         console.error(error)
     }
 }
 
 const savePokemonStats = async (folderName, pokemonStatsObject) => {
-    
-}
+    const filePath = path.join(folderName, 'stats.txt');
+
+    let content = '';
+    for (const stat of pokemonStatsObject.stats) {
+        content += `${stat.stat.name}: ${stat.base_stat}\n`;
+    }
+
+    try {
+        await fs.writeFile(filePath, content, 'utf8');
+    } catch (error) {
+        console.error('Error writing stats file:', error);
+    }
+};
+
 
 const savePokemonSprites = async (folderName, pokemonSpritesObject) => {
     for (const key in pokemonSpritesObject) {
@@ -33,7 +45,7 @@ const savePokemonSprites = async (folderName, pokemonSpritesObject) => {
         if (spriteUrl && typeof spriteUrl === 'string') {
             const response = await fetch(spriteUrl);
             const arrayBuffer = await response.arrayBuffer();
-            const filePath = path.join(folderName, `${key}.png`); // Save with the key as filename
+            const filePath = path.join(folderName, `${key}.png`);
             await saveImageFile(filePath, arrayBuffer);
         }
     }
@@ -53,9 +65,8 @@ const savePokemonArtwork = async (folderName, pokemonArtworkObject) => {
 
 const parseOptions = async (pokemonObject, optionsObject) => {
     const folder = await createFolder(pokemonObject.name);
-    console.log(pokemonObject)
     for (const option of optionsObject.options) {
-        if(option === "Stats") await savePokemonStats(folder, pokemonObject.stats);
+        if(option === "Stats") await savePokemonStats(folder, pokemonObject);
         if(option === "Sprites") await savePokemonSprites(folder, pokemonObject.sprites);
         if(option === "Artwork") await savePokemonArtwork(folder, pokemonObject.sprites.other['official-artwork']);
     }
