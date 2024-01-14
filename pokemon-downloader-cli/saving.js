@@ -5,7 +5,6 @@ const createFolder = async (folderName) => {
     try {
         const dirPath = path.join(process.cwd(), folderName);
         await fs.mkdir(dirPath, { recursive: true })
-        // console.log(`Directory created at ${dirPath}`)
         return dirPath
     } catch (error) {
         console.error(error)
@@ -17,7 +16,6 @@ const saveImageFile = async (filePath, arrayBuffer) => {
         const buffer = Buffer.from(arrayBuffer)
 
         await fs.writeFile(filePath, buffer)
-        // console.log(`Image saved to ${filePath}`)
     } catch (error) {
         console.error(error)
     }
@@ -37,7 +35,6 @@ const savePokemonStats = async (folderName, pokemonStatsObject) => {
         console.error('Error writing stats file:', error);
     }
 };
-
 
 const savePokemonSprites = async (folderName, pokemonSpritesObject) => {
     for (const key in pokemonSpritesObject) {

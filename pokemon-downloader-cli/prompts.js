@@ -23,7 +23,6 @@ async function promptForPokemon() {
         }
     ])
     const data = await fetchData(answers.name)
-    console.log(data)
     return data
 }
 
@@ -56,17 +55,16 @@ async function promptToContinue() {
 
 async function promptUser() {
     let searchAgain = true
+
     while(searchAgain) {
         const pokemonObject = await promptForPokemon()
-        console.log(pokemonObject)
 
         const optionsObject = await promptForDownloadInfo()
-        console.log(optionsObject)
 
         if(optionsObject.options.length > 0) {
             await parseOptions(pokemonObject, optionsObject)
         }
-
+        
         searchAgain = await promptToContinue()
     }
 }
