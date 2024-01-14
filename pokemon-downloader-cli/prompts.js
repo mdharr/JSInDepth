@@ -14,6 +14,22 @@ async function fetchData(name) {
     }
 }
 
+async function infoToDownload() {
+    const options = await inquirer.prompt([
+        {
+            type: "checkbox",
+            name: "types",
+            message: 'What features do you want?',
+            choices: [
+                { name: 'Stats' },
+                { name: 'Sprites' },
+                { name: 'Artwork' }
+            ]
+        }
+    ])
+    return options
+}
+
 async function promptUser() {
     let searchAgain = true
     while(searchAgain) {
@@ -26,6 +42,10 @@ async function promptUser() {
         ])
         const data = await fetchData(answers.name)
         console.log(data)
+
+        const info = await infoToDownload()
+        console.log(info)
+
         const confirm = await inquirer.prompt([
             {
                 type: "confirm",
