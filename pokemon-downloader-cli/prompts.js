@@ -14,11 +14,24 @@ async function fetchData(name) {
     }
 }
 
-async function infoToDownload() {
+async function promptForPokemon() {
+    const answers = await inquirer.prompt([
+        {
+            type: "input",
+            name: "name",
+            message: "Enter a pokemon to fetch:"
+        }
+    ])
+    const data = await fetchData(answers.name)
+    console.log(data)
+    return data
+}
+
+async function promptForDownloadInfo() {
     const options = await inquirer.prompt([
         {
             type: "checkbox",
-            name: "types",
+            name: "options",
             message: 'What features do you want?',
             choices: [
                 { name: 'Stats' },
@@ -30,30 +43,31 @@ async function infoToDownload() {
     return options
 }
 
+async function promptToContinue() {
+    const confirm = await inquirer.prompt([
+        {
+            type: "confirm",
+            name: "searchAgain",
+            message: "Do you want to search for another pokemon?"
+        }
+    ])
+    return confirm.searchAgain
+}
+
 async function promptUser() {
     let searchAgain = true
     while(searchAgain) {
-        const answers = await inquirer.prompt([
-            {
-                type: "input",
-                name: "name",
-                message: "Enter a pokemon to fetch:"
-            }
-        ])
-        const data = await fetchData(answers.name)
-        console.log(data)
+        const pokemonObject = await promptForPokemon()
+        console.log(pokemonObject)
 
-        const info = await infoToDownload()
-        console.log(info)
+        const optionsObject = await promptForDownloadInfo()
+        console.log(optionsObject)
 
-        const confirm = await inquirer.prompt([
-            {
-                type: "confirm",
-                name: "searchAgain",
-                message: "Do you want to search for another pokemon?"
-            }
-        ])
-        searchAgain = confirm.searchAgain
+        if(optionsObject.options.length > 0) {
+            await parseOptions(pokemonObject, optionsObject)
+        }
+
+        searchAgain = await promptToContinue()
     }
 }
 
