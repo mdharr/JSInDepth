@@ -61,7 +61,7 @@ const palindrome = (str) => {
     return palindrome(str.slice(1, str.length-1))
 }
 
-console.log(palindrome('racecar'))
+// console.log(palindrome('racecar'))
 
 
 /*
@@ -88,7 +88,27 @@ console.log(palindrome('racecar'))
     HINT2: What are the base-cases and what do we want to return?
 */
 
+const flatten = (arr) => {
+    const result = []
+    for(const element of arr) {
+        if(Array.isArray(element)) {
+            const flattened = flatten(element)
+            for(const innerElement of flattened) {
+                result.push(innerElement)
+            }
+        } else {
+            result.push(element)
+        }
+    }
 
+    return result
+}
+
+console.log(flatten([1, 2, 3]))
+
+console.log(flatten([1, 2, 3, [1, 2, 3]]))
+
+console.log(flatten([1, [4, 5, 6, [7, 8, 9]], 2, 3]))
 
 
 /*
