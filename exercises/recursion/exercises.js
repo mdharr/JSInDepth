@@ -104,11 +104,24 @@ const palindrome = (str) => {
 //     return result
 // }
 
+// const flatten = (arr) => {
+//     let result = [];
+//     for (const element of arr) {
+//         if (Array.isArray(element)) {
+//             result = result.concat(flatten(element));
+//         } else {
+//             result.push(element);
+//         }
+//     }
+//     return result;
+// }
+
 const flatten = (arr) => {
     let result = [];
     for (const element of arr) {
         if (Array.isArray(element)) {
-            result = result.concat(flatten(element));
+            const flattened = flatten(element)
+            result.push(...flattened)
         } else {
             result.push(element);
         }
