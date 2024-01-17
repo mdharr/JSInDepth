@@ -88,20 +88,32 @@ const palindrome = (str) => {
     HINT2: What are the base-cases and what do we want to return?
 */
 
+// const flatten = (arr) => {
+//     const result = []
+//     for(const element of arr) {
+//         if(Array.isArray(element)) {
+//             const flattened = flatten(element)
+//             for(const innerElement of flattened) {
+//                 result.push(innerElement)
+//             }
+//         } else {
+//             result.push(element)
+//         }
+//     }
+
+//     return result
+// }
+
 const flatten = (arr) => {
-    const result = []
-    for(const element of arr) {
-        if(Array.isArray(element)) {
-            const flattened = flatten(element)
-            for(const innerElement of flattened) {
-                result.push(innerElement)
-            }
+    let result = [];
+    for (const element of arr) {
+        if (Array.isArray(element)) {
+            result = result.concat(flatten(element));
         } else {
-            result.push(element)
+            result.push(element);
         }
     }
-
-    return result
+    return result;
 }
 
 console.log(flatten([1, 2, 3]))
