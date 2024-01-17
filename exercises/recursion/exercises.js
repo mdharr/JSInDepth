@@ -116,24 +116,38 @@ const palindrome = (str) => {
 //     return result;
 // }
 
-const flatten = (arr) => {
-    let result = [];
-    for (const element of arr) {
-        if (Array.isArray(element)) {
-            const flattened = flatten(element)
-            result.push(...flattened)
-        } else {
-            result.push(element);
-        }
-    }
-    return result;
-}
+// const flatten = (arr) => {
+//     let result = [];
+//     for (const element of arr) {
+//         if (Array.isArray(element)) {
+//             const flattened = flatten(element)
+//             result.push(...flattened)
+//         } else {
+//             result.push(element);
+//         }
+//     }
+//     return result;
+// }
 
-console.log(flatten([1, 2, 3]))
+// const flatten = (arr) => {
+//     const result = []
+//     for(const element of arr) {
+//         if(Array.isArray(element)) {
+//             const flattened = flatten(element)
+//             result.push(...flattened)
+//         } else {
+//             result.push(element)
+//         }
+//     }
+//     return result
+// }
 
-console.log(flatten([1, 2, 3, [1, 2, 3]]))
+// console.log(flatten([1, 2, 3]))
 
-console.log(flatten([1, [4, 5, 6, [7, 8, 9]], 2, 3]))
+// console.log(flatten([1, 2, 3, [1, 2, 3]]))
+
+// console.log(flatten([1, [4, 5, 6, [7, 8, 9]], 2, 3]))
+
 
 
 /*
@@ -153,9 +167,9 @@ console.log(flatten([1, [4, 5, 6, [7, 8, 9]], 2, 3]))
         name: "bob",
         happy: true,
         friend: {
-        id2: 2,
-        name2: "alice",
-        happy2: true,
+            id2: 2,
+            name2: "alice",
+            happy2: true,
         },
     })
     );
@@ -174,7 +188,67 @@ console.log(flatten([1, [4, 5, 6, [7, 8, 9]], 2, 3]))
     HINT2: The "delete" operator will delete a key from an Object
 */
 
+// const flatten = (obj) => {
+//     let result = {}
+//     for(const [key, value] of Object.entries(obj)) {
+//         if(typeof value == 'object') {
+//             const flattened = flatten(value)
+//             result = {...result, ...flattened}
+//             // return result
+//         } else {
+//             result[key] = value
+//         }
+//     }
+//     return result
+// }
 
+// console.log(
+//     flatten({
+//         id: 1,
+//         name: "bob",
+//         happy: true,
+//         friend: {
+//             id2: 2,
+//             name2: "alice",
+//             happy2: true,
+//         },
+//     })
+// )
+
+// const deeplyNestedObject = {
+//     id: 1,
+//     name: "John",
+//     details: {
+//         age: 30,
+//         address: {
+//             street: "123 Main St",
+//             city: "Metropolis",
+//             country: {
+//                 name: "Freedonia",
+//                 code: "FR",
+//                 continent: {
+//                     name: "North America",
+//                     climate: "Temperate"
+//                 }
+//             }
+//         }
+//     },
+//     hobbies: ["Reading", "Cycling", "Photography"],
+//     education: {
+//         degree: "Masters",
+//         field: "Computer Science",
+//         university: {
+//             name: "State University",
+//             location: {
+//                 city: "Gotham",
+//                 country: "Freedonia"
+//             }
+//         }
+//     }
+// };
+
+
+// console.log(flatten(deeplyNestedObject))
 
 
 /*
