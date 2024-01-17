@@ -16,7 +16,22 @@
     HINT: What is the base-case vs the "regular" cases here?
 */
 
+const fizzBuzz = (startNum, endNum) => {
+    if(startNum === endNum) return
+    
+    if(startNum % 3 === 0 && startNum % 5 === 0) {
+        console.log(`FizzBuzz: ${startNum}`)
+    } else if(startNum % 3 === 0) {
+        console.log(`Fizz: ${startNum}`) 
+    } else if(startNum % 5 === 0) {
+        console.log(`Buzz: ${startNum}`) 
+    } else {
+        console.log(`${startNum}`)
+    }
+    return fizzBuzz(++startNum, endNum)
+}
 
+fizzBuzz(0, 100)
 
 
 /*
