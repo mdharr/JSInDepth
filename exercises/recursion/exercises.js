@@ -251,6 +251,10 @@ const palindrome = (str) => {
 // console.log(flatten(deeplyNestedObject))
 
 
+
+
+
+
 /*
     1. Create a function called "constructDOM" that takes a single
        Object as it's argument.
@@ -295,61 +299,120 @@ const palindrome = (str) => {
 
 */
 
-// const document = {
-//     childNodes: [
-//       {
-//         nodeName: "html",
-//         childNodes: [
-//           {
-//             nodeName: "head",
-//             childNodes: [
-//               {
-//                 nodeName: "script",
-//                 innerText: "console.log('hi');",
-//               },
-//             ],
-//           },
-//           {
-//             nodeName: "body",
-//             childNodes: [
-//               {
-//                 nodeName: "ul",
-//                 childNodes: [
-//                   {
-//                     nodeName: "li",
-//                     childNodes: [
-//                       {
-//                         nodeName: "b",
-//                         innerText: "Home",
-//                       },
-//                     ],
-//                   },
-//                   {
-//                     nodeName: "li",
-//                     innerText: "Blog",
-//                   },
-//                   {
-//                     nodeName: "li",
-//                     innerText: "About",
-//                   },
-//                 ],
-//               },
-//               {
-//                 nodeName: "div",
-//                 childNodes: [
-//                   {
-//                     nodeName: "h1",
-//                     innerText: "My Blog",
-//                   },
-//                   {
-//                     nodeName: "p",
-//                     innerText: "Welcome to my blog!",
-//                   },
-//                 ],
-//               },
-//             ],
-//           },
-//         ],
-//       },
-//     ],
-//   }
+const document = {
+    childNodes: [
+      {
+        nodeName: "html",
+        childNodes: [
+          {
+            nodeName: "head",
+            childNodes: [
+              {
+                nodeName: "script",
+                innerText: "console.log('hi');",
+              },
+            ],
+          },
+          {
+            nodeName: "body",
+            childNodes: [
+              {
+                nodeName: "ul",
+                childNodes: [
+                  {
+                    nodeName: "li",
+                    childNodes: [
+                      {
+                        nodeName: "b",
+                        innerText: "Home",
+                      },
+                    ],
+                  },
+                  {
+                    nodeName: "li",
+                    innerText: "Blog",
+                  },
+                  {
+                    nodeName: "li",
+                    innerText: "About",
+                  },
+                ],
+              },
+              {
+                nodeName: "div",
+                childNodes: [
+                  {
+                    nodeName: "h1",
+                    innerText: "My Blog",
+                  },
+                  {
+                    nodeName: "p",
+                    innerText: "Welcome to my blog!",
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+    ],
+  }
+
+// function constructDOM(node) {
+//     let result = ''
+//     for(const [key, value] of Object.entries(node)) {
+//         if(key === 'innerText') {
+//             result += `<${node.nodeName}>${obj.innerText}</${node.nodeName}>`
+//             return result
+//         } else {
+//             return constructDOM(node[key])
+//         }
+//     }
+//     return result
+// }
+
+// function constructDOM(node) {
+//     if(node.innerText) return node.innerText
+
+//     let html = ''
+//     for(const childNode of node.childNodes) {
+//         html += `<${childNode.nodeName}>\n`
+//         html += constructDOM(childNode)
+//         html += `</${childNode.nodeName}>\n`
+//     }
+//     return html
+// }
+
+// function constructDOM(node, indentLevel = 0) {
+//     let indent = ' '.repeat(indentLevel * 4)
+
+//     if (node.innerText) {
+//         return `${indent}${node.innerText}\n`
+//     }
+
+//     let html = ''
+//     for (const childNode of node.childNodes) {
+//         html += `${indent}<${childNode.nodeName}>\n`
+//         html += constructDOM(childNode, indentLevel + 1)
+//         html += `${indent}</${childNode.nodeName}>\n`
+//     }
+
+//     return html
+// }
+
+function constructDOM(node, indentLevel = 0) {
+    let indent = ' '.repeat(indentLevel * 4)
+    if(node.innerText) {
+        return `${indent}${node.innerText}\n`
+    }
+    let html = ''
+    for(const childNode of node.childNodes) {
+        html += `${indent}<${childNode.nodeName}>\n`
+        html += constructDOM(childNode, indentLevel + 1)
+        html += `${indent}</${childNode.nodeName}>\n`
+    }
+    return html
+}
+
+console.log(constructDOM(document))
+
