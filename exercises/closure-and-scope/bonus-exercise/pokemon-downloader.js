@@ -50,7 +50,8 @@ const pokemonDownloader = () => {
 }
 
 const [getPokemon, pokemonCache] = pokemonDownloader()
-
+console.log(typeof getPokemon)
+console.log(typeof pokemonCache)
 await getPokemon("mew")
 await getPokemon("mewtwo")
 await getPokemon("pikachu")
