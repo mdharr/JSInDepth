@@ -102,30 +102,30 @@
        vendingMachine(); // "Insert 75 more coins"
 */
 
-const createVendingMachine = () => {
-   const stock = ["Cola", "Chips", "Chocolate", "Juice", "Nuts"]
-   let coins = 0
+// const createVendingMachine = () => {
+//    const stock = ["Cola", "Chips", "Chocolate", "Juice", "Nuts"]
+//    let coins = 0
 
-   const add25 = () => {
-      const random = Math.floor(Math.random() * stock.length)
-      console.log(`Random: ${random}`)
-      coins += 25
-      if(coins >= 100) {
-         console.log(`You got some ${stock[random]}`)
-         coins = 0
-      } else {
-         console.log(`Please insert ${100 - coins} more coins`)
-      }
-   }
-   return add25
-}
+//    const add25 = () => {
+//       const random = Math.floor(Math.random() * stock.length)
+//       console.log(`Random: ${random}`)
+//       coins += 25
+//       if(coins >= 100) {
+//          console.log(`You got some ${stock[random]}`)
+//          coins = 0
+//       } else {
+//          console.log(`Please insert ${100 - coins} more coins`)
+//       }
+//    }
+//    return add25
+// }
 
-const vendingMachine = createVendingMachine()
-vendingMachine()
-vendingMachine()
-vendingMachine()
-vendingMachine()
-vendingMachine()
+// const vendingMachine = createVendingMachine()
+// vendingMachine()
+// vendingMachine()
+// vendingMachine()
+// vendingMachine()
+// vendingMachine()
 
 
 
@@ -151,6 +151,33 @@ vendingMachine()
        then clear out the "database" (storage array inside)?
 */
 
+const createDatabase = () => {
+   let storage = ["Apple", "Banana", "Carrot"]
+
+   const addToDB = (item) => {
+      storage.push(item)
+      console.log(storage)
+   }
+
+   const clearDB = () => {
+      storage = []
+      console.log(storage);
+   }
+   return [addToDB, clearDB]
+}
+
+// my solution without destructuring
+// const manageStorage = createDatabase()
+// manageStorage[0]('Peach')
+// manageStorage[1]()
+// manageStorage[0]('Starfruit')
+
+// solution with destructuring
+const [add, clear] = createDatabase()
+
+add('Strawberry')
+clear()
+add('Starfruit')
 
 
 
