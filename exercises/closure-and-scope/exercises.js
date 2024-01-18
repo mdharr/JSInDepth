@@ -54,21 +54,21 @@
        console.log(text); // "Hello there friend!"
 */
 
-function stringBuilder() {
-   let result = ''
-   function add(characters) {
-      result += characters
-      return result
-   }
-   return add
-}
+// function stringBuilder() {
+//    let result = ''
+//    function add(characters) {
+//       result += characters
+//       return result
+//    }
+//    return add
+// }
 
-const builder = stringBuilder()
+// const builder = stringBuilder()
 
-let text = builder("Hello ")
-text = builder("there ")
-text = builder("friend!")
-console.log(text)
+// let text = builder("Hello ")
+// text = builder("there ")
+// text = builder("friend!")
+// console.log(text)
 
 
 
@@ -102,7 +102,30 @@ console.log(text)
        vendingMachine(); // "Insert 75 more coins"
 */
 
+const createVendingMachine = () => {
+   const stock = ["Cola", "Chips", "Chocolate", "Juice", "Nuts"]
+   let coins = 0
 
+   const add25 = () => {
+      const random = Math.floor(Math.random() * stock.length)
+      console.log(`Random: ${random}`)
+      coins += 25
+      if(coins >= 100) {
+         console.log(`You got some ${stock[random]}`)
+         coins = 0
+      } else {
+         console.log(`Please insert ${100 - coins} more coins`)
+      }
+   }
+   return add25
+}
+
+const vendingMachine = createVendingMachine()
+vendingMachine()
+vendingMachine()
+vendingMachine()
+vendingMachine()
+vendingMachine()
 
 
 
