@@ -17,22 +17,22 @@
     * Why is this considered "closure"?
 */
 
-const createCounter = () => {
-   let counter = 0
+// const createCounter = () => {
+//    let counter = 0
 
-   const incrementCounter = () => {
-      counter += 1
-      console.log(counter)
-   }
-   return incrementCounter
-}
+//    const incrementCounter = () => {
+//       counter += 1
+//       console.log(counter)
+//    }
+//    return incrementCounter
+// }
 
-const counter = createCounter()
+// const counter = createCounter()
 
-counter()
-counter()
-counter()
-counter()
+// counter()
+// counter()
+// counter()
+// counter()
 
 
 /*
@@ -54,7 +54,21 @@ counter()
        console.log(text); // "Hello there friend!"
 */
 
+function stringBuilder() {
+   let result = ''
+   function add(characters) {
+      result += characters
+      return result
+   }
+   return add
+}
 
+const builder = stringBuilder()
+
+let text = builder("Hello ")
+text = builder("there ")
+text = builder("friend!")
+console.log(text)
 
 
 
