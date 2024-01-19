@@ -33,7 +33,7 @@ const cat = "meow"
     4. Does this make sense? Why?
 */
 
-console.log(Object.getOwnPropertyNames(Object.prototype))
+// console.log(Object.getOwnPropertyNames(Object.prototype))
 
 // console.log(Object.getOwnPropertyNames(Array))
 // console.log(Object.getOwnPropertyNames(Array.__proto__))
@@ -51,7 +51,13 @@ console.log(Object.getOwnPropertyNames(Object.prototype))
     4. What is happening here and why does this work?
 */
 
+const fakeArray = new Object({ "0": "Zero", "1": "One", "2": "Two", length: 3})
 
+fakeArray.__proto__ = Array.prototype
+
+fakeArray.map(item => {
+    console.log(item)
+})
 
 
 
