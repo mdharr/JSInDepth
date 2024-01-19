@@ -15,7 +15,7 @@ String.prototype.boop = () => {
 }
 
 const cat = "meow"
-cat.boop()
+// cat.boop()
 
 
 
@@ -33,9 +33,10 @@ cat.boop()
     4. Does this make sense? Why?
 */
 
+console.log(Object.getOwnPropertyNames(Object.prototype))
 
-
-
+// console.log(Object.getOwnPropertyNames(Array))
+// console.log(Object.getOwnPropertyNames(Array.__proto__))
 
 /*
     1. Create a new Object and assign it to a variable
