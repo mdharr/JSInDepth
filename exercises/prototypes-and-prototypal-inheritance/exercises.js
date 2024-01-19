@@ -106,10 +106,10 @@ yourStore.__proto__ = store
 
 myStore.stock[1].quantity = 300
 
-console.log(myStore.name)
-console.log(myStore.stock)
-console.log(yourStore.name)
-console.log(yourStore.stock)
+// console.log(myStore.name)
+// console.log(myStore.stock)
+// console.log(yourStore.name)
+// console.log(yourStore.stock)
 
 // console.log(Object.getPrototypeOf(myStore))
 
@@ -137,3 +137,14 @@ console.log(yourStore.stock)
     5. Log out the prototype of cleo and taylor. What is
        happening? What about just taylor?
 */
+
+function Person(name) {
+    this.name = name;
+}
+
+const cleo = Person("Cleo")
+const taylor = new Person("Taylor")
+
+// console.log(Object.getOwnPropertyNames(cleo.__proto__))
+console.log(taylor.__proto__.constructor.name)
+console.log(Object.getOwnPropertyNames(taylor.__proto__.constructor))
