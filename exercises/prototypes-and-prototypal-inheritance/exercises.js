@@ -55,9 +55,9 @@ const fakeArray = new Object({ "0": "Zero", "1": "One", "2": "Two", length: 3})
 
 fakeArray.__proto__ = Array.prototype
 
-fakeArray.map(item => {
-    console.log(item)
-})
+// fakeArray.map(item => {
+//     console.log(item)
+// })
 
 
 
@@ -87,9 +87,34 @@ fakeArray.map(item => {
     9. What is happening and Why?
 */
 
+const store = { 
+    name: null, 
+    stock: [
+        { name: 'candy', quantity: 100 },
+        { name: 'fruit', quantity: 7 },
+        { name: 'toys', quantity: 23 }
+    ]
+}
 
+const myStore = {}
+myStore['name'] = "My Wonderful Store"
+myStore.__proto__ = store
 
+const yourStore = {}
+yourStore['name'] = "Not My Wonderful Store"
+yourStore.__proto__ = store
 
+myStore.stock[1].quantity = 300
+
+console.log(myStore.name)
+console.log(myStore.stock)
+console.log(yourStore.name)
+console.log(yourStore.stock)
+
+// console.log(Object.getPrototypeOf(myStore))
+
+// console.log(Object.getOwnPropertyNames(store.__proto__))
+// console.log(Object.getOwnPropertyNames(myStore.__proto__))
 
 
 /*
