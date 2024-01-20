@@ -22,3 +22,18 @@
 
     HINT* What methods can we use on Functions to manipulate "this"?
 */
+
+const book = {
+    name: "Harry Potter",
+    author: "J.K. Rowling",
+    characters: {
+        mainChars: ["Harry", "Ron", "Hermione"],
+        list: function() {
+            for (const char of this.mainChars) {
+                console.log(char)
+            }
+        }
+    }
+}
+
+book.characters.list.call({ mainChars: ["Draco", "Severus", "Voldemort"] })
