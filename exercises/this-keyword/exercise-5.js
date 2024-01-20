@@ -25,3 +25,28 @@
 
     *HINT: Think of how you'd modify/setup the prototype chain
 */
+
+function ThisPerson(name, age, favouriteFood) {
+    this.name = name
+    this.age = age
+    this.favouriteFood = favouriteFood
+}
+
+function ProtoPerson(name, age, favouriteFood) {
+    const instance = {
+        name,
+        age,
+        favouriteFood,
+    }
+    instance.__proto__ = ProtoPerson.prototype
+    return instance
+}
+
+const thisPerson = new ThisPerson("This", 0, "cookies");
+const protoPerson = ProtoPerson("Proto", 1, "?")
+
+console.log(thisPerson.__proto__.constructor.name)
+console.log(protoPerson.__proto__.constructor.name)
+
+console.log(Object.getOwnPropertyNames(thisPerson))
+console.log(Object.getOwnPropertyNames(protoPerson))
