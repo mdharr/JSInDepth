@@ -20,3 +20,18 @@
     6. How would you explain what is happening when we use the
        "new" operator with a function in JS?
 */
+
+function Person(name, age, favoriteFood) {
+    this.name = name
+    this.age = age
+    this.favoriteFood = favoriteFood
+}
+
+const avery = new Person("Avery", 20, "Dark Chocolate")
+const jackie = new Person("Jackie", 35, "Sourdough Bread")
+
+// console.log(avery)
+// console.log(jackie)
+
+console.log(Object.getOwnPropertyNames(jackie.__proto__))
+console.log(jackie.__proto__.constructor.arguments)
