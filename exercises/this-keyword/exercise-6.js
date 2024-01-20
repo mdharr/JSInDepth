@@ -33,3 +33,48 @@
 
     BONUS: Did we just create Object Oriented Programming?
 */
+
+function Person(name, age, favoriteFood) {
+    this.name = name;
+    this.age = age;
+    this.favoriteFood = favoriteFood;
+}
+
+Person.prototype.greet = function() {
+    console.log(`${this.name} says hello!`);
+}
+
+function SuperHero(name, age, favoriteFood, overpowered) {
+    this.name = name
+    this.age = age
+    this.favoriteFood = favoriteFood
+    this.overpowered = overpowered
+}
+
+SuperHero.prototype.__proto__ = Person.prototype
+
+const anya = new Person("Anya", 40, "Sour Keys")
+const batman = new SuperHero("Bruce", 55, "Steak", false)
+
+// console.log(anya.__proto__.constructor)
+// console.log(batman.__proto__.constructor)
+
+// console.log(anya)
+// console.log(batman)
+
+// batman.greet()
+
+let proto = anya.__proto__
+while(proto) {
+    console.log(proto.constructor.name)
+    proto = proto.__proto__
+}
+
+proto = batman.__proto__
+while(proto) {
+    console.log(proto.constructor.name)
+    proto = proto.__proto__
+}
+
+console.log(Object.getOwnPropertyNames(anya))
+console.log(Object.getOwnPropertyNames(batman))
