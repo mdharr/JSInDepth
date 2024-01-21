@@ -30,3 +30,32 @@
        1984 by George Orwell
        Harry Potter by J.K. Rowling
 */
+
+
+class Bookstore {
+    constructor(books) {
+        this.books = books
+    }
+    listBooks = function () {
+        const result = this.books.map(book => {
+            return `${book.title} by ${book.author}`
+        })
+        return result
+    }
+}
+
+class Book {
+    constructor(title, author) {
+        this.title = title
+        this.author = author
+    }
+}
+
+const nineteen84 = new Book("1984", "George Orwell")
+const hp = new Book("Harry Potter", "J.K. Rowling")
+
+const bookstore = new Bookstore( [ nineteen84, hp ] )
+
+bookstore.listBooks().forEach(element => {
+    console.log(element)
+})
