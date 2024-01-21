@@ -16,3 +16,40 @@
     * This is purposefully open-ended to allow you
       the creative freedom to design these classes
 */
+
+class Player {
+    lives = 3
+    shotDelay = 2000
+    totalScore = 0
+    xPos
+    yPos
+    constructor(xPos, yPos) {
+        this.xPos = xPos
+        this.yPos = yPos
+    }
+    shoot() {
+
+    }
+}
+
+class Enemy {
+    hp = 1
+    shotDelay = 9000
+    xPos
+    yPos
+    score = 10
+    constructor(xPos, yPos) {
+        this.xPos = xPos
+        this.yPos = yPos
+    }
+    shoot() {
+        
+    }
+}
+
+const spaceShip = new Player(500, 500)
+console.log(spaceShip)
+
+const enemy1 = new Enemy(10, 10)
+console.log(enemy1)
+

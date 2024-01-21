@@ -20,3 +20,17 @@
       - flying.__proto__
       - swimming.__proto__
 */
+
+class EnemyFactory {
+
+    generateFlyingEnemy = function(name) {
+        this.name = name
+    }
+    generateSwimmingEnemy = function(name) {
+        this.name = name
+    }
+}
+
+const factory = new EnemyFactory();
+const flying = factory.generateFlyingEnemy("batman");
+flying.fly()
