@@ -22,15 +22,44 @@
 */
 
 class EnemyFactory {
+    generateFlyingEnemy(name) {
+        class FlyingEnemy {
+            constructor(name) {
+                this.name = name
+            }
 
-    generateFlyingEnemy = function(name) {
-        this.name = name
-    }
-    generateSwimmingEnemy = function(name) {
-        this.name = name
+            fly() {
+                console.log(`${this.name} can fly!`)
+            }
+        }
+        return new FlyingEnemy(name)
     }
 }
 
-const factory = new EnemyFactory();
-const flying = factory.generateFlyingEnemy("batman");
-flying.fly()
+EnemyFactory.generateSwimmingEnemy = function(name) {
+    class SwimmingEnemy {
+        constructor(name) {
+            this.name = name
+        }
+
+        swim() {
+            console.log(`${this.name} can swim!`)
+        }
+    }
+    return new SwimmingEnemy(name)
+}
+
+const factory = new EnemyFactory()
+const flying = factory.generateFlyingEnemy("batman")
+// flying.fly()
+
+const swimming = EnemyFactory.generateSwimmingEnemy("aquaman")
+// swimming.swim()
+
+// console.log(Object.getOwnPropertyNames(EnemyFactory))
+// console.log(Object.getOwnPropertyNames(factory))
+// console.log(Object.getOwnPropertyNames(factory.__proto__))
+console.log(Object.getOwnPropertyNames(flying))
+console.log(Object.getOwnPropertyNames(flying.__proto__))
+console.log(Object.getOwnPropertyNames(swimming))
+console.log(Object.getOwnPropertyNames(swimming.__proto__))
