@@ -23,3 +23,22 @@
        console.log(Utilities.camelCase("Monkey Banana"))
        // monkeyBanana
 */
+
+class Utilities {
+    static camelCase(str) {
+        let result = ''
+        const arr = str.toLowerCase().split(' ')
+        const firstWord = arr[0]
+        const rest = arr.slice(1)
+        for(const word of rest) {
+            result += word.charAt(0).toUpperCase() + word.slice(1)
+        }
+        return firstWord + result
+    }
+}
+
+console.log(Utilities.camelCase("Hello There My FRIEND"))
+console.log(Utilities.camelCase("hello there")) // helloThere
+console.log(Utilities.camelCase("HELLO THERE")) // helloThere
+console.log(Utilities.camelCase("I love cookies")) // iLoveCookies
+console.log(Utilities.camelCase("Monkey Banana")) // monkeyBanana
