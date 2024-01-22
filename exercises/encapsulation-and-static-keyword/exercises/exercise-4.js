@@ -168,18 +168,25 @@
 
 */
 
-const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
-const reduced = arr.reduce((acc, current) => {
-    acc.push(current)
-    return acc
-}, [])
+// static Array methods seem to be typically used in conjunction with (potentially) non array classes/objects
+// while non static properties/methods are used directly on arrays
 
-console.log(reduced)
-let total = 0
-const reducedRight = arr.reduceRight((acc, current) => {
-    acc.push(current)
-    return acc
-}, [])
 
-console.log(reducedRight)
+
+
+// const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+// const reduced = arr.reduce((acc, current) => {
+//     acc.push(current)
+//     return acc
+// }, [])
+
+// console.log(reduced)
+// let total = 0
+// const reducedRight = arr.reduceRight((acc, current) => {
+//     acc.push(current)
+//     return acc
+// }, [])
+
+// console.log(reducedRight)
