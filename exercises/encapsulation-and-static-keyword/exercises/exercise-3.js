@@ -46,3 +46,50 @@
        // A blue square
        // A red rectangle
 */
+
+class Shape {
+   type = "Shape"
+
+   constructor(color = "Transparent") {
+      this.color = color
+   }
+
+   describe() {
+      console.log(`A ${this.color} ${this.type}`)
+   }
+}
+
+class Square extends Shape {
+   type = "Square"
+
+   constructor(color, sideLength) {
+      super(color)
+      this.sideLength = sideLength
+   }
+
+   area() {
+      return this.sideLength**2
+   }
+}
+
+class Rectangle extends Shape {
+   type = "Rectangle"
+
+   constructor(color, width, height) {
+      super(color)
+      this.width = width
+      this.height = height
+   }
+
+   area() {
+      return this.width * this.height
+   }
+}
+
+const square = new Square("blue", 5);
+const rectangle = new Rectangle("red", 5, 6);
+console.log( square.area() ); // 25
+console.log( rectangle.area() ); // 30
+for ( const shape of [square, rectangle] ) shape.describe();
+// A blue square
+// A red rectangle

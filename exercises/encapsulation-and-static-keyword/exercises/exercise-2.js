@@ -45,16 +45,16 @@ class FancyArray extends Array {
    }
 }
 
-const arr = new FancyArray();
-console.log(arr);
-arr.push(1);
-arr.push(2);
-arr.push(3);
+const arr = new FancyArray()
+console.log(arr)
+arr.push(1)
+arr.push(2)
+arr.push(3)
 
 const mapped = arr.mapWithLogging((item, i) => {
-   return item + i;
+   return item + i
  });
- console.log(mapped);
+ console.log(mapped)
 
  // FancyArray(0) []
  // Current: 1, After Callback: 1
